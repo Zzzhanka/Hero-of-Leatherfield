@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
-            Initialize();
+            //Initialize();
         }
         else
         {
@@ -32,8 +32,8 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void Initialize()
-    {
-        windowService.Initialize();
-    }
+    //private void Initialize()
+    //{
+    //    windowService.Initialize();
+    //}
 }
