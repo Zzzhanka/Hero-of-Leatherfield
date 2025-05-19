@@ -34,9 +34,10 @@ public class PlayerMovementSystem : MonoBehaviour
     public IEnumerator Dash()
     {
 
-        if (_playerState.PlayerCanDash && _playerChars.PlayerCurrentEnergy >= _dashCost)
+        if (_playerState.PlayerCanDash && _playerChars.PlayerCurrentEnergy >= _dashCost && _dashCooldownTimer <= 0)
         {
             _playerState.PlayerCanRun = false;
+            _playerState.PlayerCanDash = false;
 
             float speedBeforeDashing = _playerChars.PlayerMoveSpeed;
 
@@ -61,6 +62,7 @@ public class PlayerMovementSystem : MonoBehaviour
             _playerState.PlayerIsDashing = false;
 
             _playerState.PlayerCanRun = true;
+            _playerState.PlayerCanDash = true;
 
             _dashCooldownTimer = _dashCooldown;
         }
@@ -135,7 +137,10 @@ public class PlayerMovementSystem : MonoBehaviour
 
         if (_dashCooldownTimer > 0)
         {
-            _dashCooldownTimer -= Time.time;
+            _dashCooldownTimer -= Time.deltaTime;
+
+            if (_dashCooldownTimer < 0)
+                _dashCooldownTimer = 0;
         }
 
     }
