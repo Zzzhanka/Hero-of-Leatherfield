@@ -1870,10 +1870,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1103755084}
   - component: {fileID: 1103755083}
-  - component: {fileID: 1103755090}
-  - component: {fileID: 1103755089}
   - component: {fileID: 1103755088}
   - component: {fileID: 1103755087}
+  - component: {fileID: 1103755089}
   - component: {fileID: 1103755086}
   - component: {fileID: 1103755085}
   m_Layer: 0
@@ -1969,6 +1968,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40f6c8689aba8c742ad5813075fee25c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerVelocity: {x: 0, y: 0}
 --- !u!114 &1103755086
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1996,8 +1996,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f4d27afae289d24483f59e54d6b1792, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerHealth: 0
-  PlayerDamage: 0
+  PlayerHealth: 200
+  PlayerDamage: 10
   PlayerMoveSpeed: 3.5
 --- !u!114 &1103755088
 MonoBehaviour:
@@ -2012,83 +2012,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerCanMove: 1
-  PlayerCanDas: 0
-  PlayerCanAttack: 0
-  PlayerCanTakeDamage: 0
-  PlayerCanTakeHeal: 0
---- !u!50 &1103755089
-Rigidbody2D:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1103755082}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
---- !u!61 &1103755090
-BoxCollider2D:
+  PlayerCanDash: 1
+  PlayerCanAttack: 1
+  PlayerCanTakeDamage: 1
+  PlayerCanTakeHeal: 1
+  PlayerCanRecoverEnergy: 1
+--- !u!114 &1103755089
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1103755082}
   m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 136854281c294dc41a78368ace82eb1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _checkDistance: 4
+  _minSafeDistance: 0.55
+  _obstacleLayer:
     serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
+    m_Bits: 64
+  LeftBlockBorderX: 0
+  RightBlockBorderX: 0
+  TopBlockBorderY: 0
+  BottomBlockBorderY: 0
 --- !u!1001 &1212650531
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2421,41 +2370,13 @@ GameObject:
   - component: {fileID: 1509492094}
   - component: {fileID: 1509492093}
   - component: {fileID: 1509492092}
-  - component: {fileID: 1509492091}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall for Testing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!50 &1509492091
-Rigidbody2D:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1509492090}
-  m_BodyType: 2
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!61 &1509492092
 BoxCollider2D:
   m_ObjectHideFlags: 0
