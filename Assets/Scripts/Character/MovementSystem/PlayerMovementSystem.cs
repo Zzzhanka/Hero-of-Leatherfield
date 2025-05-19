@@ -34,7 +34,7 @@ public class PlayerMovementSystem : MonoBehaviour
     public IEnumerator Dash()
     {
 
-        if (_playerState.PlayerCanDash && _playerChars.PlayerCurrentEnergy >= _dashCost && _dashCooldownTimer <= 0)
+        if (_playerState.PlayerCanDash && _playerChars.PlayerCurrentEnergy >= _dashCost && _dashCooldownTimer <= 0 && (_playerMovementInputSystem.InputX != 0 || _playerMovementInputSystem.InputY != 0))
         {
             _playerState.PlayerCanRun = false;
             _playerState.PlayerCanDash = false;
