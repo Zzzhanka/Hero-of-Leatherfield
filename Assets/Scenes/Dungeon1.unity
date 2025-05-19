@@ -2671,7 +2671,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerVelocity: {x: 0, y: 0}
   _dashCost: 10
-  _dashSpeedMultiplier: 1.5
+  _dashSpeedMultiplier: 8
   _dashDuration: 0.2
   _dashCooldown: 2
   _dashCooldownTimer: 0
