@@ -14,10 +14,41 @@ public class PlayerMovementInputSystem : MonoBehaviour
     public float InputX;
     public float InputY;
 
+    private PlayerMovementSystem _playerMovementSystem;
+
+
+
+
+    public void DashInput()
+    {
+
+        StartCoroutine(_playerMovementSystem.Dash());
+
+    }
+
+
+
+    private void Awake()
+    {
+
+        _playerMovementSystem = GetComponent<PlayerMovementSystem>();
+
+    }
+
 
 
     private void Update()
     {
+
+        JoystickInput();
+
+    }
+
+
+
+    private void JoystickInput()
+    {
+
 
         float rawX;
         float rawY;

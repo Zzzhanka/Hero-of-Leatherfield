@@ -73,8 +73,6 @@ public class PlayerSensorsSystem : MonoBehaviour
             Vector3 origin = transform.position + offset;
             RaycastHit2D hit = Physics2D.Raycast(origin, dir, _checkDistance, _obstacleLayer);
 
-            Debug.DrawRay(origin, dir * _checkDistance, Color.red);
-
             if (hit.collider != null)
             {
                 if (isHorizontal)

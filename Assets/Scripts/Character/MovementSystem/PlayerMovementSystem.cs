@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
+using System.Collections.Generic;
+using System.Collections;
 
 
 public class PlayerMovementSystem : MonoBehaviour
@@ -10,6 +12,11 @@ public class PlayerMovementSystem : MonoBehaviour
 
     [Space(5)]
     public Vector2 PlayerVelocity;
+    [SerializeField] private int _dashCost = 10;
+    [SerializeField] private float _dashSpeedMultiplier = 1.5f;
+    [SerializeField] private float _dashDuration = 0.2f;
+    [SerializeField] private float _dashCooldown = 2f;
+    [SerializeField] private float _dashCooldownTimer;
 
 
 
@@ -21,6 +28,44 @@ public class PlayerMovementSystem : MonoBehaviour
     private Vector2 _heroPreviousPosition;
     private Vector2 _moveDirection;
 
+
+
+
+    public IEnumerator Dash()
+    {
+
+        if (_playerState.PlayerCanDash && _playerChars.PlayerCurrentEnergy >= _dashCost)
+        {
+            _playerState.PlayerCanRun = false;
+
+            float speedBeforeDashing = _playerChars.PlayerMoveSpeed;
+
+            _playerState.PlayerIsDashing = true;
+
+            _playerChars.PlayerCurrentEnergy -= _dashCost;
+            _playerChars.UpdatePlayerEnergyBar();
+
+            float HeroWithDashSpeed = speedBeforeDashing * _dashSpeedMultiplier;
+
+            float startTime = Time.time;
+
+            while (Time.time < startTime + _dashDuration)
+            {
+                _playerChars.PlayerMoveSpeed = HeroWithDashSpeed;
+
+                yield return null;
+            }
+
+            _playerChars.PlayerMoveSpeed = speedBeforeDashing;
+
+            _playerState.PlayerIsDashing = false;
+
+            _playerState.PlayerCanRun = true;
+
+            _dashCooldownTimer = _dashCooldown;
+        }
+        
+    }
 
 
 
@@ -40,6 +85,7 @@ public class PlayerMovementSystem : MonoBehaviour
     {
 
         HeroInputMove();
+        UpdateDashCooldown();
 
     }
 
@@ -75,36 +121,6 @@ public class PlayerMovementSystem : MonoBehaviour
 
 
 
-    //public IEnumerator Dash()
-    //{
-    //    _heroStatus.HeroCanRun = false;
-    //    _heroStatus.HeroCanRecoverEnergy = false;
-
-    //    _heroChars.HeroCurrentEnergy -= _heroChars.HeroDashEnergyCost;
-    //    _heroChars.UpdateEnergyBarAfterDash();
-
-    //    float HeroBaseMoveSpeed = _heroChars.HeroMovementSpeedPoints / 100f;
-    //    float HeroWithDashSpeed = HeroBaseMoveSpeed * _heroChars.HeroDashSpeedMultiplier;
-
-    //    float startTime = Time.time;
-
-    //    while (Time.time < startTime + _heroChars.HeroDashDuration)
-    //    {
-    //        _heroChars.HeroMovementSpeed = HeroWithDashSpeed;
-
-    //        yield return null;
-    //    }
-
-    //    _heroChars.HeroMovementSpeed = HeroBaseMoveSpeed;
-
-    //    _heroStatus.HeroCanRun = true;
-    //    _heroStatus.HeroCanRecoverEnergy = true;
-
-    //    _heroChars.RestartDashCooldown();
-    //}
-
-
-
     private void CalculateHeroVelocity()
     {
         Vector2 currentPosition = transform.position;
@@ -112,5 +128,16 @@ public class PlayerMovementSystem : MonoBehaviour
         _heroPreviousPosition = currentPosition;
     }
 
+
+
+    private void UpdateDashCooldown()
+    {
+
+        if (_dashCooldownTimer > 0)
+        {
+            _dashCooldownTimer -= Time.time;
+        }
+
+    }
 
 }
