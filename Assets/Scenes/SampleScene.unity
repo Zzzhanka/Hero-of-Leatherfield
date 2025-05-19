@@ -508,6 +508,7 @@ GameObject:
   m_Component:
   - component: {fileID: 251383335}
   - component: {fileID: 251383336}
+  - component: {fileID: 251383337}
   m_Layer: 5
   m_Name: Slider Player Energybar
   m_TagString: Untagged
@@ -584,10 +585,25 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0.7
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &251383337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 251383334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffe02b5469ae0da46a5123eeaf7665ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _slider: {fileID: 251383336}
+  _maxEnergyText: {fileID: 2007553962}
+  _currentEnergyText: {fileID: 145332824}
 --- !u!1 &269928048
 GameObject:
   m_ObjectHideFlags: 0
@@ -1577,6 +1593,7 @@ GameObject:
   m_Component:
   - component: {fileID: 810152057}
   - component: {fileID: 810152058}
+  - component: {fileID: 810152059}
   m_Layer: 5
   m_Name: Slider Player Healthbar
   m_TagString: Untagged
@@ -1653,10 +1670,25 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0.4
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &810152059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 810152056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4019851158184d942a1d5f41bd94dbe2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _slider: {fileID: 810152058}
+  _maxHealthText: {fileID: 1072035844}
+  _currentHealthText: {fileID: 1593693286}
 --- !u!1 &874015010
 GameObject:
   m_ObjectHideFlags: 0
@@ -1969,6 +2001,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerVelocity: {x: 0, y: 0}
+  _dashCost: 10
+  _dashSpeedMultiplier: 1.5
+  _dashDuration: 0.2
+  _dashCooldown: 2
+  _dashCooldownTimer: 0
 --- !u!114 &1103755086
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1996,9 +2033,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f4d27afae289d24483f59e54d6b1792, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerHealth: 200
+  PlayerMaxHealth: 200
+  PlayerCurrentHealth: 0
   PlayerDamage: 10
+  PlayerDefense: 0
   PlayerMoveSpeed: 3.5
+  PlayerAttackReload: 2
+  PlayerMaxEnergy: 100
+  PlayerCurrentEnergy: 0
+  PlayerEnergyRecoveringPower: 1
+  _playerHealthSlider: {fileID: 810152059}
+  _playerEnergySlider: {fileID: 251383337}
 --- !u!114 &1103755088
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2012,11 +2057,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerCanMove: 1
+  PlayerCanRun: 1
   PlayerCanDash: 1
   PlayerCanAttack: 1
   PlayerCanTakeDamage: 1
-  PlayerCanTakeHeal: 1
+  PlayerCanDie: 1
+  PlayerCanTakeHealh: 1
   PlayerCanRecoverEnergy: 1
+  PlayerIsRunning: 0
+  PlayerIsDashing: 0
 --- !u!114 &1103755089
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.UI;
 
 
 public class PlayerCharacteristics : MonoBehaviour
@@ -27,13 +26,17 @@ public class PlayerCharacteristics : MonoBehaviour
     public float PlayerEnergyRecoveringPower;
 
     [Space(5)]
-    [SerializeField] Slider _playerHealthSlider;
-    [SerializeField] Slider _playerEnergySlider;
+    [SerializeField] PlayerHealthBar _playerHealthSlider;
+    [SerializeField] PlayerEnegyBar _playerEnergySlider;
 
     private PlayerState _playerState;
 
     private float _energyRecoverTimer = 0f;
     private const float _energyRecoverInterval = 0.1f;
+
+    private float _energyLoseTimer = 0f;
+    private const float _energyLoseInterval = 0.1f;
+    private const float _losingEnergyWhileRunning = 1;
 
 
 
@@ -78,8 +81,8 @@ public class PlayerCharacteristics : MonoBehaviour
 
     public void UpdatePlayerHealthBar()
     {
-        
 
+        _playerHealthSlider.UpdateHealthBar(PlayerMaxHealth, PlayerCurrentHealth);
 
     }
 
@@ -88,7 +91,7 @@ public class PlayerCharacteristics : MonoBehaviour
     public void UpdatePlayerEnergyBar()
     {
 
-
+        _playerEnergySlider.UpdateEnergyBar(PlayerMaxEnergy, PlayerCurrentEnergy);
 
     }
 
@@ -109,6 +112,9 @@ public class PlayerCharacteristics : MonoBehaviour
         PlayerCurrentHealth = PlayerMaxHealth;
         PlayerCurrentEnergy = PlayerMaxEnergy;
 
+        UpdatePlayerHealthBar();
+        UpdatePlayerEnergyBar();
+
     }
 
 
@@ -117,6 +123,14 @@ public class PlayerCharacteristics : MonoBehaviour
     {
 
         RecoverEnergy();
+        LoseEnergyWhileRunning();
+
+        //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        if (Input.GetMouseButtonDown(0)) 
+        {
+            PlayerTakesDamage(5);
+        }
+        //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
     }
 
@@ -137,6 +151,27 @@ public class PlayerCharacteristics : MonoBehaviour
 
                 if (PlayerCurrentEnergy > PlayerMaxEnergy)
                     PlayerCurrentEnergy = PlayerMaxEnergy;
+
+                UpdatePlayerEnergyBar();
+            }
+        }
+
+    }
+
+
+
+    private void LoseEnergyWhileRunning()
+    {
+
+        while (_playerState.PlayerIsRunning)
+        {
+            _energyLoseTimer += Time.deltaTime;
+
+            if (_energyLoseTimer >= _energyLoseInterval)
+            {
+                _energyLoseTimer = 0f;
+
+                PlayerCurrentEnergy -= _losingEnergyWhileRunning;
 
                 UpdatePlayerEnergyBar();
             }
