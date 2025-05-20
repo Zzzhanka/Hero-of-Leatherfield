@@ -3,26 +3,31 @@ using UnityEngine;
 public class PortalScript : MonoBehaviour
 {
 
-    public GameObject button;
-    [SerializeField] bool isPlayerInZone = false;
+    [SerializeField] private GameObject _button;
+
+
 
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+
         if (other.CompareTag("Player"))
         {
-            button.SetActive(true);
-            Debug.Log("dgdfg");
+            _button.SetActive(true);
         }
+
     }
+
+
 
     private void OnTriggerExit2D(Collider2D other)
     {
+
         if (other.CompareTag("Player"))
         {
-            button.SetActive(false);
-            Debug.Log("dgdfg");
+            _button.SetActive(false);
         }
+
     }
 
 }
