@@ -2924,13 +2924,13 @@ GameObject:
   m_Component:
   - component: {fileID: 1103755084}
   - component: {fileID: 1103755083}
+  - component: {fileID: 1103755090}
+  - component: {fileID: 1103755091}
   - component: {fileID: 1103755088}
   - component: {fileID: 1103755087}
   - component: {fileID: 1103755089}
   - component: {fileID: 1103755086}
   - component: {fileID: 1103755085}
-  - component: {fileID: 1103755090}
-  - component: {fileID: 1103755091}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -4485,6 +4485,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 117786801192758515, guid: d459b7f074b97aa4d99920c77ea3b4c1, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1103755082}
     - target: {fileID: 117786801192758515, guid: d459b7f074b97aa4d99920c77ea3b4c1, type: 3}
       propertyPath: characteristics
       value: 
