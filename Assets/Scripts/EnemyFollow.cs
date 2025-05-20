@@ -4,21 +4,21 @@ using System.Collections;
 
 public class EnemyFollow : MonoBehaviour
 {
+    [SerializeField]private GameObject player;
+
     public float speed;
     public PlayerCharacteristics characteristics;
-
-    private Transform player;
 
 
     private void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        player.GetComponent<Transform>();
         characteristics = gameObject.GetComponent<PlayerCharacteristics>();
         
     }
     private void Update()
     {
-        transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
+        transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
