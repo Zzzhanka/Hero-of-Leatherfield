@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene 1.unity
+    path: Assets/Scenes/vill.unity
     guid: 926ccb6a2b8a57b429717737a858a268
   - enabled: 1
     path: Assets/Scenes/Dungeon1.unity
