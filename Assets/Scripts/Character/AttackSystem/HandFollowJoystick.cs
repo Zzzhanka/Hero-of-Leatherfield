@@ -90,9 +90,6 @@ public class HandFollowJoystick : MonoBehaviour
         WeaponSprite.SetActive(true);
         _weaponAnims.SetTrigger("SwordAttack1");
 
-
-        // Сюда короче потом можно пихнуть код который будет наносить урон врагам которые попали под коллайдер удара.
-
     }
 
 }
