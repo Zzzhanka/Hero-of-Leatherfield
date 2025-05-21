@@ -1,21 +1,10 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
-public class PortalScript : MonoBehaviour
+public class BlacksmithScript : MonoBehaviour
 {
-
     [SerializeField] private GameObject _button;
-
-
-    public void LoadDungeonScene()
-    {
-        string[] dungeonScenes = { "Dungeon1", "Dungeon2", "Dungeon3" };
-
-        string randomScene = dungeonScenes[Random.Range(0, dungeonScenes.Length)];
-
-        SceneManager.LoadScene(randomScene);
-    }
-
+    [SerializeField] private GameObject _BlacksmithPanel;
     private void OnTriggerEnter2D(Collider2D other)
     {
 
@@ -38,4 +27,12 @@ public class PortalScript : MonoBehaviour
 
     }
 
+    public void BlacksmithEntry()
+    {
+        _BlacksmithPanel.SetActive(true);
+    }
+    public void BlacksmithExit()
+    {
+        _BlacksmithPanel.SetActive(false);
+    }
 }
