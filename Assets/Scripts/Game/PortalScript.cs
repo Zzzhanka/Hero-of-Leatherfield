@@ -8,7 +8,7 @@ public class PortalScript : MonoBehaviour
 
     public void VillBack()
     {
-        SceneManager.LoadScene("Sample")
+        SceneManager.LoadScene("Village");
     }
 
     public void LoadDungeonScene()
