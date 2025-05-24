@@ -1,16 +1,9 @@
 using UnityEngine;
 
-public class ItemType : MonoBehaviour
+public enum ItemType
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    None = 0,
+    Consumable = 1, // e.g., Health potion
+    Weapon = 2,
+    Collectable = 3, // e.g., Gold coins
 }

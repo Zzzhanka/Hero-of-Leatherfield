@@ -3,13 +3,14 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] private WindowService windowService;
+    [SerializeField] private InventoryManager inventoryManager;
 
-    public WindowService WindowService =>
-        windowService;
+    public InventoryManager InventoryManager => 
+        inventoryManager;
 
     public static GameManager Instance { get; private set; }
-
+  
+    private bool IsDungeonSession;  
     
     private void Awake()
     {
@@ -17,7 +18,7 @@ public class GameManager : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
-            //Initialize();
+            Initialize();
         }
         else
         {
@@ -25,8 +26,15 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    //private void Initialize()
-    //{
-    //    windowService.Initialize();
-    //}
+    private void Initialize()
+    {
+        IsDungeonSession = false;
+
+        inventoryManager.Initialize();
+    }
+
+    private void Update()
+    {
+        
+    }
 }
