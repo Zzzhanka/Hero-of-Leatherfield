@@ -1,0 +1,12 @@
+# ninja log v5
+245	1738	7697100261489061	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	76b8adbfa61c0282
+1746	2366	7697100267507991	C:/GitHub/Hero-of-Leatherfield/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/14283t3j/obj/arm64-v8a/libswappywrapper.so	353fe4edb631f8c1
+91	5022	7697100294000396	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	b5ebd46eeba8f65a
+73	5075	7697100294046048	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	b313ae17c7101782
+108	5084	7697100295033886	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	54f56a52cc4d2c39
+33	5238	7697100296666846	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	8235be6d39d87958
+1	5343	7697100297707277	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	5a1fef5c61ed2f77
+54	5668	7697100301187139	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	be7686f6d05fa74b
+210	5684	7697100301381815	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	8c286d23e96139f3
+17	5761	7697100302185149	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	be5b9b8b8df68cbc
+5762	5896	7697100303618032	C:/GitHub/Hero-of-Leatherfield/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/14283t3j/obj/arm64-v8a/libgame.so	6e0d5694998c8811

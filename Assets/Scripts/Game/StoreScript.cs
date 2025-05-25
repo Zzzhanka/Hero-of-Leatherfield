@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -75,5 +76,12 @@ public class StoreScript : MonoBehaviour
             _slider.value = _itemCount;
         }
         _selectedText.text = $"Selected: {_selectedCount}";
+
+        ShowInventory();
+    }
+
+    private void ShowInventory()
+    {
+        
     }
 }

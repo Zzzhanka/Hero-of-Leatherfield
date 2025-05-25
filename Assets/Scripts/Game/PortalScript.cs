@@ -6,10 +6,14 @@ public class PortalScript : MonoBehaviour
 
     [SerializeField] private GameObject _button;
 
+    public void VillBack()
+    {
+        SceneManager.LoadScene("Village");
+    }
 
     public void LoadDungeonScene()
     {
-        string[] dungeonScenes = { "Dungeon1", "Dungeon2", "Dungeon3" };
+        string[] dungeonScenes = { "Dungeon1" };
 
         string randomScene = dungeonScenes[Random.Range(0, dungeonScenes.Length)];
 
