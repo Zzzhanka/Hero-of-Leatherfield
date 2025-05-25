@@ -1,9 +1,7 @@
-using UnityEngine;
-
 public enum ItemType
 {
-    None = 0,
-    Consumable = 1, // e.g., Health potion
-    Weapon = 2,
-    Collectable = 3, // e.g., Gold coins
+    Generic = 0,
+    Weapon = 1,
+    Potion = 2,
+    Armor = 3,
 }

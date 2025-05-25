@@ -1,13 +1,14 @@
-[System.Serializable]
-public class ItemData
+using UnityEngine;
+
+public abstract class ItemData : ScriptableObject
 {
-    public ItemType itemType;
+    [Header("Generic Data")]
     public string itemName;
     public int itemID;
-    public int quantity;
+    public Sprite icon;
+    public ItemType itemType = ItemType.Generic;
+    public int maxStack = 1;
 
-    // Specific properties
-    public int healAmount;
-    public int damage;
-    public float attackSpeed;
+    [Space(10), TextArea]
+    public string description;
 }

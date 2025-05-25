@@ -1,0 +1,3159 @@
+fileFormatVersion: 2
+guid: 8ab0550a37a36624a827f8929219a999
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3793514505562025676
+    second: Potion_of_Healing_0
+  - first:
+      213: 5639021124808770043
+    second: Potion_of_Healing_1
+  - first:
+      213: -7169272571400262765
+    second: Potion_of_Healing_2
+  - first:
+      213: 8187589456609549768
+    second: Potion_of_Healing_3
+  - first:
+      213: -6724352609425752110
+    second: Potion_of_Healing_4
+  - first:
+      213: 8456012406399516935
+    second: Potion_of_Healing_5
+  - first:
+      213: 8237306869842017538
+    second: Potion_of_Healing_6
+  - first:
+      213: 3458879717871961051
+    second: Potion_of_Healing_7
+  - first:
+      213: 4544871456543355442
+    second: Potion_of_Healing_8
+  - first:
+      213: 4244979585435598231
+    second: Potion_of_Healing_9
+  - first:
+      213: -2325887121891216901
+    second: Potion_of_Healing_10
+  - first:
+      213: 4304534308123488927
+    second: Potion_of_Healing_11
+  - first:
+      213: 4886542121800922437
+    second: Potion_of_Healing_12
+  - first:
+      213: 3564474258042424329
+    second: Potion_of_Healing_13
+  - first:
+      213: -4956069450808010324
+    second: Potion_of_Healing_14
+  - first:
+      213: -8233277912766314243
+    second: Potion_of_Healing_15
+  - first:
+      213: 5026897059054986669
+    second: Potion_of_Healing_16
+  - first:
+      213: -6882148265669955313
+    second: Potion_of_Healing_17
+  - first:
+      213: 4306351516409094812
+    second: Potion_of_Healing_18
+  - first:
+      213: 789828613077071414
+    second: Potion_of_Healing_19
+  - first:
+      213: 6888922763675871019
+    second: Potion_of_Healing_20
+  - first:
+      213: -4417076816643915894
+    second: Potion_of_Healing_21
+  - first:
+      213: 3680833896489397653
+    second: Potion_of_Healing_22
+  - first:
+      213: 7030542128975711923
+    second: Potion_of_Healing_23
+  - first:
+      213: -8458487907642893196
+    second: Potion_of_Healing_24
+  - first:
+      213: -6588938422551696210
+    second: Potion_of_Healing_25
+  - first:
+      213: 7748737638016620536
+    second: Potion_of_Healing_26
+  - first:
+      213: -1746600162816392535
+    second: Potion_of_Healing_27
+  - first:
+      213: -7098656037378394260
+    second: Potion_of_Healing_28
+  - first:
+      213: 4935361272994334246
+    second: Potion_of_Healing_29
+  - first:
+      213: -5836384999702315343
+    second: Potion_of_Healing_30
+  - first:
+      213: -2323657322649736539
+    second: Potion_of_Healing_31
+  - first:
+      213: 4614979668587474907
+    second: Potion_of_Healing_32
+  - first:
+      213: 1143339408629917250
+    second: Potion_of_Healing_33
+  - first:
+      213: -7508928311981293978
+    second: Potion_of_Healing_34
+  - first:
+      213: -4695758900184195324
+    second: Potion_of_Healing_35
+  - first:
+      213: -902446527009601382
+    second: Potion_of_Healing_36
+  - first:
+      213: -71742028513261886
+    second: Potion_of_Healing_37
+  - first:
+      213: -8007979617489153338
+    second: Potion_of_Healing_38
+  - first:
+      213: -4783123363949664816
+    second: Potion_of_Healing_39
+  - first:
+      213: -2388153978253061599
+    second: Potion_of_Healing_40
+  - first:
+      213: 2904264561201047387
+    second: Potion_of_Healing_41
+  - first:
+      213: 4322428126709073341
+    second: Potion_of_Healing_42
+  - first:
+      213: 1167460933291382070
+    second: Potion_of_Healing_43
+  - first:
+      213: 2637920221646872721
+    second: Potion_of_Healing_44
+  - first:
+      213: 8397014238562801039
+    second: Potion_of_Healing_45
+  - first:
+      213: -3938122390631871563
+    second: Potion_of_Healing_46
+  - first:
+      213: 4046432409011026864
+    second: Potion_of_Healing_47
+  - first:
+      213: 2222180188751258894
+    second: Potion_of_Healing_48
+  - first:
+      213: -7851938406736442760
+    second: Potion_of_Healing_49
+  - first:
+      213: 8398991531831088099
+    second: Potion_of_Healing_50
+  - first:
+      213: -7923408042730672607
+    second: Potion_of_Healing_51
+  - first:
+      213: 1248323370265257513
+    second: Potion_of_Healing_52
+  - first:
+      213: -1141992600761004049
+    second: Potion_of_Healing_53
+  - first:
+      213: -1866974706052150340
+    second: Potion_of_Healing_54
+  - first:
+      213: 8894494861429526036
+    second: Potion_of_Healing_55
+  - first:
+      213: -1530608896658141246
+    second: Potion_of_Healing_56
+  - first:
+      213: -5931055344674964322
+    second: Potion_of_Healing_57
+  - first:
+      213: 1019962370550801094
+    second: Potion_of_Healing_58
+  - first:
+      213: -2323803815856937913
+    second: Potion_of_Healing_59
+  - first:
+      213: 1757761041077212770
+    second: Potion_of_Healing_60
+  - first:
+      213: 4401821974460230936
+    second: Potion_of_Healing_61
+  - first:
+      213: -5733910395661796867
+    second: Potion_of_Healing_62
+  - first:
+      213: -7908460363924609049
+    second: Potion_of_Healing_63
+  - first:
+      213: 708092655135212641
+    second: Potion_of_Healing_64
+  - first:
+      213: 7361976847178473336
+    second: Potion_of_Healing_65
+  - first:
+      213: -2786044027418724687
+    second: Potion_of_Healing_66
+  - first:
+      213: -7812397542899881497
+    second: Potion_of_Healing_67
+  - first:
+      213: -6829574764563869985
+    second: Potion_of_Healing_68
+  - first:
+      213: 7403488253587947671
+    second: Potion_of_Healing_69
+  - first:
+      213: -9126254141393653746
+    second: Potion_of_Healing_70
+  - first:
+      213: -6260247718005967099
+    second: Potion_of_Healing_71
+  - first:
+      213: -8830954463555107252
+    second: Potion_of_Healing_72
+  - first:
+      213: 4392009612693081815
+    second: Potion_of_Healing_73
+  - first:
+      213: 412433195919675945
+    second: Potion_of_Healing_74
+  - first:
+      213: 6291378033585579113
+    second: Potion_of_Healing_75
+  - first:
+      213: -2579129539398395377
+    second: Potion_of_Healing_76
+  - first:
+      213: 5817055129580047827
+    second: Potion_of_Healing_77
+  - first:
+      213: 2238465742423262471
+    second: Potion_of_Healing_78
+  - first:
+      213: 7413102873307617831
+    second: Potion_of_Healing_79
+  - first:
+      213: 2260627548383246524
+    second: Potion_of_Healing_80
+  - first:
+      213: 2835506306341080042
+    second: Potion_of_Healing_81
+  - first:
+      213: -2752658585434072096
+    second: Potion_of_Healing_82
+  - first:
+      213: -7584513075969774535
+    second: Potion_of_Healing_83
+  - first:
+      213: 6844432885849166620
+    second: Potion_of_Healing_84
+  - first:
+      213: -616662291190929566
+    second: Potion_of_Healing_85
+  - first:
+      213: 2664877424195086003
+    second: Potion_of_Healing_86
+  - first:
+      213: -361861448631855146
+    second: Potion_of_Healing_87
+  - first:
+      213: 285168804226062006
+    second: Potion_of_Healing_88
+  - first:
+      213: -1413301061287735656
+    second: Potion_of_Healing_89
+  - first:
+      213: 3774158754449380324
+    second: Potion_of_Healing_90
+  - first:
+      213: -8803205211986757187
+    second: Potion_of_Healing_91
+  - first:
+      213: 2384866863994427812
+    second: Potion_of_Healing_92
+  - first:
+      213: 2610379129668845739
+    second: Potion_of_Healing_93
+  - first:
+      213: -4756163085055255670
+    second: Potion_of_Healing_94
+  - first:
+      213: -1941560707531242946
+    second: Potion_of_Healing_95
+  - first:
+      213: 843999494850711894
+    second: Potion_of_Healing_96
+  - first:
+      213: -6991079175403907314
+    second: Potion_of_Healing_97
+  - first:
+      213: 2850128282393978840
+    second: Potion_of_Healing_98
+  - first:
+      213: 4709662451593177495
+    second: Potion_of_Healing_99
+  - first:
+      213: 2422742260870781399
+    second: Potion_of_Healing_100
+  - first:
+      213: -3397840902581578457
+    second: Potion_of_Healing_101
+  - first:
+      213: 2677519280922508979
+    second: Potion_of_Healing_102
+  - first:
+      213: 3141645460384004505
+    second: Potion_of_Healing_103
+  - first:
+      213: 2170557789505509058
+    second: Potion_of_Healing_104
+  - first:
+      213: 1289762205164796483
+    second: Potion_of_Healing_105
+  - first:
+      213: -8113321945278273568
+    second: Potion_of_Healing_106
+  - first:
+      213: -8534604947999354825
+    second: Potion_of_Healing_107
+  - first:
+      213: -3686376107818420392
+    second: Potion_of_Healing_108
+  - first:
+      213: 1528526820406949246
+    second: Potion_of_Healing_109
+  - first:
+      213: -6503804385748119546
+    second: Potion_of_Healing_110
+  - first:
+      213: 4890027310818074912
+    second: Potion_of_Healing_111
+  - first:
+      213: 2334397028347705143
+    second: Potion_of_Healing_112
+  - first:
+      213: -8123617903286528035
+    second: Potion_of_Healing_113
+  - first:
+      213: -6446698695771644102
+    second: Potion_of_Healing_114
+  - first:
+      213: -6541818576084276773
+    second: Potion_of_Healing_115
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Potion_of_Healing_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 333
+        width: 36
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ccee05a085545a430800000000000000
+      internalID: 3793514505562025676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion_of_Healing_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 307
+        width: 43
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf1862116d3d14e40800000000000000
+      internalID: 5639021124808770043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion_of_Healing_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 321
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39b6cbba490a18c90800000000000000
+      internalID: -7169272571400262765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion_of_Healing_3
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 0
+        width: 295
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8cd12f72b3920a170800000000000000
+      internalID: 8187589456609549768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion_of_Healing_4
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 319
+        width: 32
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2dff4bacdec4ea2a0800000000000000
+      internalID: -6724352609425752110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion_of_Healing_5
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 337
+        width: 39
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7014db35b7ac95570800000000000000
+      internalID: 8456012406399516935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion_of_Healing_6
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 329
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20d71da74fac05270800000000000000
+      internalID: 8237306869842017538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion_of_Healing_7
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 342
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd3cf8807c8600030800000000000000
+      internalID: 3458879717871961051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion_of_Healing_8
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 337
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 232341d8280a21f30800000000000000
+      internalID: 4544871456543355442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion_of_Healing_9
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 314
+        width: 11
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79d7cac217239ea30800000000000000
+      internalID: 4244979585435598231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion_of_Healing_10
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 292
+        width: 26
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf1b4085cf9c8bfd0800000000000000
+      internalID: -2325887121891216901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion_of_Healing_11
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 311
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f92be279527ccbb30800000000000000
+      internalID: 4304534308123488927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion_of_Healing_12
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 319
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5457de57b2c70d340800000000000000
+      internalID: 4886542121800922437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion_of_Healing_13
+      rect:
+        serializedVersion: 2
+        x: 353
+        y: 322
+        width: 7
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90c84a9c37e877130800000000000000
+      internalID: 3564474258042424329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion_of_Healing_14
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 294
+        width: 10
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca95c66c711883bb0800000000000000
+      internalID: -4956069450808010324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion_of_Healing_15
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 275
+        width: 16
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df88e703c558dbd80800000000000000
+      internalID: -8233277912766314243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion_of_Healing_16
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 302
+        width: 12
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da5ad67dd3023c540800000000000000
+      internalID: 5026897059054986669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion_of_Healing_17
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 269
+        width: 21
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f01fb259d92bd70a0800000000000000
+      internalID: -6882148265669955313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion_of_Healing_18
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 302
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c92678d53eb33cb30800000000000000
+      internalID: 4306351516409094812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion_of_Healing_19
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 292
+        width: 21
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 636f5eb50f806fa00800000000000000
+      internalID: 789828613077071414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion_of_Healing_20
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 302
+        width: 11
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b27a00621ce5a9f50800000000000000
+      internalID: 6888922763675871019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion_of_Healing_21
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 272
+        width: 28
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8f7356b90463b2c0800000000000000
+      internalID: -4417076816643915894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion_of_Healing_22
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 272
+        width: 6
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59da77d4de2f41330800000000000000
+      internalID: 3680833896489397653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion_of_Healing_23
+      rect:
+        serializedVersion: 2
+        x: 334
+        y: 276
+        width: 19
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3be040021d0819160800000000000000
+      internalID: 7030542128975711923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion_of_Healing_24
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 293
+        width: 12
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47c1200201a6d9a80800000000000000
+      internalID: -8458487907642893196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion_of_Healing_25
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 275
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eac22e41a636f84a0800000000000000
+      internalID: -6588938422551696210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion_of_Healing_26
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 285
+        width: 15
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f71ea3c3db098b60800000000000000
+      internalID: 7748737638016620536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion_of_Healing_27
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 264
+        width: 9
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a280b2e764d2c7e0800000000000000
+      internalID: -1746600162816392535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion_of_Healing_28
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 254
+        width: 35
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c67f06db1f18c7d90800000000000000
+      internalID: -7098656037378394260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion_of_Healing_29
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 261
+        width: 24
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6260c0bddeced7440800000000000000
+      internalID: 4935361272994334246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion_of_Healing_30
+      rect:
+        serializedVersion: 2
+        x: 334
+        y: 257
+        width: 26
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1be3358e3cef00fa0800000000000000
+      internalID: -5836384999702315343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion_of_Healing_31
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 268
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5aa2abfe9f5b0cfd0800000000000000
+      internalID: -2323657322649736539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion_of_Healing_32
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 231
+        width: 15
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bdf6ecfae83bb0040800000000000000
+      internalID: 4614979668587474907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion_of_Healing_33
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 256
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 246671d6225fddf00800000000000000
+      internalID: 1143339408629917250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion_of_Healing_34
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 247
+        width: 20
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66e3b78fb7deac790800000000000000
+      internalID: -7508928311981293978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion_of_Healing_35
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 256
+        width: 22
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40f54a3d82055deb0800000000000000
+      internalID: -4695758900184195324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion_of_Healing_36
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 230
+        width: 35
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a98cec04aadd973f0800000000000000
+      internalID: -902446527009601382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion_of_Healing_37
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 256
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c64003510f110ff0800000000000000
+      internalID: -71742028513261886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion_of_Healing_38
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 240
+        width: 15
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c29dfa47f0fdd090800000000000000
+      internalID: -8007979617489153338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion_of_Healing_39
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 234
+        width: 5
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d5a8ee74aeee9db0800000000000000
+      internalID: -4783123363949664816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion_of_Healing_40
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 231
+        width: 23
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1225a491c929bded0800000000000000
+      internalID: -2388153978253061599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion_of_Healing_41
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 249
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b57e4202b350e4820800000000000000
+      internalID: 2904264561201047387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion_of_Healing_42
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 233
+        width: 10
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db5c6a3ea795cfb30800000000000000
+      internalID: 4322428126709073341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion_of_Healing_43
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 240
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6359af98887a33010800000000000000
+      internalID: 1167460933291382070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion_of_Healing_44
+      rect:
+        serializedVersion: 2
+        x: 334
+        y: 246
+        width: 12
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 190e41d1776cb9420800000000000000
+      internalID: 2637920221646872721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion_of_Healing_45
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 212
+        width: 15
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f85de6fe5ff288470800000000000000
+      internalID: 8397014238562801039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion_of_Healing_46
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 181
+        width: 46
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5bb00600d8af859c0800000000000000
+      internalID: -3938122390631871563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion_of_Healing_47
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 220
+        width: 16
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0bbfaba46d0d72830800000000000000
+      internalID: 4046432409011026864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion_of_Healing_48
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 226
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e05ed69ab15c6de10800000000000000
+      internalID: 2222180188751258894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion_of_Healing_49
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 222
+        width: 10
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87a4a34de9f480390800000000000000
+      internalID: -7851938406736442760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion_of_Healing_50
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 219
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e35e466c463f8470800000000000000
+      internalID: 8398991531831088099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion_of_Healing_51
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 226
+        width: 12
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12ea09a7d566a0290800000000000000
+      internalID: -7923408042730672607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion_of_Healing_52
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 216
+        width: 20
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 926aa79cd7fe25110800000000000000
+      internalID: 1248323370265257513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion_of_Healing_53
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 226
+        width: 14
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fef0487b7c3d620f0800000000000000
+      internalID: -1141992600761004049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion_of_Healing_54
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 204
+        width: 16
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cbb4f11856c2716e0800000000000000
+      internalID: -1866974706052150340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion_of_Healing_55
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 196
+        width: 22
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41e4b0093f79f6b70800000000000000
+      internalID: 8894494861429526036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion_of_Healing_56
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 214
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2cf83a8615f22cae0800000000000000
+      internalID: -1530608896658141246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion_of_Healing_57
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 197
+        width: 28
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9c777d8698a0bda0800000000000000
+      internalID: -5931055344674964322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion_of_Healing_58
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 212
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c222fc3f52a72e00800000000000000
+      internalID: 1019962370550801094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion_of_Healing_59
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 207
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7446624ddb030cfd0800000000000000
+      internalID: -2323803815856937913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion_of_Healing_60
+      rect:
+        serializedVersion: 2
+        x: 333
+        y: 196
+        width: 18
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2669d659a52d46810800000000000000
+      internalID: 1757761041077212770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion_of_Healing_61
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 197
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81de53093c9661d30800000000000000
+      internalID: 4401821974460230936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion_of_Healing_62
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 182
+        width: 10
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df9b8acefde0d60b0800000000000000
+      internalID: -5733910395661796867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion_of_Healing_63
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 166
+        width: 35
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e7640823318f3290800000000000000
+      internalID: -7908460363924609049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion_of_Healing_64
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 180
+        width: 23
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 164c569a486a3d900800000000000000
+      internalID: 708092655135212641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion_of_Healing_65
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 167
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87f19b4efeefa2660800000000000000
+      internalID: 7361976847178473336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion_of_Healing_66
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 15
+        width: 52
+        height: 156
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b6bb19d7bbf559d0800000000000000
+      internalID: -2786044027418724687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion_of_Healing_67
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 157
+        width: 8
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e9615b93d9c49390800000000000000
+      internalID: -7812397542899881497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion_of_Healing_68
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 151
+        width: 35
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fdec23fafe97831a0800000000000000
+      internalID: -6829574764563869985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion_of_Healing_69
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 181
+        width: 12
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79003ed57597eb660800000000000000
+      internalID: 7403488253587947671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion_of_Healing_70
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 181
+        width: 11
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e003b4c1638095180800000000000000
+      internalID: -9126254141393653746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion_of_Healing_71
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 16
+        width: 39
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 507fd426ed12f19a0800000000000000
+      internalID: -6260247718005967099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion_of_Healing_72
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 173
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c46c52c24b5227580800000000000000
+      internalID: -8830954463555107252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion_of_Healing_73
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 169
+        width: 9
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7de0cae097d83fc30800000000000000
+      internalID: 4392009612693081815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion_of_Healing_74
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 163
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9221f587ec149b500800000000000000
+      internalID: 412433195919675945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion_of_Healing_75
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 151
+        width: 7
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96460970df67f4750800000000000000
+      internalID: 6291378033585579113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion_of_Healing_76
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 155
+        width: 9
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0a11764957153cd0800000000000000
+      internalID: -2579129539398395377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion_of_Healing_77
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 146
+        width: 11
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3dd8b7df1d45ab050800000000000000
+      internalID: 5817055129580047827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion_of_Healing_78
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 132
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 705050b9bb0a01f10800000000000000
+      internalID: 2238465742423262471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion_of_Healing_79
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 129
+        width: 17
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72a9de679c1a0e660800000000000000
+      internalID: 7413102873307617831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion_of_Healing_80
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 143
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb878d627cc5f5f10800000000000000
+      internalID: 2260627548383246524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion_of_Healing_81
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 125
+        width: 16
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aeb07d366fdb95720800000000000000
+      internalID: 2835506306341080042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion_of_Healing_82
+      rect:
+        serializedVersion: 2
+        x: 349
+        y: 141
+        width: 11
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ebd54bc9979cc9d0800000000000000
+      internalID: -2752658585434072096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion_of_Healing_83
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 112
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93c2488ba856eb690800000000000000
+      internalID: -7584513075969774535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion_of_Healing_84
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 114
+        width: 20
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c139a02427f4cfe50800000000000000
+      internalID: 6844432885849166620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion_of_Healing_85
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 120
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 267af23d9ec2177f0800000000000000
+      internalID: -616662291190929566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion_of_Healing_86
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 101
+        width: 8
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b62b1fe5eb8bf420800000000000000
+      internalID: 2664877424195086003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion_of_Healing_87
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 106
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d7d3600ee86afaf0800000000000000
+      internalID: -361861448631855146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion_of_Healing_88
+      rect:
+        serializedVersion: 2
+        x: 334
+        y: 98
+        width: 26
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b6daec348f15f300800000000000000
+      internalID: 285168804226062006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion_of_Healing_89
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 93
+        width: 17
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89e03493c22f26ce0800000000000000
+      internalID: -1413301061287735656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion_of_Healing_90
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 83
+        width: 20
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e3d2ec0461806430800000000000000
+      internalID: 3774158754449380324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion_of_Healing_91
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 94
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db979a6408bb4d580800000000000000
+      internalID: -8803205211986757187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion_of_Healing_92
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 78
+        width: 6
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a9dcf8f6cfb81120800000000000000
+      internalID: 2384866863994427812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion_of_Healing_93
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 82
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba04101fcfde93420800000000000000
+      internalID: 2610379129668845739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion_of_Healing_94
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 68
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8b94759fd6befdb0800000000000000
+      internalID: -4756163085055255670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion_of_Healing_95
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 62
+        width: 14
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e328eb5c2d03e05e0800000000000000
+      internalID: -1941560707531242946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion_of_Healing_96
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 61
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6519f21a11d76bb00800000000000000
+      internalID: 843999494850711894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion_of_Healing_97
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 61
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e075b61c782bafe90800000000000000
+      internalID: -6991079175403907314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion_of_Healing_98
+      rect:
+        serializedVersion: 2
+        x: 346
+        y: 49
+        width: 14
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d7236c7290bd8720800000000000000
+      internalID: 2850128282393978840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion_of_Healing_99
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 29
+        width: 24
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 799e43ffb051c5140800000000000000
+      internalID: 4709662451593177495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion_of_Healing_100
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 30
+        width: 12
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d99781004f4f9120800000000000000
+      internalID: 2422742260870781399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion_of_Healing_101
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 31
+        width: 18
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 725155e93b178d0d0800000000000000
+      internalID: -3397840902581578457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion_of_Healing_102
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 14
+        width: 7
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3be35a29995782520800000000000000
+      internalID: 2677519280922508979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion_of_Healing_103
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 19
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 999386ca6ed599b20800000000000000
+      internalID: 3141645460384004505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion_of_Healing_104
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 9
+        width: 19
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c6dee73fce5f1e10800000000000000
+      internalID: 2170557789505509058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion_of_Healing_105
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 17
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34a729364e726e110800000000000000
+      internalID: 1289762205164796483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion_of_Healing_106
+      rect:
+        serializedVersion: 2
+        x: 349
+        y: 1
+        width: 11
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e7ae4f4da0b76f80800000000000000
+      internalID: -8113321945278273568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion_of_Healing_107
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 0
+        width: 17
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7301530a40efe8980800000000000000
+      internalID: -8534604947999354825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion_of_Healing_108
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 9
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 857fef0167c57dcc0800000000000000
+      internalID: -3686376107818420392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion_of_Healing_109
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 0
+        width: 13
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7573007b0b663510800000000000000
+      internalID: 1528526820406949246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion_of_Healing_110
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 0
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6001bdaae58ddb5a0800000000000000
+      internalID: -6503804385748119546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion_of_Healing_111
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 8
+        width: 21
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02125434eeddcd340800000000000000
+      internalID: 4890027310818074912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion_of_Healing_112
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 0
+        width: 11
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7377467aab1756020800000000000000
+      internalID: 2334397028347705143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion_of_Healing_113
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 8
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd75a97ce8c134f80800000000000000
+      internalID: -8123617903286528035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion_of_Healing_114
+      rect:
+        serializedVersion: 2
+        x: 333
+        y: 0
+        width: 17
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3f9e8831b9b886a0800000000000000
+      internalID: -6446698695771644102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potion_of_Healing_115
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 8
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd9e1734aaac635a0800000000000000
+      internalID: -6541818576084276773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Potion_of_Healing_0: 3793514505562025676
+      Potion_of_Healing_1: 5639021124808770043
+      Potion_of_Healing_10: -2325887121891216901
+      Potion_of_Healing_100: 2422742260870781399
+      Potion_of_Healing_101: -3397840902581578457
+      Potion_of_Healing_102: 2677519280922508979
+      Potion_of_Healing_103: 3141645460384004505
+      Potion_of_Healing_104: 2170557789505509058
+      Potion_of_Healing_105: 1289762205164796483
+      Potion_of_Healing_106: -8113321945278273568
+      Potion_of_Healing_107: -8534604947999354825
+      Potion_of_Healing_108: -3686376107818420392
+      Potion_of_Healing_109: 1528526820406949246
+      Potion_of_Healing_11: 4304534308123488927
+      Potion_of_Healing_110: -6503804385748119546
+      Potion_of_Healing_111: 4890027310818074912
+      Potion_of_Healing_112: 2334397028347705143
+      Potion_of_Healing_113: -8123617903286528035
+      Potion_of_Healing_114: -6446698695771644102
+      Potion_of_Healing_115: -6541818576084276773
+      Potion_of_Healing_12: 4886542121800922437
+      Potion_of_Healing_13: 3564474258042424329
+      Potion_of_Healing_14: -4956069450808010324
+      Potion_of_Healing_15: -8233277912766314243
+      Potion_of_Healing_16: 5026897059054986669
+      Potion_of_Healing_17: -6882148265669955313
+      Potion_of_Healing_18: 4306351516409094812
+      Potion_of_Healing_19: 789828613077071414
+      Potion_of_Healing_2: -7169272571400262765
+      Potion_of_Healing_20: 6888922763675871019
+      Potion_of_Healing_21: -4417076816643915894
+      Potion_of_Healing_22: 3680833896489397653
+      Potion_of_Healing_23: 7030542128975711923
+      Potion_of_Healing_24: -8458487907642893196
+      Potion_of_Healing_25: -6588938422551696210
+      Potion_of_Healing_26: 7748737638016620536
+      Potion_of_Healing_27: -1746600162816392535
+      Potion_of_Healing_28: -7098656037378394260
+      Potion_of_Healing_29: 4935361272994334246
+      Potion_of_Healing_3: 8187589456609549768
+      Potion_of_Healing_30: -5836384999702315343
+      Potion_of_Healing_31: -2323657322649736539
+      Potion_of_Healing_32: 4614979668587474907
+      Potion_of_Healing_33: 1143339408629917250
+      Potion_of_Healing_34: -7508928311981293978
+      Potion_of_Healing_35: -4695758900184195324
+      Potion_of_Healing_36: -902446527009601382
+      Potion_of_Healing_37: -71742028513261886
+      Potion_of_Healing_38: -8007979617489153338
+      Potion_of_Healing_39: -4783123363949664816
+      Potion_of_Healing_4: -6724352609425752110
+      Potion_of_Healing_40: -2388153978253061599
+      Potion_of_Healing_41: 2904264561201047387
+      Potion_of_Healing_42: 4322428126709073341
+      Potion_of_Healing_43: 1167460933291382070
+      Potion_of_Healing_44: 2637920221646872721
+      Potion_of_Healing_45: 8397014238562801039
+      Potion_of_Healing_46: -3938122390631871563
+      Potion_of_Healing_47: 4046432409011026864
+      Potion_of_Healing_48: 2222180188751258894
+      Potion_of_Healing_49: -7851938406736442760
+      Potion_of_Healing_5: 8456012406399516935
+      Potion_of_Healing_50: 8398991531831088099
+      Potion_of_Healing_51: -7923408042730672607
+      Potion_of_Healing_52: 1248323370265257513
+      Potion_of_Healing_53: -1141992600761004049
+      Potion_of_Healing_54: -1866974706052150340
+      Potion_of_Healing_55: 8894494861429526036
+      Potion_of_Healing_56: -1530608896658141246
+      Potion_of_Healing_57: -5931055344674964322
+      Potion_of_Healing_58: 1019962370550801094
+      Potion_of_Healing_59: -2323803815856937913
+      Potion_of_Healing_6: 8237306869842017538
+      Potion_of_Healing_60: 1757761041077212770
+      Potion_of_Healing_61: 4401821974460230936
+      Potion_of_Healing_62: -5733910395661796867
+      Potion_of_Healing_63: -7908460363924609049
+      Potion_of_Healing_64: 708092655135212641
+      Potion_of_Healing_65: 7361976847178473336
+      Potion_of_Healing_66: -2786044027418724687
+      Potion_of_Healing_67: -7812397542899881497
+      Potion_of_Healing_68: -6829574764563869985
+      Potion_of_Healing_69: 7403488253587947671
+      Potion_of_Healing_7: 3458879717871961051
+      Potion_of_Healing_70: -9126254141393653746
+      Potion_of_Healing_71: -6260247718005967099
+      Potion_of_Healing_72: -8830954463555107252
+      Potion_of_Healing_73: 4392009612693081815
+      Potion_of_Healing_74: 412433195919675945
+      Potion_of_Healing_75: 6291378033585579113
+      Potion_of_Healing_76: -2579129539398395377
+      Potion_of_Healing_77: 5817055129580047827
+      Potion_of_Healing_78: 2238465742423262471
+      Potion_of_Healing_79: 7413102873307617831
+      Potion_of_Healing_8: 4544871456543355442
+      Potion_of_Healing_80: 2260627548383246524
+      Potion_of_Healing_81: 2835506306341080042
+      Potion_of_Healing_82: -2752658585434072096
+      Potion_of_Healing_83: -7584513075969774535
+      Potion_of_Healing_84: 6844432885849166620
+      Potion_of_Healing_85: -616662291190929566
+      Potion_of_Healing_86: 2664877424195086003
+      Potion_of_Healing_87: -361861448631855146
+      Potion_of_Healing_88: 285168804226062006
+      Potion_of_Healing_89: -1413301061287735656
+      Potion_of_Healing_9: 4244979585435598231
+      Potion_of_Healing_90: 3774158754449380324
+      Potion_of_Healing_91: -8803205211986757187
+      Potion_of_Healing_92: 2384866863994427812
+      Potion_of_Healing_93: 2610379129668845739
+      Potion_of_Healing_94: -4756163085055255670
+      Potion_of_Healing_95: -1941560707531242946
+      Potion_of_Healing_96: 843999494850711894
+      Potion_of_Healing_97: -6991079175403907314
+      Potion_of_Healing_98: 2850128282393978840
+      Potion_of_Healing_99: 4709662451593177495
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

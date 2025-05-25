@@ -1,13 +1,12 @@
 using UnityEngine;
 
-public abstract class Item
+[System.Serializable]
+public class Item
 {
-    public int itemID;
-    public string itemName;
-    public Sprite itemIcon;
-    public ItemType itemType;
+    public ItemData data;
     public int itemQuantity = 1;
 
-    public abstract void Use();
-    public abstract void Equip();
+    public string Name => data.itemName;
+    public Sprite Icon => data.icon;
+    public int ID => data.itemID;
 }

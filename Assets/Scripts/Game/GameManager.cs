@@ -28,9 +28,8 @@ public class GameManager : MonoBehaviour
 
     private void Initialize()
     {
-        IsDungeonSession = false;
-
         inventoryManager.Initialize();
+        IsDungeonSession = false;
     }
 
     private void Update()

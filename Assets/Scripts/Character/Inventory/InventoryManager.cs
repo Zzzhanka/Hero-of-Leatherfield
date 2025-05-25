@@ -1,65 +1,70 @@
 using System.Collections.Generic;
 using UnityEngine;
-using System.IO;
-using UnityEditor.Overlays;
 
 public class InventoryManager : MonoBehaviour
 {
-    private List<Item> items = new List<Item>();
-    private List<Item> store = new List<Item>();
+    [Header("Inventory")]
+    public List<Item> inventory = new List<Item>();
+
+    [Header("Max Inventory Stack Size")]
+    public int defaultMaxStack = 99;
+
+    [Header("Storage")]
+    public List<Item> storage = new List<Item>();
+
+    public delegate void InventoryChanged();
+    public event InventoryChanged OnInventoryChanged;
 
     public void Initialize()
     {
         LoadInventory();
     }
 
-    public void AddItem(Item newItem)
+    public void AddItem(Item itemToAdd)
     {
-        Item existing = items.Find(i => i.itemID == newItem.itemID);
+        if (itemToAdd == null || itemToAdd.data == null) return;
+
+        // Check if already exists (and is stackable)
+        Item existing = inventory.Find(i => i.data == itemToAdd.data && i.data.maxStack > 1);
+
         if (existing != null)
         {
-            existing.itemQuantity += newItem.itemQuantity;
+            existing.itemQuantity += itemToAdd.itemQuantity;
+
+            // Clamp to maxStack
+            if (existing.itemQuantity + itemToAdd.itemQuantity > existing.data.maxStack)
+                existing.itemQuantity = existing.data.maxStack;
         }
         else
         {
-            items.Add(newItem);
-        }
-
-        Debug.Log($"Added {newItem.itemName} to inventory.");
-    }
-
-    public void DropItem(Item dropItem, int quantity)
-    {
-        Item existing = items.Find(i => i.itemID == dropItem.itemID);
-        if (existing != null)
-        {
-            if(existing.itemQuantity < quantity)
+            inventory.Add(new Item
             {
-                existing.itemQuantity -= quantity;
-            }
-            else 
-            {
-                items.Remove(existing);
-            }
-
-            // Code to send dropped Item to Item Factory
-
-            Debug.Log("The item " + dropItem.itemName + " was dropped out from inventory");
+                data = itemToAdd.data,
+                itemQuantity = Mathf.Clamp(itemToAdd.itemQuantity, 1, itemToAdd.data.maxStack)
+            });
         }
-        else
+
+        Debug.Log($"[Inventory] Added {itemToAdd.data.itemName} x{itemToAdd.itemQuantity}");
+
+        OnInventoryChanged?.Invoke();
+    }
+
+    public void RemoveItem(Item itemToRemove, int amount = 1)
+    {
+        if (inventory.Contains(itemToRemove))
         {
-            Debug.LogError("There is no " + dropItem.itemName + " to drop");
+            itemToRemove.itemQuantity -= amount;
+
+            if (itemToRemove.itemQuantity <= 0)
+                inventory.Remove(itemToRemove);
+
+            OnInventoryChanged?.Invoke();
         }
     }
 
-    public void StoreItem(Item item) 
+    public List<Item> GetAllItems()
     {
-
-    }
-
-    public void TakeItem(Item item)
-    {
-
+        return inventory;
     }
 
     public void SaveInventory()

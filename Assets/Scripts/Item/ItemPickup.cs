@@ -1,23 +1,36 @@
+using NUnit.Framework.Interfaces;
 using UnityEngine;
 
 public class ItemPickup : MonoBehaviour
 {
-    public Item item;
-    public SpriteRenderer iconRenderer;
+    [SerializeField] private ItemData itemData;
+    private SpriteRenderer iconRenderer;
+    [SerializeField] private int quantity = 1;
 
-    private void Start()
+    private void OnValidate()
     {
-        if (item != null && iconRenderer != null)
+        iconRenderer = GetComponent<SpriteRenderer>();
+
+        if (itemData != null && iconRenderer != null)
         {
-            iconRenderer.sprite = item.itemIcon;
+            iconRenderer.sprite = itemData.icon;
+            gameObject.name = "PickUp_" + itemData.itemName;
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (other.tag == "Player")
         {
+            Item item = new Item
+            {
+                data = itemData,
+                itemQuantity = quantity
+            };
+
             GameManager.Instance.InventoryManager.AddItem(item);
+            Debug.Log($"Picked up {item.data.itemName} x{item.itemQuantity}");
+
             Destroy(gameObject);
         }
     }
