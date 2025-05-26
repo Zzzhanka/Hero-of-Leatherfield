@@ -8,21 +8,18 @@ public class HandFollowJoystick : MonoBehaviour
     [SerializeField] private Transform _player;
     [SerializeField] private Joystick _joystickInput;
     [SerializeField] private GameObject _content;
-    [SerializeField] private Animator _weaponAnims;
     [SerializeField] private float _handRadius = 1.5f;
 
-    public bool IsAttacking;
-    public GameObject WeaponSprite;
-
-    private bool _wasAimingLastFrame = false;
+    private HandAttackSystem _attackSystem;
+    private bool _wasJoystickHeld = false;
 
 
 
 
-    public void EndAttacking()
+    private void Start()
     {
 
-        _wasAimingLastFrame = false;
+        _attackSystem = GetComponent<HandAttackSystem>();
 
     }
 
@@ -36,14 +33,14 @@ public class HandFollowJoystick : MonoBehaviour
 
         Vector2 dir = new(inputX, inputY);
         float magnitude = dir.magnitude;
-        dir.Normalize();
-
-        float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-
 
         if (magnitude > 0.1f)
         {
-            _wasAimingLastFrame = true;
+
+            _wasJoystickHeld = true;
+
+            dir.Normalize();
+            float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
 
             Vector3 offset = dir * _handRadius;
             Vector3 newPos = _player.position + offset;
@@ -53,42 +50,24 @@ public class HandFollowJoystick : MonoBehaviour
             if (dir.x < 0)
             {
                 _content.transform.localScale = new Vector3(1, -1, 1);
-                _content.transform.rotation = Quaternion.Euler(0, 0, angle - 45);
             }
             else
             {
                 _content.transform.localScale = new Vector3(1, 1, 1);
-                _content.transform.rotation = Quaternion.Euler(0, 0, angle + 45);
             }
         }
         else
         {
-            if (_wasAimingLastFrame)
-            {
-                SetAttackTrigger();
-            }
+            transform.position = _player.position;
+            _content.transform.rotation = Quaternion.identity;
 
-            _wasAimingLastFrame = false;
-
-            if (!IsAttacking)
+            if (_wasJoystickHeld)
             {
-                Vector3 newPos = _player.position;
-                Quaternion newRot = Quaternion.Euler(0, 0, angle - 90);
-                transform.SetPositionAndRotation(newPos, newRot);
-                _content.transform.rotation = Quaternion.Euler(0, 0, angle - 45);
+                _wasJoystickHeld = false;
+
+                _attackSystem?.Attack();
             }
         }
-
-    }
-
-
-
-    private void SetAttackTrigger()
-    {
-
-        IsAttacking = true;
-        WeaponSprite.SetActive(true);
-        _weaponAnims.SetTrigger("SwordAttack1");
 
     }
 
