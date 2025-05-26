@@ -3,15 +3,9 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class InventorySlot
-{
-    public Item Item;
-    public string ItemDescription;
-    public string ItemStats;
-}
-
 public class InventoryUI : MonoBehaviour
 {
+    [Range(30, 100)]public int MinSlots = 30;
     public GameObject slotPrefab;
     public Transform gridParent;
 
@@ -21,6 +15,7 @@ public class InventoryUI : MonoBehaviour
     {
         GameManager.Instance.InventoryManager.OnInventoryChanged += RefreshUI;
         RefreshUI();
+        // ChooseLastSlot();
     }
 
     private void OnDisable()
@@ -33,7 +28,7 @@ public class InventoryUI : MonoBehaviour
         ClearUI();
 
         List<Item> items = GameManager.Instance.InventoryManager.GetAllItems();
-        int requiredSlots = Mathf.Max(21, items.Count);
+        int requiredSlots = Mathf.Max(MinSlots, items.Count);
 
         for (int i = 0; i < requiredSlots; i++)
         {
