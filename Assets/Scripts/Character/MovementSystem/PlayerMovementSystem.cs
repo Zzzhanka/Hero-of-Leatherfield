@@ -17,6 +17,7 @@ public class PlayerMovementSystem : MonoBehaviour
     [SerializeField] private float _dashDuration = 0.2f;
     [SerializeField] private float _dashCooldown = 2f;
     [SerializeField] private float _dashCooldownTimer;
+    [SerializeField] private PlayerDashReload _dashReloadSlider;
 
 
 
@@ -141,6 +142,8 @@ public class PlayerMovementSystem : MonoBehaviour
 
             if (_dashCooldownTimer < 0)
                 _dashCooldownTimer = 0;
+
+            _dashReloadSlider.UpdateDashReloadBar(_dashCooldown, _dashCooldownTimer);
         }
 
     }

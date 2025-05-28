@@ -20,6 +20,7 @@ public class HandAttackSystem : MonoBehaviour
     [Space(5)]
     public float WeaponInHandReload;
     public float AttackReloadTimer;
+    [SerializeField] private PlayerReloadBar _reloadBar;
 
     [Space(10)]
     [Header("ƒÀﬂ ¡À»∆. Œ–”∆.")]
@@ -69,7 +70,7 @@ public class HandAttackSystem : MonoBehaviour
 
 
 
-    private void Start()
+    private void Awake()
     {
         
         _playerChars = GetComponentInParent<PlayerCharacteristics>();
@@ -84,6 +85,7 @@ public class HandAttackSystem : MonoBehaviour
         if (AttackReloadTimer > 0)
         {
             AttackReloadTimer -= Time.deltaTime;
+            _reloadBar.UpdateReloadBar(WeaponInHandReload, AttackReloadTimer);
         }
 
     }
