@@ -5,9 +5,18 @@ using UnityEngine.UI;
 
 public class InventoryUI : MonoBehaviour
 {
-    [Range(30, 100)]public int MinSlots = 30;
-    public GameObject slotPrefab;
-    public Transform gridParent;
+    [Space(5), Header("Inventory Slots Part")]
+    [Range(30, 100)] public int MinSlots = 30;
+    [SerializeField] private GameObject slotPrefab;
+    [SerializeField] private Transform gridParent;
+
+    [Space(5), Header("Item Details Part")]
+    [SerializeField] private GameObject DetailsPanel;
+    [SerializeField] private TMP_Text ItemName;
+    [SerializeField] private TMP_Text ItemDescription;
+    [SerializeField] private Image ItemIcon;
+    [SerializeField] private TMP_Text ItemStats;
+
 
     private List<GameObject> slotInstances = new List<GameObject>();
 
@@ -15,7 +24,7 @@ public class InventoryUI : MonoBehaviour
     {
         GameManager.Instance.InventoryManager.OnInventoryChanged += RefreshUI;
         RefreshUI();
-        // ChooseLastSlot();
+        ChooseFirstSlot();
     }
 
     private void OnDisable()
@@ -32,27 +41,48 @@ public class InventoryUI : MonoBehaviour
 
         for (int i = 0; i < requiredSlots; i++)
         {
-            GameObject slot = Instantiate(slotPrefab, gridParent);
-            slotInstances.Add(slot);
+            GameObject slotInstance = Instantiate(slotPrefab, gridParent);
+            InventorySlot slot = slotInstance.GetComponentInChildren<InventorySlot>();
+            slotInstances.Add(slotInstance);
 
             if (i < items.Count)
             {
-                Item item = items[i];
-                Image icon = slot.transform.GetChild(0).GetComponent<Image>();
-                Debug.Log(item.data.itemName);
-                icon.sprite = item.data.icon;
-                icon.enabled = true;
-
-                TMP_Text quantityText = slot.GetComponentInChildren<TMP_Text>();
-                quantityText.text = item.itemQuantity > 1 ? item.itemQuantity.ToString() : "";
+                slot.Setup(items[i], ShowItemDetails);                
             }
             else
             {
-                // Empty slot
-                slot.transform.GetChild(0).GetComponent<Image>().enabled = false;
-                slot.GetComponentInChildren<TMP_Text>().text = "";
+                slot.Setup(null, ShowItemDetails);
             }
         }
+    }
+
+    private void ShowItemDetails(Item slotItem)
+    {
+        if (slotItem == null) return;
+        ItemName.text = slotItem.itemName;
+        ItemDescription.text = slotItem.description;
+        ItemIcon.sprite = slotItem.icon;
+    }
+
+    private void ChooseFirstSlot()
+    {
+        GameObject firstSlotInstance = slotInstances[0];
+        
+        if(firstSlotInstance == null) 
+        {
+            DetailsPanel.SetActive(false);
+            return;
+        }
+
+        InventorySlot slot = firstSlotInstance.GetComponentInChildren<InventorySlot>();
+        if(slot.GetItem() == null)
+        {
+            DetailsPanel.SetActive(false);
+            return;
+        }
+
+        DetailsPanel.SetActive(true);
+        ShowItemDetails(slot.GetItem());
     }
 
     private void ClearUI()

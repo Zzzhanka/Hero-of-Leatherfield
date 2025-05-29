@@ -46,7 +46,6 @@ public class HandAttackSystem : MonoBehaviour
 
     public void Attack()
     {
-
         if (AttackReloadTimer <= 0)
         {
             if (WeaponInHand == WeaponType.Melee)
@@ -72,6 +71,7 @@ public class HandAttackSystem : MonoBehaviour
 
                 _animator.SetTrigger("SwordAttack1");
             }
+
             else if (WeaponInHand == WeaponType.Staff)
             {
                 Vector2 direction = new Vector2(_handFollowJoystick.InputX, _handFollowJoystick.InputY).normalized;
@@ -92,30 +92,20 @@ public class HandAttackSystem : MonoBehaviour
 
             AttackReloadTimer = WeaponInHandReload;
         }
-
     }
-
-
 
     private void Awake()
     {
-        
         _playerChars = GetComponentInParent<PlayerCharacteristics>();
         _handFollowJoystick = GetComponent<HandFollowJoystick>();
-
     }
-
-
 
     private void Update()
     {
-        
         if (AttackReloadTimer > 0)
         {
             AttackReloadTimer -= Time.deltaTime;
             _reloadBar.UpdateReloadBar(WeaponInHandReload, AttackReloadTimer);
         }
-
     }
-
 }

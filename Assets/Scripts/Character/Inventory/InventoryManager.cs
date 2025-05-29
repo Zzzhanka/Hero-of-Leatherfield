@@ -6,8 +6,8 @@ public class InventoryManager : MonoBehaviour
     [Header("Inventory")]
     public List<Item> inventory = new List<Item>();
 
-    [Header("Max Inventory Stack Size")]
-    public int defaultMaxStack = 99;
+    //[Header("Max Inventory Stack Size")]
+    //public int defaultMaxStack = 99;
 
     [Header("Storage")]
     public List<Item> storage = new List<Item>();
@@ -19,43 +19,46 @@ public class InventoryManager : MonoBehaviour
     {
         LoadInventory();
     }
-
-    public void AddItem(Item itemToAdd)
+    
+    // Return boolean to pickup to or not to destroy
+    public bool AddItem(Item itemToAdd)
     {
-        if (itemToAdd == null || itemToAdd.data == null) return;
+        if (itemToAdd == null)
+        {
+            Debug.Log($"[Inventory] Item is NULL!");
+            return false;
+        }
 
         // Check if already exists (and is stackable)
-        Item existing = inventory.Find(i => i.data == itemToAdd.data && i.data.maxStack > 1);
+        Item existing = inventory.Find(i => i == itemToAdd && i.maxStack > 1);
 
         if (existing != null)
         {
-            existing.itemQuantity += itemToAdd.itemQuantity;
+            if (existing.quantity + itemToAdd.quantity > existing.maxStack)
+            {
+                Debug.Log($"[Inventory] {itemToAdd.itemName} cannot added to max stacked item!");
+                return false;
+            }
 
-            // Clamp to maxStack
-            if (existing.itemQuantity + itemToAdd.itemQuantity > existing.data.maxStack)
-                existing.itemQuantity = existing.data.maxStack;
+            existing.quantity += itemToAdd.quantity;
         }
         else
         {
-            inventory.Add(new Item
-            {
-                data = itemToAdd.data,
-                itemQuantity = Mathf.Clamp(itemToAdd.itemQuantity, 1, itemToAdd.data.maxStack)
-            });
+            inventory.Add(itemToAdd);
         }
 
-        Debug.Log($"[Inventory] Added {itemToAdd.data.itemName} x{itemToAdd.itemQuantity}");
-
+        Debug.Log($"[Inventory] Added {itemToAdd.itemName} x {itemToAdd.quantity}");
         OnInventoryChanged?.Invoke();
+        return true;
     }
 
     public void RemoveItem(Item itemToRemove, int amount = 1)
     {
         if (inventory.Contains(itemToRemove))
         {
-            itemToRemove.itemQuantity -= amount;
+            itemToRemove.quantity -= amount;
 
-            if (itemToRemove.itemQuantity <= 0)
+            if (itemToRemove.quantity <= 0)
                 inventory.Remove(itemToRemove);
 
             OnInventoryChanged?.Invoke();

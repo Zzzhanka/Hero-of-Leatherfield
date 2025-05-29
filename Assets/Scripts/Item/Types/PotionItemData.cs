@@ -8,7 +8,7 @@ public enum PotionType
 }
 
 [CreateAssetMenu(fileName = "New Potion", menuName = "Inventory / Potion", order = 21)]
-public class PotionItemData : ItemData
+public class PotionItemData : Item
 {
     [Space(10), Header("Potion Properties")]
     public int potionHealAmount;

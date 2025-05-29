@@ -3,18 +3,17 @@ using UnityEngine;
 
 public class ItemPickup : MonoBehaviour
 {
-    [SerializeField] private ItemData itemData;
+    [SerializeField] private Item item;
     private SpriteRenderer iconRenderer;
-    [SerializeField] private int quantity = 1;
 
     private void OnValidate()
     {
         iconRenderer = GetComponent<SpriteRenderer>();
 
-        if (itemData != null && iconRenderer != null)
+        if (item != null && iconRenderer != null)
         {
-            iconRenderer.sprite = itemData.icon;
-            gameObject.name = "PickUp_" + itemData.itemName;
+            iconRenderer.sprite = item.icon;
+            gameObject.name = item.itemName + " Pickup";
         }
     }
 
@@ -22,16 +21,9 @@ public class ItemPickup : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            Item item = new Item
-            {
-                data = itemData,
-                itemQuantity = quantity
-            };
-
-            GameManager.Instance.InventoryManager.AddItem(item);
-            Debug.Log($"Picked up {item.data.itemName} x{item.itemQuantity}");
-
-            Destroy(gameObject);
+            // Destroys pickup if function says that item added to inventory
+            if(GameManager.Instance.InventoryManager.AddItem(item))
+                Destroy(gameObject);
         }
     }
 }

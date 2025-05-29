@@ -1,12 +1,23 @@
 using UnityEngine;
 
-[System.Serializable]
-public class Item
+public enum ItemType
 {
-    public ItemData data;
-    public int itemQuantity = 1;
+    Generic = 0,
+    Weapon = 1,
+    Potion = 2,
+    Armor = 3,
+}
 
-    public string Name => data.itemName;
-    public Sprite Icon => data.icon;
-    public int ID => data.itemID;
+public abstract class Item : ScriptableObject
+{
+    [Header("Generic Data")]
+    public string itemName;
+    public int itemID;
+    public Sprite icon;
+    public ItemType itemType = ItemType.Generic;
+    public int maxStack = 1;
+    public int quantity = 1;
+
+    [Space(10), TextArea]
+    public string description;
 }

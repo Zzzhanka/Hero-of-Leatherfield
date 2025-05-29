@@ -1188,7 +1188,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &180136392
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1225,6 +1225,11 @@ MonoBehaviour:
   MinSlots: 30
   slotPrefab: {fileID: 85668952424691867, guid: e3f3c06480883b147a0b98ca8349502e, type: 3}
   gridParent: {fileID: 1782516176}
+  DetailsPanel: {fileID: 292690461}
+  ItemName: {fileID: 339539497}
+  ItemDescription: {fileID: 1469725395}
+  ItemIcon: {fileID: 991329108}
+  ItemStats: {fileID: 295283512}
 --- !u!1 &219861051
 GameObject:
   m_ObjectHideFlags: 0
@@ -2556,7 +2561,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &292690462
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2578,8 +2583,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.000061035156, y: 0}
-  m_SizeDelta: {x: 0, y: 0.000061035}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &293276809
 GameObject:
@@ -6376,7 +6381,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventory: []
-  defaultMaxStack: 99
   storage: []
 --- !u!4 &957276913
 Transform:
@@ -8917,7 +8921,7 @@ RectTransform:
   m_Father: {fileID: 1901053687}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -9385,9 +9389,9 @@ RectTransform:
   m_Father: {fileID: 523492722}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: -17, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1699224552
 MonoBehaviour:
@@ -11546,12 +11550,24 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 286956838008603315, guid: 204e0506f74a51a4c8abcd24adbef191, type: 3}
       propertyPath: m_Name
-      value: PickUp_Healing Potion
+      value: Healing Potion Pickup
       objectReference: {fileID: 0}
+    - target: {fileID: 1614915063819515262, guid: 204e0506f74a51a4c8abcd24adbef191, type: 3}
+      propertyPath: item
+      value: 
+      objectReference: {fileID: 11400000, guid: ae8a6639cdc8c904897605bcd2374f68, type: 2}
     - target: {fileID: 1614915063819515262, guid: 204e0506f74a51a4c8abcd24adbef191, type: 3}
       propertyPath: itemData
       value: 
       objectReference: {fileID: 11400000, guid: ae8a6639cdc8c904897605bcd2374f68, type: 2}
+    - target: {fileID: 4180172306355526338, guid: 204e0506f74a51a4c8abcd24adbef191, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 3.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4180172306355526338, guid: 204e0506f74a51a4c8abcd24adbef191, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 3.6
+      objectReference: {fileID: 0}
     - target: {fileID: 5279990634734539456, guid: 204e0506f74a51a4c8abcd24adbef191, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -11749,12 +11765,24 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 286956838008603315, guid: 204e0506f74a51a4c8abcd24adbef191, type: 3}
       propertyPath: m_Name
-      value: PickUp_Diamond Sword
+      value: Diamond Sword Pickup
       objectReference: {fileID: 0}
+    - target: {fileID: 1614915063819515262, guid: 204e0506f74a51a4c8abcd24adbef191, type: 3}
+      propertyPath: item
+      value: 
+      objectReference: {fileID: 11400000, guid: 9bad9efb38264514ead5caa21ca576ef, type: 2}
     - target: {fileID: 1614915063819515262, guid: 204e0506f74a51a4c8abcd24adbef191, type: 3}
       propertyPath: itemData
       value: 
       objectReference: {fileID: 11400000, guid: 9bad9efb38264514ead5caa21ca576ef, type: 2}
+    - target: {fileID: 4180172306355526338, guid: 204e0506f74a51a4c8abcd24adbef191, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 3.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4180172306355526338, guid: 204e0506f74a51a4c8abcd24adbef191, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 3.6
+      objectReference: {fileID: 0}
     - target: {fileID: 5279990634734539456, guid: 204e0506f74a51a4c8abcd24adbef191, type: 3}
       propertyPath: m_Sprite
       value: 
