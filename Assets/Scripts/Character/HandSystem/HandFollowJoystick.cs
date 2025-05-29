@@ -13,7 +13,11 @@ public class HandFollowJoystick : MonoBehaviour
     [SerializeField] private Joystick _joystickInput;
     [SerializeField] private GameObject _content;
     [SerializeField] private GameObject _weaponInHandSprite;
+    [SerializeField] private GameObject _meleeRange;
     [SerializeField] private float _handRadius = 1.5f;
+
+    [Space(5)]
+    public float InputX, InputY;
 
     private HandAttackSystem _attackSystem;
     private bool _wasJoystickHeld = false;
@@ -26,6 +30,7 @@ public class HandFollowJoystick : MonoBehaviour
         transform.position = _player.position;
         _content.transform.localRotation = Quaternion.identity;
         _weaponInHandSprite.SetActive(false);
+        _meleeRange.SetActive(false);
     }
 
 
@@ -42,10 +47,10 @@ public class HandFollowJoystick : MonoBehaviour
     private void Update()
     {
 
-        float inputX = _joystickInput.Horizontal;
-        float inputY = _joystickInput.Vertical;
+        InputX = _joystickInput.Horizontal;
+        InputY = _joystickInput.Vertical;
 
-        Vector2 dir = new(inputX, inputY);
+        Vector2 dir = new(InputX, InputY);
         float magnitude = dir.magnitude;
 
         if (magnitude > 0.1f)
@@ -56,10 +61,12 @@ public class HandFollowJoystick : MonoBehaviour
             if (_attackSystem.AttackReloadTimer <= 0)
             {
                 _weaponInHandSprite.SetActive(true);
+                _meleeRange.SetActive(true);
             }
             else
             {
                 _weaponInHandSprite.SetActive(false);
+                _meleeRange.SetActive(false);
             }
 
             dir.Normalize();
@@ -104,11 +111,11 @@ public class HandFollowJoystick : MonoBehaviour
                 break;
 
             case WeaponType.Bow:
-                extraAngle = dirIsLeft ? 0f : 0f;
+                extraAngle = dirIsLeft ? -90f : 90f;
                 break;
 
             case WeaponType.Staff:
-                extraAngle = dirIsLeft ? 90f : 90f;
+                extraAngle = dirIsLeft ? 0f : 0f;
                 break;
         }
 
