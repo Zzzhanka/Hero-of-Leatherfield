@@ -1,45 +1,23 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PortalScript : MonoBehaviour
+public class PortalScript : MonoBehaviour, IInteractable
 {
+    [SerializeField] private string[] dungeonScenes = { "Dungeon1" };
 
-    [SerializeField] private GameObject _button;
-
-    public void VillBack()
+    public void Interact()
     {
-        SceneManager.LoadScene("Village");
-    }
-
-    public void LoadDungeonScene()
-    {
-        string[] dungeonScenes = { "Dungeon1" };
-
         string randomScene = dungeonScenes[Random.Range(0, dungeonScenes.Length)];
-
         SceneManager.LoadScene(randomScene);
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    public void OnPlayerEnter()
     {
-
-        if (other.CompareTag("Player"))
-        {
-            _button.SetActive(true);
-        }
-
+        InteractionManager.Instance.ShowButton(this);
     }
 
-
-
-    private void OnTriggerExit2D(Collider2D other)
+    public void OnPlayerExit()
     {
-
-        if (other.CompareTag("Player"))
-        {
-            _button.SetActive(false);
-        }
-
+        InteractionManager.Instance.HideButton(this);
     }
-
 }

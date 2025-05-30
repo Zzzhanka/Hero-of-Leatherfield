@@ -1,55 +1,38 @@
-using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
+using UnityEngine;
 
-public class BlacksmithScript : MonoBehaviour
+public class BlacksmithScript : MonoBehaviour, IInteractable
 {
-    [SerializeField] private GameObject _button;
-    [SerializeField] private GameObject _BlacksmithPanel;
-
-
+    [SerializeField] private GameObject _blacksmithPanel;
     [SerializeField] private TMP_Text _textMeshPro;
 
+    private int _currentStrength = 10;
+    private int _strengthIncrease = 10;
 
-    private int _currentStrength = 10; 
-    private int _strengthIncrease = 10; 
-    private void OnTriggerEnter2D(Collider2D other)
+    public void Interact()
     {
-
-        if (other.CompareTag("Player"))
-        {
-            _button.SetActive(true);
-        }
-
+        _blacksmithPanel.SetActive(true);
+        UpdateStrengthText();
     }
 
-    private void OnTriggerExit2D(Collider2D other)
+    public void OnPlayerEnter()
     {
-
-        if (other.CompareTag("Player"))
-        {
-            _button.SetActive(false);
-        }
-
+        InteractionManager.Instance.ShowButton(this);
     }
 
-    public void BlacksmithEntry()
+    public void OnPlayerExit()
     {
-        _BlacksmithPanel.SetActive(true);
-    }
-    public void BlacksmithExit()
-    {
-        _BlacksmithPanel.SetActive(false);
+        InteractionManager.Instance.HideButton(this);
+        _blacksmithPanel.SetActive(false);
     }
 
     public void StrengthUpdate()
     {
         _currentStrength += _strengthIncrease;
-
         UpdateStrengthText();
     }
 
-    public void UpdateStrengthText()
+    private void UpdateStrengthText()
     {
         _textMeshPro.text = $"Strength: {_currentStrength} + {_strengthIncrease}";
     }
