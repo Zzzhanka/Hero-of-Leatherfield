@@ -4,6 +4,10 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private InventoryManager inventoryManager;
+    [SerializeField] private ItemPickupFactory itemPickupFactory;
+
+    public ItemPickupFactory ItemPickupFactory => 
+        itemPickupFactory;
 
     public InventoryManager InventoryManager => 
         inventoryManager;

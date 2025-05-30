@@ -17,14 +17,34 @@ public class InventoryUI : MonoBehaviour
     [SerializeField] private Image ItemIcon;
     [SerializeField] private TMP_Text ItemStats;
 
+    [SerializeField] private Button UseButton;
+    [SerializeField] private Button DropButton;
+
+    [Space(5), Header("Item Popup Part")]
+    [SerializeField] private GameObject DropPopup;
+    [SerializeField] private Slider itemCountSlider;
+    [SerializeField] private TMP_Text itemCountText;
+    [SerializeField] private Button DropConfirmButton;
+    [SerializeField] private Button DropCancelButton;
+
+    private ItemEntry chosenEntry;
+    private int chosenItemCount;
 
     private List<GameObject> slotInstances = new List<GameObject>();
+
+    private void Awake()
+    {
+        DropPopup.SetActive(false);
+        gameObject.SetActive(false);
+    }
 
     private void OnEnable()
     {
         GameManager.Instance.InventoryManager.OnInventoryChanged += RefreshUI;
         RefreshUI();
         ChooseFirstSlot();
+        itemCountSlider.onValueChanged.AddListener(UpdateCount);
+        DropConfirmButton.onClick.AddListener(DropItem);
     }
 
     private void OnDisable()
@@ -36,8 +56,8 @@ public class InventoryUI : MonoBehaviour
     {
         ClearUI();
 
-        List<Item> items = GameManager.Instance.InventoryManager.GetAllItems();
-        int requiredSlots = Mathf.Max(MinSlots, items.Count);
+        List<ItemEntry> entries = GameManager.Instance.InventoryManager.GetAllEntries();
+        int requiredSlots = Mathf.Max(MinSlots, entries.Count);
 
         for (int i = 0; i < requiredSlots; i++)
         {
@@ -45,9 +65,9 @@ public class InventoryUI : MonoBehaviour
             InventorySlot slot = slotInstance.GetComponentInChildren<InventorySlot>();
             slotInstances.Add(slotInstance);
 
-            if (i < items.Count)
+            if (i < entries.Count)
             {
-                slot.Setup(items[i], ShowItemDetails);                
+                slot.Setup(entries[i], ShowItemDetails);
             }
             else
             {
@@ -56,33 +76,37 @@ public class InventoryUI : MonoBehaviour
         }
     }
 
-    private void ShowItemDetails(Item slotItem)
+    private void ShowItemDetails(ItemEntry entry)
     {
-        if (slotItem == null) return;
-        ItemName.text = slotItem.itemName;
-        ItemDescription.text = slotItem.description;
-        ItemIcon.sprite = slotItem.icon;
+        if (entry == null || entry.item == null) return;
+
+        chosenEntry = entry;
+
+        ItemName.text = entry.item.itemName;
+        ItemDescription.text = entry.item.description;
+        ItemIcon.sprite = entry.item.icon;
+
+        // Optionally set stats
+        ItemStats.text = $"Qty: {entry.quantity}";
     }
 
     private void ChooseFirstSlot()
     {
-        GameObject firstSlotInstance = slotInstances[0];
-        
-        if(firstSlotInstance == null) 
+        if (slotInstances.Count == 0)
         {
             DetailsPanel.SetActive(false);
             return;
         }
 
-        InventorySlot slot = firstSlotInstance.GetComponentInChildren<InventorySlot>();
-        if(slot.GetItem() == null)
+        InventorySlot slot = slotInstances[0].GetComponentInChildren<InventorySlot>();
+        if (slot.GetEntry().item == null)
         {
             DetailsPanel.SetActive(false);
             return;
         }
 
         DetailsPanel.SetActive(true);
-        ShowItemDetails(slot.GetItem());
+        ShowItemDetails(slot.GetEntry());
     }
 
     private void ClearUI()
@@ -92,5 +116,57 @@ public class InventoryUI : MonoBehaviour
             Destroy(slot);
         }
         slotInstances.Clear();
+    }
+
+    private void DropItem()
+    {
+        GameManager.Instance.InventoryManager.RemoveItem(chosenEntry.item, true, chosenItemCount);
+        RefreshUI();
+        DropPopup.SetActive(false);
+    }
+
+    private void UseItem(Item item)
+    {
+        switch (item.itemType)
+        {
+            case ItemType.Weapon:
+                Debug.Log($"Used Weapon {item.itemName}");
+                break;
+            case ItemType.Armor:
+                Debug.Log($"Weared {item.itemName}");
+                break;
+            case ItemType.Potion:
+                Debug.Log($"{item.itemName} was used");
+                break;
+        }
+    }
+
+    public void TooglePopup()
+    {
+        if (chosenEntry.quantity <= 1)
+        {
+            chosenItemCount = 1;
+            DropItem();
+            return;
+        }
+
+        if (!DropPopup.activeSelf)
+        {
+            itemCountSlider.minValue = 1;
+            itemCountSlider.maxValue = chosenEntry.quantity;
+            itemCountSlider.value = 1;
+            itemCountText.text = "1";
+            DropPopup.SetActive(true);
+        }
+        else
+        {
+            DropPopup.SetActive(false);
+        }
+    }
+
+    private void UpdateCount(float value)
+    {
+        chosenItemCount = Mathf.RoundToInt(value);
+        itemCountText.text = chosenItemCount.ToString();
     }
 }

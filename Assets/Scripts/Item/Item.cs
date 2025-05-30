@@ -14,9 +14,8 @@ public abstract class Item : ScriptableObject
     public string itemName;
     public int itemID;
     public Sprite icon;
-    public ItemType itemType = ItemType.Generic;
+    public virtual ItemType itemType => ItemType.Generic;
     public int maxStack = 1;
-    public int quantity = 1;
 
     [Space(10), TextArea]
     public string description;

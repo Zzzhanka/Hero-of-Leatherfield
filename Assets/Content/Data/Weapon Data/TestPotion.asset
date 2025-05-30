@@ -15,8 +15,7 @@ MonoBehaviour:
   itemName: Healing Potion
   itemID: 1338
   icon: {fileID: 21300000, guid: 8ab0550a37a36624a827f8929219a999, type: 3}
-  itemType: 0
-  maxStack: 1
+  maxStack: 16
   description: 
   potionHealAmount: 10
   potionUseTime: 3

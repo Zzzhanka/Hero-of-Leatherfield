@@ -4,48 +4,55 @@ using UnityEngine.UI;
 
 public class InventorySlot : MonoBehaviour
 {
-    private int slotIndex;
     private Button button;
+
     [SerializeField] private Image slotIcon;
     [SerializeField] private TMP_Text slotQuantity;
-    private Item item = null;
 
-    public delegate void OnItemClicked(Item item);
-
-    private OnItemClicked onItemClickedCallback;
+    private ItemEntry entry;
+    private System.Action<ItemEntry> onItemClickedCallback;
 
     private void Awake()
     {
         button = transform.parent.GetComponent<Button>();
     }
 
-    public void Setup(Item item, OnItemClicked callback)
+    public void Setup(ItemEntry entry, System.Action<ItemEntry> callback)
     {
-        SetItem(item);
+        this.entry = entry;
         onItemClickedCallback = callback;
 
-        button.onClick.RemoveAllListeners(); // Prevent duplicates
-        button.onClick.AddListener(() => onItemClickedCallback?.Invoke(item));
-    }
-
-    private void SetItem(Item newItem)
-    { 
-        if (newItem != null)
+        if (entry != null && entry.item != null)
         {
-            item = newItem;
-            slotIcon.sprite = item.icon;
+            slotIcon.sprite = entry.item.icon;
             slotIcon.enabled = true;
-            slotQuantity.text = item.quantity > 1 ? item.quantity.ToString() : "";
+            slotQuantity.text = entry.quantity > 1 ? entry.quantity.ToString() : "";
+            slotQuantity.enabled = entry.quantity > 1;
         }
         else
         {
             slotIcon.enabled = false;
             slotQuantity.text = "";
+            slotQuantity.enabled = false;
         }
+
+        button.onClick.RemoveAllListeners();
+        button.onClick.AddListener(() =>
+        {
+            if (entry != null && entry.item != null)
+                onItemClickedCallback?.Invoke(entry);
+        });
     }
 
-    public Item GetItem()
+    public ItemEntry GetEntry() => entry;
+
+    public void SetQuantity(int newQuantity)
     {
-        return item;
+        if (entry != null)
+        {
+            entry.quantity = newQuantity;
+            slotQuantity.text = newQuantity > 1 ? newQuantity.ToString() : "";
+            slotQuantity.enabled = newQuantity > 1;
+        }
     }
 }

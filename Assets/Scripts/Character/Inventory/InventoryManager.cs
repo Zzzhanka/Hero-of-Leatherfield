@@ -4,83 +4,76 @@ using UnityEngine;
 public class InventoryManager : MonoBehaviour
 {
     [Header("Inventory")]
-    public List<Item> inventory = new List<Item>();
-
-    //[Header("Max Inventory Stack Size")]
-    //public int defaultMaxStack = 99;
+    public List<ItemEntry> inventory = new List<ItemEntry>();
 
     [Header("Storage")]
-    public List<Item> storage = new List<Item>();
+    public List<ItemEntry> storage = new List<ItemEntry>();
 
     public delegate void InventoryChanged();
     public event InventoryChanged OnInventoryChanged;
 
     public void Initialize()
     {
-        LoadInventory();
+        // LoadInventory();
     }
-    
-    // Return boolean to pickup to or not to destroy
-    public bool AddItem(Item itemToAdd)
+
+    public bool AddItem(Item itemToAdd, int quantity)
     {
         if (itemToAdd == null)
         {
-            Debug.Log($"[Inventory] Item is NULL!");
+            Debug.Log("[Inventory] Item is NULL!");
             return false;
         }
 
-        // Check if already exists (and is stackable)
-        Item existing = inventory.Find(i => i == itemToAdd && i.maxStack > 1);
+        ItemEntry existingEntry = inventory.Find(entry => entry.item == itemToAdd && itemToAdd.maxStack > 1);
 
-        if (existing != null)
+        if (existingEntry != null)
         {
-            if (existing.quantity + itemToAdd.quantity > existing.maxStack)
+            if (existingEntry.quantity + quantity > itemToAdd.maxStack)
             {
-                Debug.Log($"[Inventory] {itemToAdd.itemName} cannot added to max stacked item!");
+                Debug.Log($"[Inventory] {itemToAdd.itemName} cannot exceed max stack!");
                 return false;
             }
 
-            existing.quantity += itemToAdd.quantity;
+            existingEntry.quantity += quantity;
         }
         else
         {
-            inventory.Add(itemToAdd);
+            inventory.Add(new ItemEntry(itemToAdd, quantity));
         }
 
-        Debug.Log($"[Inventory] Added {itemToAdd.itemName} x {itemToAdd.quantity}");
+        Debug.Log($"[Inventory] Added {itemToAdd.itemName} x{quantity}");
         OnInventoryChanged?.Invoke();
         return true;
     }
 
-    public void RemoveItem(Item itemToRemove, int amount = 1)
+    public void RemoveItem(Item itemToRemove, bool isDropping, int amount = 1)
     {
-        if (inventory.Contains(itemToRemove))
-        {
-            itemToRemove.quantity -= amount;
+        ItemEntry entry = inventory.Find(e => e.item == itemToRemove);
 
-            if (itemToRemove.quantity <= 0)
-                inventory.Remove(itemToRemove);
+        if (entry != null)
+        {
+            if (isDropping)
+            {
+                GameManager.Instance.ItemPickupFactory.CreatePickup(itemToRemove, amount);
+            }
+
+            Debug.Log($"Remove {amount} {itemToRemove.itemName} ({entry.quantity - amount})");
+
+            if (entry.quantity - amount <= 0)
+            {
+                
+                inventory.Remove(entry);
+            }
+
+            entry.quantity -= amount;
 
             OnInventoryChanged?.Invoke();
         }
     }
 
-    public List<Item> GetAllItems()
+    public List<ItemEntry> GetAllEntries()
     {
         return inventory;
-    }
-
-    public void SaveInventory()
-    {
-        // Some code to save inventory
-
-        Debug.Log("Inventory saved.");
-    }
-
-    public void LoadInventory()
-    {
-        // Some code to save inventory
-
-        Debug.Log("Inventory loaded.");
     }
 }
