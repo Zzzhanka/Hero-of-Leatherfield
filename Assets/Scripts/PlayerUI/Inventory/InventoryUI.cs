@@ -86,8 +86,8 @@ public class InventoryUI : MonoBehaviour
         ItemDescription.text = entry.item.description;
         ItemIcon.sprite = entry.item.icon;
 
-        // Optionally set stats
-        ItemStats.text = $"Qty: {entry.quantity}";
+
+        ItemStats.text = $"Quantity: {entry.quantity}";
     }
 
     private void ChooseFirstSlot()

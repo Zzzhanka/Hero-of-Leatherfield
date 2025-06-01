@@ -9,11 +9,31 @@ public class AlchemyManager : MonoBehaviour
 
     public bool CheckAvailability(Receipt receipt)
     {
-        return false;
+        List<Component> tempList = receipt.GetComponents();
+        List<ItemEntry> invList = GameManager.Instance.InventoryManager.GetAllEntries();
+
+        foreach (Component comp in tempList)
+        {
+            Item itemR = comp.requiredItem;
+            int countR = comp.requiredNumber;
+
+            ItemEntry entry = invList.Find(e => e.item == itemR);
+            if (entry.quantity < countR) return false;
+        }
+
+        return true;
     }
 
-    public void MakeDeal()
+    public void MakeDeal(Receipt receipt)
     {
+        List<Component> tempList = receipt.GetComponents();
 
+        foreach (Component comp in tempList) 
+        {
+            Item item = comp.requiredItem;
+            int count = comp.requiredNumber;
+
+            GameManager.Instance.InventoryManager.RemoveItem(item, false, count);
+        }
     }
 }
