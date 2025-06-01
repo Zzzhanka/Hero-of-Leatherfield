@@ -2610,7 +2610,11 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+<<<<<<< Updated upstream
       - m_Target: {fileID: 351554182}
+=======
+      - m_Target: {fileID: 0}
+>>>>>>> Stashed changes
         m_TargetAssemblyTypeName: InteractionManager, Assembly-CSharp
         m_MethodName: Interact
         m_Mode: 1
@@ -5990,7 +5994,6 @@ GameObject:
   m_Component:
   - component: {fileID: 622324750}
   - component: {fileID: 622324749}
-  - component: {fileID: 622324751}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -6026,19 +6029,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &622324751
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 622324748}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 293c0d86b74e3754f94a2633b046e722, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactionButton: {fileID: 257321651}
 --- !u!1 &693810426
 GameObject:
   m_ObjectHideFlags: 0
@@ -6609,8 +6599,8 @@ RectTransform:
   - {fileID: 729067652}
   - {fileID: 1368547823}
   - {fileID: 277080342}
-  - {fileID: 257321652}
   - {fileID: 1968065379}
+  - {fileID: 257321652}
   - {fileID: 180136392}
   - {fileID: 944856775}
   - {fileID: 1017007724}
