@@ -36,5 +36,6 @@ public class InteractionManager : MonoBehaviour
    public void Interact()
     {
         currentInteractable?.Interact();
+        Debug.Log("Кнопка нажата. Выполняем действие...");
     }
 }
