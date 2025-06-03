@@ -10,14 +10,14 @@ public class PotionSlot : MonoBehaviour
     [SerializeField] private TMP_Text slotName;
 
     private Receipt receipt;
-    private System.Action<Receipt> onReceiptClickedCallback;
+    private System.Action<Receipt, PotionSlot> onReceiptClickedCallback;
 
     private void Awake()
     {
         button = transform.parent.GetComponent<Button>();
     }
 
-    public void Setup(Receipt receipt, System.Action<Receipt> callback)
+    public void Setup(Receipt receipt, System.Action<Receipt, PotionSlot> callback)
     {
         this.receipt = receipt;
         onReceiptClickedCallback = callback;
@@ -40,7 +40,9 @@ public class PotionSlot : MonoBehaviour
         button.onClick.AddListener(() =>
         {
             if (receipt != null)
-                onReceiptClickedCallback?.Invoke(receipt);
+            {
+                onReceiptClickedCallback?.Invoke(receipt, this);
+            }
         });
     }
 

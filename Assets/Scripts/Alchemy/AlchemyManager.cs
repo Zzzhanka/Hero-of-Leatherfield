@@ -16,9 +16,10 @@ public class AlchemyManager : MonoBehaviour
         {
             Item itemR = comp.requiredItem;
             int countR = comp.requiredNumber;
-
+            
             ItemEntry entry = invList.Find(e => e.item == itemR);
-            if (entry.quantity < countR) return false;
+            
+            if (entry == null || entry.quantity < countR) return false;
         }
 
         return true;
@@ -34,6 +35,7 @@ public class AlchemyManager : MonoBehaviour
             int count = comp.requiredNumber;
 
             GameManager.Instance.InventoryManager.RemoveItem(item, false, count);
+            GameManager.Instance.InventoryManager.AddItem(receipt.receiptItemRef, receipt.receiptNumber);
         }
     }
 }

@@ -58,7 +58,7 @@ public class InventoryManager : MonoBehaviour
                 GameManager.Instance.ItemPickupFactory.CreatePickup(itemToRemove, amount);
             }
 
-            Debug.Log($"Remove {amount} {itemToRemove.itemName} ({entry.quantity - amount})");
+            Debug.Log($"[Inventory] Remove {amount} {itemToRemove.itemName} ({entry.quantity} - {amount})");
 
             if (entry.quantity - amount <= 0)
             {
@@ -75,5 +75,19 @@ public class InventoryManager : MonoBehaviour
     public List<ItemEntry> GetAllEntries()
     {
         return inventory;
+    }
+
+    public int FindItemCount(Item item)
+    {
+        ItemEntry entry = inventory.Find(e => e.item == item);
+
+        if(entry != null)
+        {
+            return entry.quantity;
+        }
+        else
+        {
+            return 0;
+        }
     }
 }

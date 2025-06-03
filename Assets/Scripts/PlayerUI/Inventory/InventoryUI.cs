@@ -92,13 +92,13 @@ public class InventoryUI : MonoBehaviour
 
     private void ChooseFirstSlot()
     {
-        if (slotInstances.Count == 0)
+        InventorySlot slot = slotInstances[0].GetComponentInChildren<InventorySlot>();
+        if (slot == null)
         {
             DetailsPanel.SetActive(false);
             return;
         }
 
-        InventorySlot slot = slotInstances[0].GetComponentInChildren<InventorySlot>();
         if (slot.GetEntry().item == null)
         {
             DetailsPanel.SetActive(false);

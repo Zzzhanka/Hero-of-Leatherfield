@@ -10601,6 +10601,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   receiptLists:
   - {fileID: 11400000, guid: 593fbd315897bc64bacee4d3d92cc86c, type: 2}
+  - {fileID: 11400000, guid: 2ec6abfeb75abe8489d477a6e3b41c0d, type: 2}
 --- !u!1 &776295744
 GameObject:
   m_ObjectHideFlags: 0
@@ -11822,7 +11823,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slotPrefab: {fileID: 2381198419445531163, guid: 882f33d8f6151304ab404808599bc4fa, type: 3}
-  gridParent: {fileID: 169933143}
+  componentPrefab: {fileID: 2381198419445531163, guid: 40dfdf6290e33614baabc0f20fc00c7a, type: 3}
+  potionListGridParent: {fileID: 169933143}
+  componentsListgridParent: {fileID: 1686524264}
   DetailsPanel: {fileID: 395807382}
   PotionName: {fileID: 1453823807}
   PotionIcon: {fileID: 1812315787}
@@ -19870,7 +19873,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
