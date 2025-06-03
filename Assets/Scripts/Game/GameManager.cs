@@ -5,12 +5,16 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] private InventoryManager inventoryManager;
     [SerializeField] private ItemPickupFactory itemPickupFactory;
+    [SerializeField] private AlchemyManager alchemyManager;
 
     public ItemPickupFactory ItemPickupFactory => 
         itemPickupFactory;
 
     public InventoryManager InventoryManager => 
         inventoryManager;
+
+    public AlchemyManager AlchemyManager => 
+        alchemyManager;
 
     public static GameManager Instance { get; private set; }
   
