@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 
@@ -12,6 +13,11 @@ public class EnemyCharacteristics : MonoBehaviour
 
     public float EnemyMoveSpeed;
     public float EnemyAttackReload;
+
+    public PlayerCharacteristics characteristics;
+
+    private PlayerCharacteristics _playerChars;
+    private GameObject _playerGameObject;
 
 
 
@@ -29,12 +35,21 @@ public class EnemyCharacteristics : MonoBehaviour
 
     }
 
-
-
-    private void Start()
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log("Trigger entered");
+        if (collision.gameObject.tag == "Player")
+        {
+            Debug.Log("Player takes damage");
+            _playerChars.PlayerTakesDamage(10);
+        }
+    }
+private void Start()
     {
 
         EnemyCurrentHealth = EnemyMaxHealth;
+        _playerGameObject = GameObject.FindWithTag("Player");
+        _playerChars = _playerGameObject.GetComponent<PlayerCharacteristics>();
 
     }
 
