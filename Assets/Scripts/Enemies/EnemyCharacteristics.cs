@@ -1,10 +1,8 @@
 using Unity.VisualScripting;
 using UnityEngine;
 
-
 public class EnemyCharacteristics : MonoBehaviour
 {
-
     public int EnemyMaxHealth;
     public int EnemyCurrentHealth;
 
@@ -15,15 +13,17 @@ public class EnemyCharacteristics : MonoBehaviour
     public float EnemyAttackReload;
 
 
+<<<<<<< Updated upstream
     private PlayerCharacteristics _playerChars;
     private GameObject _playerGameObject;
 
 
 
 
+=======
+>>>>>>> Stashed changes
     public void EnemyTakesDamage(int damage)
     {
-
         EnemyCurrentHealth -= damage;
 
         if (EnemyCurrentHealth <= 0)
@@ -31,9 +31,9 @@ public class EnemyCharacteristics : MonoBehaviour
             EnemyCurrentHealth = 0;
             EnemyDies();
         }
-
     }
 
+<<<<<<< Updated upstream
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log("Trigger entered");
@@ -44,20 +44,23 @@ public class EnemyCharacteristics : MonoBehaviour
         }
     }
 private void Start()
+=======
+    private void Start()
+>>>>>>> Stashed changes
     {
-
         EnemyCurrentHealth = EnemyMaxHealth;
+<<<<<<< Updated upstream
         _playerGameObject = GameObject.FindWithTag("Player");
         _playerChars = _playerGameObject.GetComponent<PlayerCharacteristics>();
 
+=======
+>>>>>>> Stashed changes
     }
-
-
 
     private void EnemyDies()
     {
-
         gameObject.SetActive(false);
+
 
     }
 

@@ -1,11 +1,11 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private InventoryManager inventoryManager;
     [SerializeField] private ItemPickupFactory itemPickupFactory;
     [SerializeField] private AlchemyManager alchemyManager;
+    [SerializeField] private ScoreSystem scoreSystem;
 
     public ItemPickupFactory ItemPickupFactory => 
         itemPickupFactory;
@@ -15,6 +15,9 @@ public class GameManager : MonoBehaviour
 
     public AlchemyManager AlchemyManager => 
         alchemyManager;
+
+    public ScoreSystem ScoreSystem =>
+        scoreSystem;
 
     public static GameManager Instance { get; private set; }
   
