@@ -1,15 +1,12 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using UnityEngine.EventSystems;
 using System.Collections.Generic;
 using System.Collections;
 
-
 public class PlayerMovementSystem : MonoBehaviour
 {
-
     [Space(5)]
-    [Header("Ïåðåäâèæåíèå:")]
-
+    [Header("ÐŸÐµÑ€ÐµÐ´Ð²Ð¸Ð¶ÐµÐ½Ð¸Ðµ:")]
     [Space(5)]
     public Vector2 PlayerVelocity;
     [SerializeField] private int _dashCost = 10;
@@ -19,22 +16,17 @@ public class PlayerMovementSystem : MonoBehaviour
     [SerializeField] private float _dashCooldownTimer;
     [SerializeField] private PlayerDashReload _dashReloadSlider;
 
-
-
     private PlayerMovementInputSystem _playerMovementInputSystem;
     private PlayerSensorsSystem _playerSensorsSystem;
     private PlayerCharacteristics _playerChars;
     private PlayerState _playerState;
+    private Animator _animator; 
 
     private Vector2 _heroPreviousPosition;
     private Vector2 _moveDirection;
 
-
-
-
     public IEnumerator Dash()
     {
-
         if (_playerState.PlayerCanDash && _playerChars.PlayerCurrentEnergy >= _dashCost && _dashCooldownTimer <= 0 && (_playerMovementInputSystem.InputX != 0 || _playerMovementInputSystem.InputY != 0))
         {
             _playerState.PlayerCanRun = false;
@@ -67,62 +59,45 @@ public class PlayerMovementSystem : MonoBehaviour
 
             _dashCooldownTimer = _dashCooldown;
         }
-        
     }
-
-
 
     private void Awake()
     {
-
         _playerMovementInputSystem = GetComponent<PlayerMovementInputSystem>();
         _playerSensorsSystem = GetComponent<PlayerSensorsSystem>();
         _playerChars = GetComponent<PlayerCharacteristics>();
         _playerState = GetComponent<PlayerState>();
-
+        _animator = GetComponent<Animator>(); 
     }
-
-
 
     private void Update()
     {
-
         HeroInputMove();
         UpdateDashCooldown();
-
     }
-
-
 
     private void LateUpdate()
     {
-
         CalculateHeroVelocity();
-
     }
-
-
 
     private void HeroInputMove()
     {
-
         _moveDirection = new Vector2(_playerMovementInputSystem.InputX, _playerMovementInputSystem.InputY).normalized;
+
+        bool isMoving = _moveDirection.magnitude > 0.1f;
+        _animator.SetBool("IsRunning", isMoving);
 
         if (_playerState.PlayerCanMove)
         {
-
             Vector3 newPos = transform.position + (Vector3)((_moveDirection * _playerChars.PlayerMoveSpeed) * Time.deltaTime);
 
             newPos.x = Mathf.Clamp(newPos.x, _playerSensorsSystem.LeftBlockBorderX, _playerSensorsSystem.RightBlockBorderX);
             newPos.y = Mathf.Clamp(newPos.y, _playerSensorsSystem.BottomBlockBorderY, _playerSensorsSystem.TopBlockBorderY);
 
             transform.position = newPos;
-
         }
-
     }
-
-
 
     private void CalculateHeroVelocity()
     {
@@ -131,11 +106,8 @@ public class PlayerMovementSystem : MonoBehaviour
         _heroPreviousPosition = currentPosition;
     }
 
-
-
     private void UpdateDashCooldown()
     {
-
         if (_dashCooldownTimer > 0)
         {
             _dashCooldownTimer -= Time.deltaTime;
@@ -145,7 +117,5 @@ public class PlayerMovementSystem : MonoBehaviour
 
             _dashReloadSlider.UpdateDashReloadBar(_dashCooldown, _dashCooldownTimer);
         }
-
     }
-
 }
