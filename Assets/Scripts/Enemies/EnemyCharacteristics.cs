@@ -12,16 +12,9 @@ public class EnemyCharacteristics : MonoBehaviour
     public float EnemyMoveSpeed;
     public float EnemyAttackReload;
 
-
-<<<<<<< Updated upstream
     private PlayerCharacteristics _playerChars;
     private GameObject _playerGameObject;
 
-
-
-
-=======
->>>>>>> Stashed changes
     public void EnemyTakesDamage(int damage)
     {
         EnemyCurrentHealth -= damage;
@@ -33,7 +26,7 @@ public class EnemyCharacteristics : MonoBehaviour
         }
     }
 
-<<<<<<< Updated upstream
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log("Trigger entered");
@@ -43,24 +36,16 @@ public class EnemyCharacteristics : MonoBehaviour
             _playerChars.PlayerTakesDamage(EnemyDamage);
         }
     }
-private void Start()
-=======
     private void Start()
->>>>>>> Stashed changes
     {
         EnemyCurrentHealth = EnemyMaxHealth;
-<<<<<<< Updated upstream
         _playerGameObject = GameObject.FindWithTag("Player");
         _playerChars = _playerGameObject.GetComponent<PlayerCharacteristics>();
-
-=======
->>>>>>> Stashed changes
     }
 
     private void EnemyDies()
     {
         gameObject.SetActive(false);
-
 
     }
 
