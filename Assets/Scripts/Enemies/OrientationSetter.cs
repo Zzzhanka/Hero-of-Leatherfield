@@ -51,6 +51,6 @@ public class OrientationSetter : MonoBehaviour
                 break;
         }
 
-        Destroy(gameObject);
+        
     }
 }
