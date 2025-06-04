@@ -14,7 +14,6 @@ public class EnemyCharacteristics : MonoBehaviour
     public float EnemyMoveSpeed;
     public float EnemyAttackReload;
 
-    public PlayerCharacteristics characteristics;
 
     private PlayerCharacteristics _playerChars;
     private GameObject _playerGameObject;
@@ -41,7 +40,7 @@ public class EnemyCharacteristics : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             Debug.Log("Player takes damage");
-            _playerChars.PlayerTakesDamage(10);
+            _playerChars.PlayerTakesDamage(EnemyDamage);
         }
     }
 private void Start()
