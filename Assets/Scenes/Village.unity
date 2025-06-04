@@ -7837,7 +7837,7 @@ MonoBehaviour:
   inventoryManager: {fileID: 957276912}
   itemPickupFactory: {fileID: 597243412}
   alchemyManager: {fileID: 774677253}
-  scoreSystem: {fileID: 0}
+  scoreSystem: {fileID: 1784167045}
 --- !u!4 &421718974
 Transform:
   m_ObjectHideFlags: 0
@@ -8290,6 +8290,7 @@ GameObject:
   - component: {fileID: 455932608}
   - component: {fileID: 455932610}
   - component: {fileID: 455932609}
+  - component: {fileID: 455932611}
   m_Layer: 5
   m_Name: StorePanel
   m_TagString: Untagged
@@ -8358,6 +8359,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 455932607}
   m_CullTransparentMesh: 1
+--- !u!114 &455932611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 455932607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da896caa4edf48f47be4d6e465a621a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &485274421
 GameObject:
   m_ObjectHideFlags: 0
@@ -10259,6 +10272,7 @@ GameObject:
   m_Component:
   - component: {fileID: 774677252}
   - component: {fileID: 774677253}
+  - component: {fileID: 774677254}
   m_Layer: 0
   m_Name: VillageSystem
   m_TagString: Untagged
@@ -10296,6 +10310,18 @@ MonoBehaviour:
   receiptLists:
   - {fileID: 11400000, guid: 593fbd315897bc64bacee4d3d92cc86c, type: 2}
   - {fileID: 11400000, guid: 2ec6abfeb75abe8489d477a6e3b41c0d, type: 2}
+--- !u!114 &774677254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 774677251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a41d6e84219e1d409d2b4a0b233c2be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &776295744
 GameObject:
   m_ObjectHideFlags: 0
@@ -17481,10 +17507,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _storePanel: {fileID: 455932607}
-  _maxText: {fileID: 0}
-  _selectedText: {fileID: 0}
-  _slider: {fileID: 1061678521}
-  _itemCount: 20
 --- !u!114 &1687050484
 MonoBehaviour:
   m_ObjectHideFlags: 0
