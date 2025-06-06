@@ -7837,7 +7837,7 @@ MonoBehaviour:
   inventoryManager: {fileID: 957276912}
   itemPickupFactory: {fileID: 597243412}
   alchemyManager: {fileID: 774677253}
-  storeManager: {fileID: 0}
+  storeManager: {fileID: 774677254}
   scoreSystem: {fileID: 1784167045}
 --- !u!4 &421718974
 Transform:
@@ -8376,7 +8376,7 @@ MonoBehaviour:
   ValueSlider: {fileID: 1061678521}
   OperationButton: {fileID: 371817675}
   inventoryGrid: {fileID: 1253130825}
-  inventroySlotPrefab: {fileID: 85668952424691867, guid: e3f3c06480883b147a0b98ca8349502e, type: 3}
+  inventorySlotPrefab: {fileID: 85668952424691867, guid: e3f3c06480883b147a0b98ca8349502e, type: 3}
   traderGrid: {fileID: 1860533537}
   traderSlotPrefab: {fileID: 2381198419445531163, guid: b48529de1157128439c56335540f798b, type: 3}
 --- !u!1 &485274421
