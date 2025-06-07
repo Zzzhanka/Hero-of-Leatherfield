@@ -2,11 +2,14 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    [Space(2), Header("Player Dependent objects")]
     [SerializeField] private InventoryManager inventoryManager;
+    [SerializeField] private ScoreSystem scoreSystem;
+
+    [Space(5), Header("Player Independent objects")]
     [SerializeField] private ItemPickupFactory itemPickupFactory;
     [SerializeField] private AlchemyManager alchemyManager;
     [SerializeField] private StoreManager storeManager;
-    [SerializeField] private ScoreSystem scoreSystem;
 
     public ItemPickupFactory ItemPickupFactory => 
         itemPickupFactory;
@@ -43,5 +46,6 @@ public class GameManager : MonoBehaviour
     private void Initialize()
     {
         inventoryManager.Initialize();
+        scoreSystem.Initialize();
     }
 }

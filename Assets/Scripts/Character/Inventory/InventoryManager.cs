@@ -12,6 +12,8 @@ public class InventoryManager : MonoBehaviour
     public delegate void InventoryChanged();
     public event InventoryChanged OnInventoryChanged;
 
+    [Range(30, 100)] public int MinSlots = 30;
+
     public void Initialize()
     {
         // LoadInventory();
