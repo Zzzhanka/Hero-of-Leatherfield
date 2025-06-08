@@ -4,25 +4,18 @@ using UnityEngine;
 public class StoreManager : MonoBehaviour
 {
     public List<Trade> TradeList = new List<Trade>();
-    private List<Trade> tempSaleList = new List<Trade>();
-    private List<Trade> tempBuyList = new List<Trade>();
 
-    public List<Trade> TempSale => tempSaleList;
-    public List<Trade> TempBuy => tempBuyList;
-
-    public void MakeDeal()
+    public void Sell(Item selledItem, int amount = 1)
     {
-        int saleCost = 0, buyCost = 0;
-        foreach (Trade saleTrade in tempSaleList)
-        {
-            saleCost += saleTrade.tradeCost;
-        }
+        int profit = selledItem.cost * amount;
+        GameManager.Instance.InventoryManager.RemoveItem(selledItem, false, amount);
+        GameManager.Instance.ScoreSystem.AddCoins(profit);
+    }
 
-        foreach (Trade buyTrade in tempBuyList)
-        {
-            buyCost += buyTrade.tradeCost;
-        }
-
-        
+    public void Buy(Trade trade, int amount = 1)
+    {
+        int totalCost = trade.tradeCost * amount;
+        GameManager.Instance.InventoryManager.AddItem(trade.tradeItem, amount);
+        GameManager.Instance.ScoreSystem.RemoveCoins(totalCost);
     }
 }

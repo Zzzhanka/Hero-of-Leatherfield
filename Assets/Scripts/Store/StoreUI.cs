@@ -25,13 +25,16 @@ public class StoreUI : MonoBehaviour
     private List<GameObject> inventorySlots = new List<GameObject>();
     private List<GameObject> traderSlots = new List<GameObject>();
 
+    private Item chosenItem;
     private Trade chosenTrade;
     private TradeSlot chosenTradeSlot;
 
+    private int chosenAmount = 1;
+    private bool isEnoughToBuy = false;
+
     private void Awake()
     {
-        TradeButton.onClick.RemoveAllListeners();
-        TradeButton.onClick.AddListener(MakeDeal);
+        OperationButton.onClick.RemoveAllListeners();
 
         ValueSlider.onValueChanged.RemoveAllListeners();
         ValueSlider.onValueChanged.AddListener(ChangeValueText);
@@ -48,42 +51,68 @@ public class StoreUI : MonoBehaviour
     {
         ChangeCoinsText(GameManager.Instance.ScoreSystem.TotalCoins);
 
+        RefreshInventoryList();
+        RefreshTradeList();
+    }
+
+    // Trade operations
+    private void Sell()
+    {
+        GameManager.Instance.StoreManager.Sell(chosenItem, chosenAmount);
+        RefreshInventoryList();
+        ChangeCoinsText(GameManager.Instance.ScoreSystem.TotalCoins);
+    }
+
+    private void Buy()
+    {
+        GameManager.Instance.StoreManager.Buy(chosenTrade, chosenAmount);
+        RefreshInventoryList();
+        ChangeCoinsText(GameManager.Instance.ScoreSystem.TotalCoins);
+    }
+
+
+    // Refresh UI functions
+    private void RefreshInventoryList()
+    {
         ClearInventoryList();
-        ClearTradeList();
 
         List<ItemEntry> inventory = GameManager.Instance.InventoryManager.GetAllEntries();
         CreateInventoryList(inventory);
+    }
+
+    private void RefreshTradeList()
+    {
+        ClearTradeList();
 
         List<Trade> tradeList = GameManager.Instance.StoreManager.TradeList;
         CreateTradeList(tradeList);
     }
 
-    private void MakeDeal()
-    {
-        GameManager.Instance.StoreManager.MakeDeal();
-        ClearTradeList();
-        ChangeCoinsText(GameManager.Instance.ScoreSystem.TotalCoins);
-    }
-
-    private void ChangeValueText(float value)
-    {
-        ValueText.text = value.ToString();
-    }
-
+    
+    // Choosing Item from List
     private void ChooseInventoryItem(ItemEntry entry)
     {
         ValueSlider.minValue = 1;
         ValueSlider.maxValue = entry.quantity;
         ValueSlider.value = 1;
+        ChangeValueText(1);
+
+        chosenItem = entry.item;
 
         OperationButton.GetComponentInChildren<TMP_Text>().text = "Sell";
+        OperationButton.interactable = true;
+        OperationButton.onClick.RemoveAllListeners();
+        OperationButton.onClick.AddListener(Sell);
     }
 
     private void ChooseTradeItem(Trade trade, TradeSlot slot)
     {
         OperationButton.GetComponentInChildren<TMP_Text>().text = "Buy";
 
-        if(chosenTrade != null)
+        OperationButton.onClick.RemoveAllListeners();
+        OperationButton.onClick.AddListener(Buy);
+
+        if (chosenTrade != null)
         {
             chosenTradeSlot.transform.parent.GetComponent<Button>().interactable = true;
         }
@@ -96,9 +125,11 @@ public class StoreUI : MonoBehaviour
         ValueSlider.minValue = 1;
         ValueSlider.maxValue = 20;
         ValueSlider.value = 1;
-        ValueText.text = "1";
+        ChangeValueText(1);
     }
 
+
+    // Creating New List functions
     private void CreateInventoryList(List<ItemEntry> inventory)
     {
         int requiredSlots = Mathf.Max(inventory.Count, MinSlots);
@@ -132,11 +163,8 @@ public class StoreUI : MonoBehaviour
         }
     }
 
-    private void ChangeCoinsText(float number)
-    {
-        CoinsText.text = ((int) number).ToString();
-    }
-
+    
+    // Clearing List functions
     private void ClearInventoryList()
     {
         foreach (GameObject slot in inventorySlots)
@@ -155,5 +183,27 @@ public class StoreUI : MonoBehaviour
         }
 
         traderSlots.Clear();
+    }
+
+
+    // Change Text Value Functions
+    private void ChangeValueText(float value)
+    {
+        chosenAmount = (int)value;
+        CheckBuyOperation();
+
+        ValueText.text = value.ToString();
+    }
+
+    private void ChangeCoinsText(float number)
+    {
+        CoinsText.text = ((int)number).ToString();
+    }
+
+    private void CheckBuyOperation()
+    {
+        int cost = chosenTrade.tradeCost * chosenAmount;
+        int coins = GameManager.Instance.ScoreSystem.TotalCoins;
+        OperationButton.interactable = coins >= cost;
     }
 }

@@ -15,9 +15,12 @@ MonoBehaviour:
   itemName: Diamond Sword
   itemID: 1337
   icon: {fileID: 21300000, guid: 0ec6728787381c24caa4370761143eb4, type: 3}
-  itemType: 1
   maxStack: 1
+  cost: 20
   description: Mighty diamond sword
   damage: 10
-  attackSpeed: 5
-  range: 5
+  type: 0
+  critDamage: 0
+  critChance: 0.2
+  reloadTime: 0
+  ProjectilePrefab: {fileID: 0}
