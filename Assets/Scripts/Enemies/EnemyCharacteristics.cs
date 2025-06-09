@@ -15,6 +15,17 @@ public class EnemyCharacteristics : MonoBehaviour
     private PlayerCharacteristics _playerChars;
     private GameObject _playerGameObject;
 
+
+    public enum EnemyType
+    {
+        Slime,
+        Mandragora,
+        Mushroom,
+        Cyclops
+    }
+
+    public EnemyType Type;
+
     public void EnemyTakesDamage(int damage)
     {
         EnemyCurrentHealth -= damage;
@@ -45,6 +56,7 @@ public class EnemyCharacteristics : MonoBehaviour
 
     private void EnemyDies()
     {
+        EnemyKillStats.Instance.RegisterKill(Type);
         gameObject.SetActive(false);
 
     }
