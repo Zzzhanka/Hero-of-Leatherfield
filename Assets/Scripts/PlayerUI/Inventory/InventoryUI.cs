@@ -78,7 +78,13 @@ public class InventoryUI : MonoBehaviour
 
     private void ShowItemDetails(ItemEntry entry)
     {
-        if (entry == null || entry.item == null) return;
+        if (entry == null || entry.item == null)
+        {
+            DetailsPanel.SetActive(false);
+            return;
+        }
+        else DetailsPanel.SetActive(true);
+
 
         chosenEntry = entry;
 
@@ -94,13 +100,7 @@ public class InventoryUI : MonoBehaviour
     {
         InventorySlot slot = slotInstances[0].GetComponentInChildren<InventorySlot>();
 
-        if (slot.GetEntry() == null)
-        {
-            DetailsPanel.SetActive(false);
-            return;
-        }
-
-        if (slot.GetEntry().item == null)
+        if (slot.GetEntry() == null || slot.GetEntry().item == null)
         {
             DetailsPanel.SetActive(false);
             return;

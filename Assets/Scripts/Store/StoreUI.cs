@@ -2,13 +2,18 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEngine.EventSystems.EventTrigger;
 
 public class StoreUI : MonoBehaviour
 {
     [Space(5), Header("Operation Side")]
+    [SerializeField] private TMP_Text chosenItemName;
+    [SerializeField] private TMP_Text chosenItemFrom;
+    [SerializeField] private Image chosenItemIcon;
     [SerializeField] private TMP_Text CoinsText;
     [SerializeField] private TMP_Text ValueText;
     [SerializeField] private Slider ValueSlider;
+    [SerializeField] private GameObject InfoPart;
     [SerializeField] private Button OperationButton;
 
     [Space(5), Header("Inventory Side")]
@@ -20,7 +25,7 @@ public class StoreUI : MonoBehaviour
     [SerializeField] private GameObject traderSlotPrefab;
     [SerializeField] private Button TradeButton;
 
-    private int MinSlots = 50;
+    private int MinSlots = 30;
 
     private List<GameObject> inventorySlots = new List<GameObject>();
     private List<GameObject> traderSlots = new List<GameObject>();
@@ -30,7 +35,8 @@ public class StoreUI : MonoBehaviour
     private TradeSlot chosenTradeSlot;
 
     private int chosenAmount = 1;
-    private bool isEnoughToBuy = false;
+    private int chosenMaxAmount = 1;
+    private bool onSellOwnItems = false;
 
     private void Awake()
     {
@@ -53,6 +59,8 @@ public class StoreUI : MonoBehaviour
 
         RefreshInventoryList();
         RefreshTradeList();
+
+        
     }
 
     // Trade operations
@@ -61,6 +69,9 @@ public class StoreUI : MonoBehaviour
         GameManager.Instance.StoreManager.Sell(chosenItem, chosenAmount);
         RefreshInventoryList();
         ChangeCoinsText(GameManager.Instance.ScoreSystem.TotalCoins);
+
+        chosenItem = null;
+        ChooseFirstInventorySlot();
     }
 
     private void Buy()
@@ -68,6 +79,7 @@ public class StoreUI : MonoBehaviour
         GameManager.Instance.StoreManager.Buy(chosenTrade, chosenAmount);
         RefreshInventoryList();
         ChangeCoinsText(GameManager.Instance.ScoreSystem.TotalCoins);
+        ChooseTradeItem(chosenTrade, chosenTradeSlot);
     }
 
 
@@ -92,40 +104,78 @@ public class StoreUI : MonoBehaviour
     // Choosing Item from List
     private void ChooseInventoryItem(ItemEntry entry)
     {
-        ValueSlider.minValue = 1;
-        ValueSlider.maxValue = entry.quantity;
-        ValueSlider.value = 1;
-        ChangeValueText(1);
+        onSellOwnItems = true;
+
+        if(entry == null)
+        {
+            InfoPart.SetActive(false);
+            return;
+        }
+        else InfoPart.SetActive(true);
 
         chosenItem = entry.item;
 
+        UpdateValueSlider(entry);
+
+        chosenItemFrom.text = "From: Inventory";
+        chosenItemIcon.sprite = chosenItem.icon;
+        chosenItemName.text = chosenItem.itemName;
+
         OperationButton.GetComponentInChildren<TMP_Text>().text = "Sell";
         OperationButton.interactable = true;
+
         OperationButton.onClick.RemoveAllListeners();
         OperationButton.onClick.AddListener(Sell);
     }
 
     private void ChooseTradeItem(Trade trade, TradeSlot slot)
     {
+        // Operation Side
+        onSellOwnItems = false;
+
+        InfoPart.SetActive(true);
+
+        chosenItemFrom.text = "From: Trader";
+        chosenItemIcon.sprite = trade.tradeItem.icon;
+        chosenItemName.text = trade.tradeItem.itemName;
+
         OperationButton.GetComponentInChildren<TMP_Text>().text = "Buy";
 
         OperationButton.onClick.RemoveAllListeners();
         OperationButton.onClick.AddListener(Buy);
 
-        if (chosenTrade != null)
+        UpdateValueSlider();
+
+        // Trader Side
+        chosenTrade = trade;
+
+        if (chosenTradeSlot != null)
         {
             chosenTradeSlot.transform.parent.GetComponent<Button>().interactable = true;
         }
 
         chosenTradeSlot = slot;
         chosenTradeSlot.transform.parent.GetComponent<Button>().interactable = false;
+    }
 
-        chosenTrade = trade;
+    private void ChooseFirstInventorySlot()
+    {
+        InventorySlot slot = inventorySlots[0].GetComponentInChildren<InventorySlot>();
 
-        ValueSlider.minValue = 1;
-        ValueSlider.maxValue = 20;
-        ValueSlider.value = 1;
-        ChangeValueText(1);
+        if (slot.GetEntry() == null)
+        {
+            InfoPart.SetActive(false);
+            return;
+        }
+
+        if (slot.GetEntry().item == null)
+        {
+            InfoPart.SetActive(false);
+            return;
+        }
+
+        InfoPart.SetActive(true);
+        ChooseInventoryItem(slot.GetEntry());
     }
 
 
@@ -192,7 +242,7 @@ public class StoreUI : MonoBehaviour
         chosenAmount = (int)value;
         CheckBuyOperation();
 
-        ValueText.text = value.ToString();
+        ValueText.text = ((int) value) + "/" + chosenMaxAmount;
     }
 
     private void ChangeCoinsText(float number)
@@ -202,8 +252,33 @@ public class StoreUI : MonoBehaviour
 
     private void CheckBuyOperation()
     {
-        int cost = chosenTrade.tradeCost * chosenAmount;
-        int coins = GameManager.Instance.ScoreSystem.TotalCoins;
-        OperationButton.interactable = coins >= cost;
+        if (chosenTrade != null)
+        {
+            int cost = chosenTrade.tradeCost * chosenAmount;
+            int coins = GameManager.Instance.ScoreSystem.TotalCoins;
+            OperationButton.interactable = (coins >= cost) || onSellOwnItems;
+        }
+    }
+
+
+    // Update Slider Functions
+    private void UpdateValueSlider(ItemEntry entry)
+    {
+        chosenMaxAmount = entry.quantity;
+
+        ValueSlider.minValue = 1;
+        ValueSlider.maxValue = chosenMaxAmount;
+        ValueSlider.value = 1;
+        ChangeValueText(1);
+    }
+
+    private void UpdateValueSlider()
+    {
+        chosenMaxAmount = 20;
+
+        ValueSlider.minValue = 1;
+        ValueSlider.maxValue = chosenMaxAmount;
+        ValueSlider.value = 1;
+        ChangeValueText(1);
     }
 }

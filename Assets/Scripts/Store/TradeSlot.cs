@@ -11,7 +11,7 @@ public class TradeSlot : MonoBehaviour
     [SerializeField] private TMP_Text TradeItemName;
     [SerializeField] private TMP_Text TradeItemCost;
 
-    private Trade tradeSlot;
+    private Trade trade;
     private System.Action<Trade, TradeSlot> onItemClickedCallback;
 
     private void Awake()
@@ -21,7 +21,7 @@ public class TradeSlot : MonoBehaviour
 
     public void Setup(Trade trade, System.Action<Trade, TradeSlot> callback)
     {
-        this.tradeSlot = trade;
+        this.trade = trade;
         onItemClickedCallback = callback;
 
         TradeItemIcon.enabled = true;
@@ -32,7 +32,7 @@ public class TradeSlot : MonoBehaviour
         {
             button.interactable = true;
             TradeItemIcon.sprite = trade.tradeItem.icon;
-            TradeItemName.text = trade.tradeItem.name;
+            TradeItemName.text = trade.tradeItem.itemName;
             TradeItemCost.text = trade.tradeCost.ToString();
         }
         else
@@ -51,5 +51,5 @@ public class TradeSlot : MonoBehaviour
         });
     }
 
-    public Trade GetTrade() => tradeSlot;
+    public Trade GetTrade() => trade;
 }

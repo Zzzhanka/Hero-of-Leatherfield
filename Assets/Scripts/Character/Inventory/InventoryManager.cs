@@ -74,10 +74,7 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
-    public List<ItemEntry> GetAllEntries()
-    {
-        return inventory;
-    }
+    public List<ItemEntry> GetAllEntries() => inventory;
 
     public int FindItemCount(Item item)
     {

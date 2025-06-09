@@ -39,8 +39,7 @@ public class InventorySlot : MonoBehaviour
         button.onClick.RemoveAllListeners();
         button.onClick.AddListener(() =>
         {
-            if (entry != null && entry.item != null)
-                onItemClickedCallback?.Invoke(entry);
+            onItemClickedCallback?.Invoke(entry);
         });
     }
 
