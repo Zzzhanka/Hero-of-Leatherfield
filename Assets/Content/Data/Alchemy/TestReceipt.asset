@@ -18,3 +18,4 @@ MonoBehaviour:
   - requiredItem: {fileID: 11400000, guid: 9bad9efb38264514ead5caa21ca576ef, type: 2}
     requiredNumber: 1
   receiptItemRef: {fileID: 11400000, guid: ae8a6639cdc8c904897605bcd2374f68, type: 2}
+  receiptNumber: 1
