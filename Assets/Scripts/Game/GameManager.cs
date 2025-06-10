@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private AlchemyManager alchemyManager;
     [SerializeField] private StoreManager storeManager;
 
+    private GameObject player;
+
     public ItemPickupFactory ItemPickupFactory => 
         itemPickupFactory;
 
@@ -27,8 +29,13 @@ public class GameManager : MonoBehaviour
         scoreSystem;
 
     public static GameManager Instance { get; private set; }
-  
-    
+    public GameObject Player => player;
+
+    private float checkPlayerTimeAmount = 5f;
+    private float checkPlayerTimer = 5f;
+
+   
+
     private void Awake()
     {
         if (Instance == null)
@@ -45,7 +52,31 @@ public class GameManager : MonoBehaviour
 
     private void Initialize()
     {
+        checkPlayerTimer = 5f;
+        FindPlayer();
+
         inventoryManager.Initialize();
         scoreSystem.Initialize();
+        
+    }
+
+    private void Update()
+    {
+        if(checkPlayerTimer <= 0)
+        {
+            FindPlayer();
+            checkPlayerTimer = checkPlayerTimeAmount;
+            return;
+        }
+
+        checkPlayerTimer -= Time.deltaTime; 
+    }
+
+    private void FindPlayer()
+    {
+        if(player == null)
+        {
+            player = GameObject.FindGameObjectWithTag("Player");
+        }
     }
 }
