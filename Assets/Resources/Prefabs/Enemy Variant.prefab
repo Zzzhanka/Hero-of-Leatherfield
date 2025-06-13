@@ -10,10 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 9204537434949739356}
   - component: {fileID: 15957558738546606}
-  - component: {fileID: 6602535286622160328}
   - component: {fileID: 5412157488739287852}
   - component: {fileID: 5182272909180842360}
   - component: {fileID: 8182645181187752011}
+  - component: {fileID: 6602535286622160328}
+  - component: {fileID: 8272915169017949022}
   m_Layer: 7
   m_Name: Enemy Variant
   m_TagString: Untagged
@@ -91,19 +92,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &6602535286622160328
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2267405162862184750}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a139125ae75882443b53580ae767931d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _enemySpeed: 2
 --- !u!61 &5412157488739287852
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -190,4 +178,30 @@ MonoBehaviour:
   EnemyDefense: 0
   EnemyMoveSpeed: 3.5
   EnemyAttackReload: 2
-  characteristics: {fileID: 0}
+  Type: 0
+--- !u!114 &6602535286622160328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2267405162862184750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a139125ae75882443b53580ae767931d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _enemySpeed: 2
+--- !u!114 &8272915169017949022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2267405162862184750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 763e11e324414d84296f37193282613f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _attackReload: 1.5
