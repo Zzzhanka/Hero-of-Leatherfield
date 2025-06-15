@@ -111,7 +111,6 @@ public class StoreUI : MonoBehaviour
             InfoPart.SetActive(false);
             return;
         }
-        else InfoPart.SetActive(true);
 
         chosenItem = entry.item;
 
@@ -126,6 +125,8 @@ public class StoreUI : MonoBehaviour
 
         OperationButton.onClick.RemoveAllListeners();
         OperationButton.onClick.AddListener(Sell);
+
+        InfoPart.SetActive(true);
     }
 
     private void ChooseTradeItem(Trade trade, TradeSlot slot)
@@ -133,18 +134,9 @@ public class StoreUI : MonoBehaviour
         // Operation Side
         onSellOwnItems = false;
 
-        InfoPart.SetActive(true);
-
         chosenItemFrom.text = "From: Trader";
         chosenItemIcon.sprite = trade.tradeItem.icon;
         chosenItemName.text = trade.tradeItem.itemName;
-
-        OperationButton.GetComponentInChildren<TMP_Text>().text = "Buy";
-
-        OperationButton.onClick.RemoveAllListeners();
-        OperationButton.onClick.AddListener(Buy);
-
-        UpdateValueSlider();
 
         // Trader Side
         chosenTrade = trade;
@@ -156,6 +148,15 @@ public class StoreUI : MonoBehaviour
 
         chosenTradeSlot = slot;
         chosenTradeSlot.transform.parent.GetComponent<Button>().interactable = false;
+
+        UpdateValueSlider();
+        CheckBuyOperation();
+        OperationButton.GetComponentInChildren<TMP_Text>().text = "Buy";
+
+        OperationButton.onClick.RemoveAllListeners();
+        OperationButton.onClick.AddListener(Buy);
+
+        InfoPart.SetActive(true);
     }
 
     private void ChooseFirstInventorySlot()
@@ -256,7 +257,11 @@ public class StoreUI : MonoBehaviour
         {
             int cost = chosenTrade.tradeCost * chosenAmount;
             int coins = GameManager.Instance.ScoreSystem.TotalCoins;
+            bool temp = OperationButton.interactable;
             OperationButton.interactable = (coins >= cost) || onSellOwnItems;
+
+            if(OperationButton.interactable == temp)
+                OperationButton.interactable = (coins >= cost) || onSellOwnItems;
         }
     }
 

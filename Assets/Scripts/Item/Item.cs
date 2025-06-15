@@ -15,7 +15,9 @@ public abstract class Item : ScriptableObject
     public int itemID;
     public Sprite icon;
     public virtual ItemType itemType => ItemType.Generic;
-    public int maxStack = 1;
+
+    [Tooltip("Setting the limit of Stack. 0 - no limit")]
+    public int maxStack = 0;
     public int cost = 1;
 
     [Space(10), TextArea]

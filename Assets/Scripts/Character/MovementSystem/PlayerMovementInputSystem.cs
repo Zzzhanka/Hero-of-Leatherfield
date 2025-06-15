@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class PlayerMovementInputSystem : MonoBehaviour
 {
-
     [Space(5)]
     [Header("Джойстик:")]
 
@@ -13,42 +12,32 @@ public class PlayerMovementInputSystem : MonoBehaviour
     [Space(5)]
     public float InputX;
     public float InputY;
+    public float InputMagnitude;
 
     private PlayerMovementSystem _playerMovementSystem;
 
 
-
-
     public void DashInput()
     {
-
         StartCoroutine(_playerMovementSystem.Dash());
-
     }
-
 
 
     private void Awake()
     {
-
         _playerMovementSystem = GetComponent<PlayerMovementSystem>();
-
     }
-
 
 
     private void Update()
     {
-
         JoystickInput();
 
     }
 
 
-
     private void JoystickInput()
     {
-
         float rawX;
         float rawY;
 
@@ -64,6 +53,7 @@ public class PlayerMovementInputSystem : MonoBehaviour
         }
 
         Vector2 input = new(rawX, rawY);
+        
 
         if (input.magnitude < 0.2f)
         {
@@ -72,11 +62,16 @@ public class PlayerMovementInputSystem : MonoBehaviour
             return;
         }
 
+        // Поворот персонажа в зависимости от горизонтального направления стика
+        this.gameObject.GetComponent<SpriteRenderer>().flipX = rawX > 0;
+
+        // Если преодолевает 0.85, то автоматом ставится 1. 
+        InputMagnitude = input.magnitude > 0.85f ? 1f : input.magnitude;
+
         input.Normalize();
 
         InputX = Mathf.Round(input.x);
         InputY = Mathf.Round(input.y);
 
     }
-
 }

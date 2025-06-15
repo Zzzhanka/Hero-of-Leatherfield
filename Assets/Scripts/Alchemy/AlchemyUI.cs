@@ -69,8 +69,8 @@ public class AlchemyUI : MonoBehaviour
         chosenReceipt = receipt;
 
         DetailsPanel.SetActive(true);
-        PotionName.text = receipt.receiptName;
-        PotionIcon.sprite = receipt.receiptSprite;
+        PotionName.text = receipt.receiptItemRef.itemName;
+        PotionIcon.sprite = receipt.receiptItemRef.icon;
 
         ShowPotionComponents(receipt);
     }

@@ -22,17 +22,18 @@ public class PotionSlot : MonoBehaviour
         this.receipt = receipt;
         onReceiptClickedCallback = callback;
 
+        slotName.enabled = true;
+
         if (receipt != null)
         {
-            slotIcon.sprite = receipt.receiptSprite;
+            slotIcon.sprite = receipt.receiptItemRef.icon;
             slotIcon.enabled = true;
-            slotName.text = receipt.receiptName;
-            slotName.enabled = true;
+            slotName.text = receipt.receiptItemRef.itemName;
         }
         else
         {
             slotIcon.enabled = false;
-            slotName.text = "";
+            slotName.text = "NULL";
             
         }
 

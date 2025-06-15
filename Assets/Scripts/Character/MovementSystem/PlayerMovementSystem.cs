@@ -88,9 +88,15 @@ public class PlayerMovementSystem : MonoBehaviour
         bool isMoving = _moveDirection.magnitude > 0.1f;
         _animator.SetBool("IsRunning", isMoving);
 
+        // Устанавливает скорость ходьбы в зависимости от стика джойстика
+        //_animator.SetFloat("InputMagnitude", _playerMovementInputSystem.InputMagnitude);
+
         if (_playerState.PlayerCanMove)
         {
             Vector3 newPos = transform.position + (Vector3)((_moveDirection * _playerChars.PlayerMoveSpeed) * Time.deltaTime);
+
+            // Контролирует скорость шага в зависимости от стика джойстика
+            // Vector3 newPos = transform.position + (Vector3)((_moveDirection * _playerChars.PlayerMoveSpeed * _playerMovementInputSystem.InputMagnitude) * Time.deltaTime);
 
             newPos.x = Mathf.Clamp(newPos.x, _playerSensorsSystem.LeftBlockBorderX, _playerSensorsSystem.RightBlockBorderX);
             newPos.y = Mathf.Clamp(newPos.y, _playerSensorsSystem.BottomBlockBorderY, _playerSensorsSystem.TopBlockBorderY);

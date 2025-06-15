@@ -8,7 +8,7 @@ public class ItemPickup : MonoBehaviour
     [SerializeField] private int quantity = 1;
     private SpriteRenderer iconRenderer;
 
-    private bool canBePickedUp = false;
+    private bool canBePickedUp = true;
     private bool playerWasInside = false;
 
     private void Awake()
