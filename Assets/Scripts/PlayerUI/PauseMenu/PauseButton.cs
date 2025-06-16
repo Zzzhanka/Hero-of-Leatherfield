@@ -17,6 +17,8 @@ public class PauseButton : MonoBehaviour
                 targetPanel.SetActive(!targetPanel.activeSelf);
 
             this.gameObject.SetActive(temp);
+
+            Time.timeScale = temp == true ? 1 : 0;
         }
     }
 }

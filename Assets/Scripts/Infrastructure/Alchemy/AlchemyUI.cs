@@ -45,10 +45,27 @@ public class AlchemyUI : MonoBehaviour
 
         for (int i = 0; i < receipts.Count; i++)
         {
-            GameObject slotInstance = Instantiate(slotPrefab, potionListGridParent);
+            GameObject slotInstance;
+
+            if (i < slotInstances.Count)
+            {
+                slotInstance = slotInstances[i];
+                slotInstance.SetActive(true);
+            }
+            else
+            {
+                slotInstance = Instantiate(slotPrefab, potionListGridParent);
+                slotInstances.Add(slotInstance);
+            }
+
             PotionSlot slotScript = slotInstance.GetComponentInChildren<PotionSlot>();
             slotScript.Setup(receipts[i], ShowPotionDetails);
-            slotInstances.Add(slotInstance);
+        }
+
+        // Deactivate extra slots
+        for (int i = receipts.Count; i < slotInstances.Count; i++)
+        {
+            slotInstances[i].SetActive(false);
         }
     }
 
@@ -80,14 +97,30 @@ public class AlchemyUI : MonoBehaviour
         if (receipt == null) return;
 
         List<Component> components = receipt.GetComponents();
-        componentInstances.Clear();
 
-        foreach (Component component in components) 
+        for (int i = 0; i < components.Count; i++)
         {
-            GameObject componentInstance = Instantiate(componentPrefab, componentsListgridParent);
+            GameObject componentInstance;
+
+            if (i < componentInstances.Count)
+            {
+                componentInstance = componentInstances[i];
+                componentInstance.SetActive(true);
+            }
+            else
+            {
+                componentInstance = Instantiate(componentPrefab, componentsListgridParent);
+                componentInstances.Add(componentInstance);
+            }
+
             PotionComponentSlot componentScript = componentInstance.GetComponentInChildren<PotionComponentSlot>();
-            componentScript.Setup(component);
-            componentInstances.Add(componentInstance);
+            componentScript.Setup(components[i]);
+        }
+
+        // Deactivate extra component slots
+        for (int i = components.Count; i < componentInstances.Count; i++)
+        {
+            componentInstances[i].SetActive(false);
         }
 
         CheckAvailability();
@@ -117,22 +150,15 @@ public class AlchemyUI : MonoBehaviour
     private void ClearPotionList()
     {
         foreach (GameObject slot in slotInstances)
-        {
-            Destroy(slot);
-        }
-
-        slotInstances.Clear();
+            slot.SetActive(false);
     }
 
     private void ClearComponentsList()
     {
         foreach (GameObject slot in componentInstances)
-        {
-            Destroy(slot);
-        }
-
-        componentInstances.Clear();
+            slot.SetActive(false);
     }
+
 
     private void CheckAvailability()
     {

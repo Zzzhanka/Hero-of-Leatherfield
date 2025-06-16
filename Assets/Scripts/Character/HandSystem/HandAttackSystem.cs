@@ -1,13 +1,8 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
-
-
-public enum WeaponType { Melee, Bow, Staff }
 
 
 public class HandAttackSystem : MonoBehaviour
 {
-
     [Space(10)]
     [Header("Œ¡Ÿ»≈ Õ¿—“–Œ… »")]
 
@@ -40,8 +35,6 @@ public class HandAttackSystem : MonoBehaviour
 
     private PlayerCharacteristics _playerChars;
     private HandFollowJoystick _handFollowJoystick;
-
-
 
 
     public void Attack()

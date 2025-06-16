@@ -2,7 +2,6 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using static UnityEngine.EventSystems.EventTrigger;
 
 public class StoreUI : MonoBehaviour
 {
@@ -25,7 +24,7 @@ public class StoreUI : MonoBehaviour
     [SerializeField] private GameObject traderSlotPrefab;
     [SerializeField] private Button TradeButton;
 
-    private int MinSlots = 30;
+    private int MinSlots = 56;
 
     private List<GameObject> inventorySlots = new List<GameObject>();
     private List<GameObject> traderSlots = new List<GameObject>();
@@ -53,14 +52,18 @@ public class StoreUI : MonoBehaviour
         RefreshUI();
     }
 
+    //private void OnDisable()
+    //{
+    //    ClearInventoryList();
+    //    ClearTradeList();
+    //}
+
     public void RefreshUI()
     {
         ChangeCoinsText(GameManager.Instance.ScoreSystem.TotalCoins);
 
         RefreshInventoryList();
         RefreshTradeList();
-
-        
     }
 
     // Trade operations
@@ -185,56 +188,80 @@ public class StoreUI : MonoBehaviour
     {
         int requiredSlots = Mathf.Max(inventory.Count, MinSlots);
 
+        // Reuse or instantiate slots
         for (int i = 0; i < requiredSlots; i++)
         {
-            GameObject slotInstance = Instantiate(inventorySlotPrefab, inventoryGrid);
-            InventorySlot slot = slotInstance.GetComponentInChildren<InventorySlot>();
-            inventorySlots.Add(slotInstance);
+            GameObject slotInstance;
 
-            if (i < inventory.Count)
+            if (i < inventorySlots.Count)
             {
-                slot.Setup(inventory[i], ChooseInventoryItem);
+                slotInstance = inventorySlots[i];
+                slotInstance.SetActive(true);
             }
             else
             {
-                slot.Setup(null, ChooseInventoryItem);
+                slotInstance = Instantiate(inventorySlotPrefab, inventoryGrid);
+                inventorySlots.Add(slotInstance);
             }
+
+            InventorySlot slot = slotInstance.GetComponentInChildren<InventorySlot>();
+
+            if (i < inventory.Count)
+                slot.Setup(inventory[i], ChooseInventoryItem);
+            else
+                slot.Setup(null, ChooseInventoryItem);
+        }
+
+        // Deactivate excess slots
+        for (int i = requiredSlots; i < inventorySlots.Count; i++)
+        {
+            inventorySlots[i].SetActive(false);
         }
     }
 
     private void CreateTradeList(List<Trade> tradeList)
     {
-        foreach (Trade trade in tradeList)
+        for (int i = 0; i < tradeList.Count; i++)
         {
-            GameObject tradeSlot = Instantiate(traderSlotPrefab, traderGrid);
-            TradeSlot slot = tradeSlot.GetComponentInChildren<TradeSlot>();
-            traderSlots.Add(tradeSlot);
+            GameObject slotInstance;
 
-            slot.Setup(trade, ChooseTradeItem);
+            if (i < traderSlots.Count)
+            {
+                slotInstance = traderSlots[i];
+                slotInstance.SetActive(true);
+            }
+            else
+            {
+                slotInstance = Instantiate(traderSlotPrefab, traderGrid);
+                traderSlots.Add(slotInstance);
+            }
+
+            TradeSlot slot = slotInstance.GetComponentInChildren<TradeSlot>();
+            slot.Setup(tradeList[i], ChooseTradeItem);
+        }
+
+        // Deactivate excess trade slots
+        for (int i = tradeList.Count; i < traderSlots.Count; i++)
+        {
+            traderSlots[i].SetActive(false);
         }
     }
 
-    
+
+
     // Clearing List functions
     private void ClearInventoryList()
     {
         foreach (GameObject slot in inventorySlots)
-        {
-            Destroy(slot);
-        }
-
-        inventorySlots.Clear();
+            slot.SetActive(false);
     }
 
     private void ClearTradeList()
     {
         foreach (GameObject slot in traderSlots)
-        {
-            Destroy(slot);
-        }
-
-        traderSlots.Clear();
+            slot.SetActive(false);
     }
+
 
 
     // Change Text Value Functions

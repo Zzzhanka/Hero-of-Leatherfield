@@ -2,13 +2,12 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class InventorySlot : MonoBehaviour
+public class WeaponSlot : MonoBehaviour
 {
-    private Button button;
-
     [SerializeField] private Image slotIcon;
-    [SerializeField] private TMP_Text slotQuantity;
+    [SerializeField] private TMP_Text slotName;
 
+    private Button button;
     private ItemEntry entry;
     private System.Action<ItemEntry> onItemClickedCallback;
 
@@ -27,17 +26,18 @@ public class InventorySlot : MonoBehaviour
         {
             slotIcon.sprite = entry.item.icon;
             slotIcon.enabled = true;
-            slotQuantity.text = entry.quantity > 1 ? entry.quantity.ToString() : "";
-            slotQuantity.enabled = entry.quantity > 1;
+            slotName.text = entry.item.itemName;
+            slotName.enabled = true;
         }
         else
         {
             slotIcon.sprite = null;
             slotIcon.enabled = false;
-            slotQuantity.text = "";
-            slotQuantity.enabled = false;
+            slotName.text = "NULL";
+            slotName.enabled = false;
         }
 
+        button.interactable = true;
         button.onClick.AddListener(() =>
         {
             onItemClickedCallback?.Invoke(entry);
@@ -45,14 +45,4 @@ public class InventorySlot : MonoBehaviour
     }
 
     public ItemEntry GetEntry() => entry;
-
-    public void SetQuantity(int newQuantity)
-    {
-        if (entry != null)
-        {
-            entry.quantity = newQuantity;
-            slotQuantity.text = newQuantity > 1 ? newQuantity.ToString() : "";
-            slotQuantity.enabled = newQuantity > 1;
-        }
-    }
 }

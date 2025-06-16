@@ -89,4 +89,9 @@ public class InventoryManager : MonoBehaviour
             return 0;
         }
     }
+
+    public List<ItemEntry> GetSpecificEntries(ItemType type)
+    {
+        return inventory.FindAll(e => e.item.itemType == type);
+    }
 }
