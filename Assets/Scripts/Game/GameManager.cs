@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private ItemPickupFactory itemPickupFactory;
     [SerializeField] private AlchemyManager alchemyManager;
     [SerializeField] private StoreManager storeManager;
+    [SerializeField] private BlacksmithManager blacksmithManager;
 
     private GameObject player;
 
@@ -24,6 +25,9 @@ public class GameManager : MonoBehaviour
 
     public StoreManager StoreManager =>
         storeManager;
+
+    public BlacksmithManager BlacksmithManager => 
+        blacksmithManager;
 
     public ScoreSystem ScoreSystem =>
         scoreSystem;

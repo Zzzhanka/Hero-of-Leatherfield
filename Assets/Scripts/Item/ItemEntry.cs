@@ -4,7 +4,7 @@ using UnityEngine;
 public class ItemEntry
 {
     public Item item;
-    public WeaponItemData weapon;
+    public WeaponInstance weapon;
     public int quantity;
 
     public ItemEntry(Item item, int quantity)
@@ -12,10 +12,12 @@ public class ItemEntry
         this.item = item;
         this.quantity = quantity;
 
-        if (item.itemType == ItemType.Weapon)
+        if (item.itemType == ItemType.Weapon && item is WeaponItemData weaponItem)
         {
-            // weapon = new WeaponInstance(item);
+            weapon = new WeaponInstance(weaponItem);
         }
     }
+
+    
 }
 

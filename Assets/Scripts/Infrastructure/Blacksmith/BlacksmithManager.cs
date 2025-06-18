@@ -1,16 +1,17 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class BlacksmithManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public List<Boost> BoostList = new List<Boost>();
+
+    public void BoostWeapon(WeaponInstance weapon, BoostType boostType, float boostAmount)
     {
-        
+        weapon.ApplyEnhancement(boostType, boostAmount);
     }
 
-    // Update is called once per frame
-    void Update()
+    public bool CheckBoostAvailability(WeaponInstance weapon, BoostType boostType, float boostAmount)
     {
-        
+        return weapon.CanApplyEnhancement(boostType, boostAmount);
     }
 }

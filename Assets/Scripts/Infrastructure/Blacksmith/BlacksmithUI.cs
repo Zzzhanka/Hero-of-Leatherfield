@@ -20,9 +20,9 @@ public class BlacksmithUI : MonoBehaviour
 
     [Space(8), Header("Blacksmith Side")]
     [SerializeField] private GameObject boostSlotPrefab;
-    [SerializeField] private Transform blacksmithGrid;
+    [SerializeField] private Transform boostGrid;
 
-    private List<GameObject> blacksmithSlots = new List<GameObject>();
+    private List<GameObject> boostSlots = new List<GameObject>();
     private List<GameObject> weaponSlots = new List<GameObject>();
 
     private WeaponItemData chosenWeapon;
@@ -30,8 +30,6 @@ public class BlacksmithUI : MonoBehaviour
 
     private void Awake()
     {
-
-
         boostButton.onClick.RemoveAllListeners();
         boostButton.onClick.AddListener(() => { });
     }
@@ -46,6 +44,7 @@ public class BlacksmithUI : MonoBehaviour
         ChangeCoinsText();
 
         RefreshInventoryList();
+        RefreshBoostList();
     }
 
     private void RefreshInventoryList()
@@ -54,6 +53,14 @@ public class BlacksmithUI : MonoBehaviour
 
         List<ItemEntry> weaponList = GameManager.Instance.InventoryManager.GetSpecificEntries(ItemType.Weapon);
         CreateWeaponList(weaponList);
+    }
+
+    private void RefreshBoostList()
+    {
+        ClearBoostList();
+
+        List<Boost> boostList = GameManager.Instance.BlacksmithManager.BoostList;
+        CreateBoostList(boostList);
     }
 
     private void CreateWeaponList(List<ItemEntry> weaponList)
@@ -80,16 +87,54 @@ public class BlacksmithUI : MonoBehaviour
         }
     }
 
+    private void CreateBoostList(List<Boost> boostList)
+    {
+        // Ensure we have enough slots
+        while (boostSlots.Count < boostList.Count)
+        {
+            GameObject newSlot = Instantiate(boostSlotPrefab, boostGrid);
+            boostSlots.Add(newSlot);
+        }
+
+        for (int i = 0; i < boostSlots.Count; ++i)
+        {
+            if (i < boostList.Count)
+            {
+                BoostSlot slot = boostSlots[i].GetComponentInChildren<BoostSlot>();
+                slot.Setup(boostList[i], ChooseBoost);
+                boostSlots[i].SetActive(true);
+            }
+            else
+            {
+                boostSlots[i].SetActive(false);
+            }
+        }
+    }
+
+
+
     private void ChooseInventoryItem(ItemEntry entry)
     {
-        chosenWeapon = entry.weapon;
+        chosenWeapon = entry.weapon.BaseItem;
 
-        InfoPart.SetActive(true);
+        
+    }
+
+    private void ChooseBoost(Boost boost)
+    {
+        
+
     }
 
     private void ClearWeaponList()
     {
         foreach (GameObject slot in weaponSlots)
+            slot.SetActive(false);
+    }
+
+    private void ClearBoostList()
+    {
+        foreach (GameObject slot in boostSlots)
             slot.SetActive(false);
     }
 

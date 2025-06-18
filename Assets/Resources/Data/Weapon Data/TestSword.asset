@@ -18,9 +18,13 @@ MonoBehaviour:
   maxStack: 1
   cost: 20
   description: Mighty diamond sword
-  damage: 10
+  baseDamage: 10
   type: 0
-  critDamage: 0
-  critChance: 0.2
-  reloadTime: 0
-  ProjectilePrefab: {fileID: 0}
+  baseCritDamage: 10
+  baseCritChance: 0.2
+  baseReloadTime: 0
+  projectilePrefab: {fileID: 0}
+  damageLimit: 50
+  critDamageLimit: 2
+  critChanceLimit: 0.2
+  minusReloadTimeLimit: 1.5
