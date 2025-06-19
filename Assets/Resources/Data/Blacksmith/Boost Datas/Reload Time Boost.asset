@@ -15,4 +15,5 @@ MonoBehaviour:
   boostSprite: {fileID: -4352130414292047002, guid: 55ffeb46d2f11e645843193c6ca7ab72, type: 3}
   boostName: Reload Time Boost
   boostType: 3
-  boostCost: 500
+  boostCost: 5
+  boostAmount: 0.2

@@ -10,8 +10,8 @@ public class BlacksmithManager : MonoBehaviour
         weapon.ApplyEnhancement(boostType, boostAmount);
     }
 
-    public bool CheckBoostAvailability(WeaponInstance weapon, BoostType boostType, float boostAmount)
+    public bool CheckBoostAvailability(WeaponInstance weapon)
     {
-        return weapon.CanApplyEnhancement(boostType, boostAmount);
+        return weapon.CanApplyEnhancement();
     }
 }

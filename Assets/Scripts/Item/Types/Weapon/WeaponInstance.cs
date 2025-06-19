@@ -10,6 +10,7 @@ public class WeaponInstance
     private float bonusCritDamage;
     private float bonusCritChance;
     private float minusReloadTime;
+    private int currentBoostLevel = 0;
 
     // Public getters
     public int BonusDamage => bonusDamage;
@@ -46,64 +47,38 @@ public class WeaponInstance
         switch (boostType)
         {
             case BoostType.Damage:
-                // if (bonusDamage + amount <= BaseItem.limitTable[boostType])
-                if (bonusDamage + amount <= BaseItem.DamageLimit)
-                    bonusDamage += (int) amount;
+                bonusDamage += (int) amount;
                     
                 break;
 
             case BoostType.CritDamage:
-                // if (bonusCritDamage + amount <= limitTable[boostType])
-                if (bonusCritDamage + amount <= BaseItem.CritDamageLimit)
-                    bonusCritDamage += amount;
+                bonusCritDamage += amount;
 
                 break;
 
             case BoostType.CritChance:
-                // if (bonusCritChance + amount <= limitTable[boostType])
-                if (bonusCritChance + amount <= BaseItem.CritChanceLimit)
-                    bonusCritChance += amount;
+                bonusCritChance += amount;
 
                 break;
 
             case BoostType.ReloadTime:
-                // if (minusReloadTime + amount <= limitTable[boostType])
-                if (minusReloadTime + amount <= BaseItem.MinusReloadTimeLimit)
-                    minusReloadTime += amount;
+                minusReloadTime += amount;
                     
                 break;
         }
+
+        currentBoostLevel += 1;
     }
 
-    public bool CanApplyEnhancement(BoostType boostType, float amount)
+    public bool CanApplyEnhancement()
     {
-        switch (boostType)
-        {
-            case BoostType.Damage:
-                // return bonusDamage + amount <= limitTable[boostType];
-                return bonusDamage + amount <= BaseItem.DamageLimit;
-
-            case BoostType.CritDamage:
-                // return bonusCritDamage + amount <= limitTable[boostType];
-                return bonusCritDamage + amount <= BaseItem.CritDamageLimit;
-
-            case BoostType.CritChance:
-                // return bonusCritChance + amount <= limitTable[boostType];
-                return bonusCritChance + amount <= BaseItem.CritChanceLimit;
-
-            case BoostType.ReloadTime:
-                // return minusReloadTime + amount <= limitTable[boostType];
-                return minusReloadTime + amount <= BaseItem.MinusReloadTimeLimit;
-
-            default:
-                return false;
-        }
+        return currentBoostLevel < BaseItem.MaxBoostLevel;
     }
 
-    private float CalculateBoost(float baseStat, float statWeight, int level, float limit)
-    {
-        float boost = baseStat * statWeight * Mathf.Log(level + 1, 2);
-        return Mathf.Min(boost, limit);
-    }
+    //private float CalculateBoost(float baseStat, float statWeight, int level, float limit)
+    //{
+    //    float boost = baseStat * statWeight * Mathf.Log(level + 1, 2);
+    //    return Mathf.Min(boost, limit);
+    //}
 }
 

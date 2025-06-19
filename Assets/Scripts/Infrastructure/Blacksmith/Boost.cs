@@ -15,4 +15,5 @@ public class Boost : ScriptableObject
     public string boostName;
     public BoostType boostType;
     public int boostCost;
+    public float boostAmount;
 }

@@ -12,6 +12,7 @@ public class WeaponItemData : Item
     [SerializeField] private WeaponType type;
     [SerializeField] private int baseCritDamage = 1;
     [Range(0f, 1f), SerializeField] private float baseCritChance = 0.1f;
+    [Range(0, 10f), SerializeField] private int maxBoostLevel = 3;
 
     [Space(5), Header("Specific Properties")]
     [Tooltip("Reloading time in seconds")]
@@ -31,6 +32,7 @@ public class WeaponItemData : Item
     [HideInInspector] public float BaseCritChance => baseCritChance;
     [HideInInspector] public float BaseReloadTime => baseReloadTime;
     [HideInInspector] public GameObject ProjectilePrefab => projectilePrefab;
+    [HideInInspector] public int MaxBoostLevel => maxBoostLevel;
 
     [HideInInspector] public int DamageLimit => damageLimit;
     [HideInInspector] public float CritDamageLimit => critDamageLimit;

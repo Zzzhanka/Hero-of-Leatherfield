@@ -15,4 +15,5 @@ MonoBehaviour:
   boostSprite: {fileID: -8307069055350043731, guid: f387d54e8e700594e83b6ed1e388d923, type: 3}
   boostName: Damage Boost
   boostType: 0
-  boostCost: 400
+  boostCost: 4
+  boostAmount: 10

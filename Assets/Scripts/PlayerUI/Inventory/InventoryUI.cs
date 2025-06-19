@@ -9,6 +9,7 @@ public class InventoryUI : MonoBehaviour
     [Range(30, 100)] public int MinSlots = 30;
     [SerializeField] private GameObject slotPrefab;
     [SerializeField] private Transform gridParent;
+    [SerializeField] private TMP_Text CoinsText;
 
     [Space(5), Header("Item Details Part")]
     [SerializeField] private GameObject DetailsPanel;
@@ -34,8 +35,8 @@ public class InventoryUI : MonoBehaviour
 
     private void Awake()
     {
+        this.gameObject.SetActive(false);
         DropPopup.SetActive(false);
-        gameObject.SetActive(false);
     }
 
     private void OnEnable()
@@ -54,6 +55,8 @@ public class InventoryUI : MonoBehaviour
 
     public void RefreshUI()
     {
+        ChangeCoinsText(GameManager.Instance.ScoreSystem.TotalCoins);
+
         ClearUI();
 
         List<ItemEntry> entries = GameManager.Instance.InventoryManager.GetAllEntries();
@@ -169,5 +172,10 @@ public class InventoryUI : MonoBehaviour
     {
         chosenItemCount = Mathf.RoundToInt(value);
         itemCountText.text = chosenItemCount.ToString();
+    }
+
+    private void ChangeCoinsText(float number)
+    {
+        CoinsText.text = ((int)number).ToString();
     }
 }

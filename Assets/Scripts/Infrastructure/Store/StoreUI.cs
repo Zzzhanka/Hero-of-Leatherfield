@@ -39,12 +39,12 @@ public class StoreUI : MonoBehaviour
 
     private void Awake()
     {
+        this.gameObject.SetActive(false);
+
         OperationButton.onClick.RemoveAllListeners();
 
         ValueSlider.onValueChanged.RemoveAllListeners();
         ValueSlider.onValueChanged.AddListener(ChangeValueText);
-
-        ChangeCoinsText(GameManager.Instance.ScoreSystem.TotalCoins);
     }
 
     private void OnEnable() 
@@ -275,7 +275,7 @@ public class StoreUI : MonoBehaviour
 
     private void ChangeCoinsText(float number)
     {
-        CoinsText.text = ((int)number).ToString();
+        CoinsText.text = ((int) number).ToString();
     }
 
     private void CheckBuyOperation()

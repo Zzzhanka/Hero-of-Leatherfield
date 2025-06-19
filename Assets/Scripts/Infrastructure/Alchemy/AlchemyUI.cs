@@ -26,6 +26,8 @@ public class AlchemyUI : MonoBehaviour
 
     private void Awake()
     {
+        this.gameObject.SetActive(false);
+
         CreateButton.onClick.RemoveAllListeners();
         CreateButton.onClick.AddListener(MakeDeal);
     }
@@ -88,6 +90,7 @@ public class AlchemyUI : MonoBehaviour
         DetailsPanel.SetActive(true);
         PotionName.text = receipt.receiptItemRef.itemName;
         PotionIcon.sprite = receipt.receiptItemRef.icon;
+        PotionStats.text = receipt.receiptItemRef.description;
 
         ShowPotionComponents(receipt);
     }

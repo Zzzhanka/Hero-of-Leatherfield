@@ -31,4 +31,17 @@ public class ScoreSystem : MonoBehaviour
     {
         totalCoins = PlayerPrefs.GetInt(COINS_SAVE_NAME, 0);
     }
+
+    private void LateUpdate()
+    {
+        if (Input.GetKeyDown(KeyCode.Backslash))
+        {
+            CheatAddCoins();
+        }
+    }
+
+    private void CheatAddCoins()
+    {
+        totalCoins += 1000;
+    }
 }

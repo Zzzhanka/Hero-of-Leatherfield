@@ -16,6 +16,8 @@ public class PlayerMovementSystem : MonoBehaviour
     [SerializeField] private float _dashCooldownTimer;
     [SerializeField] private PlayerDashReload _dashReloadSlider;
 
+    [SerializeField] private bool smoothMovement = false;
+
     private PlayerMovementInputSystem _playerMovementInputSystem;
     private PlayerSensorsSystem _playerSensorsSystem;
     private PlayerCharacteristics _playerChars;
@@ -88,15 +90,16 @@ public class PlayerMovementSystem : MonoBehaviour
         bool isMoving = _moveDirection.magnitude > 0.1f;
         _animator.SetBool("IsRunning", isMoving);
 
+        float moveMult = smoothMovement ? _playerMovementInputSystem.InputMagnitude : 1f;
+
         // Устанавливает скорость ходьбы в зависимости от стика джойстика
-        //_animator.SetFloat("InputMagnitude", _playerMovementInputSystem.InputMagnitude);
+        _animator.SetFloat("InputMagnitude", moveMult);
+        
 
         if (_playerState.PlayerCanMove)
         {
-            Vector3 newPos = transform.position + (Vector3)((_moveDirection * _playerChars.PlayerMoveSpeed) * Time.deltaTime);
-
             // Контролирует скорость шага в зависимости от стика джойстика
-            // Vector3 newPos = transform.position + (Vector3)((_moveDirection * _playerChars.PlayerMoveSpeed * _playerMovementInputSystem.InputMagnitude) * Time.deltaTime);
+            Vector3 newPos = transform.position + (Vector3)((_moveDirection * _playerChars.PlayerMoveSpeed * moveMult) * Time.deltaTime);
 
             newPos.x = Mathf.Clamp(newPos.x, _playerSensorsSystem.LeftBlockBorderX, _playerSensorsSystem.RightBlockBorderX);
             newPos.y = Mathf.Clamp(newPos.y, _playerSensorsSystem.BottomBlockBorderY, _playerSensorsSystem.TopBlockBorderY);

@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 
 public class BlacksmithUI : MonoBehaviour
 {
@@ -14,9 +15,12 @@ public class BlacksmithUI : MonoBehaviour
     [SerializeField] private GameObject InfoPart;
     [SerializeField] private TMP_Text weaponName;
     [SerializeField] private Image weaponIcon;
-    [SerializeField] private TMP_Text weaponStats;
     [SerializeField] private TMP_Text CoinsText;
     [SerializeField] private Button boostButton;
+
+    [SerializeField] private TMP_Text statsDamage;
+    [SerializeField] private TMP_Text statsCritical;
+    [SerializeField] private TMP_Text statsReloadTime;
 
     [Space(8), Header("Blacksmith Side")]
     [SerializeField] private GameObject boostSlotPrefab;
@@ -25,11 +29,13 @@ public class BlacksmithUI : MonoBehaviour
     private List<GameObject> boostSlots = new List<GameObject>();
     private List<GameObject> weaponSlots = new List<GameObject>();
 
-    private WeaponItemData chosenWeapon;
-    private BoostSlot chosenBoost;
+    private WeaponInstance chosenWeapon;
+    private Boost chosenBoost;
 
     private void Awake()
     {
+        this.gameObject.SetActive(false);
+
         boostButton.onClick.RemoveAllListeners();
         boostButton.onClick.AddListener(() => { });
     }
@@ -37,6 +43,7 @@ public class BlacksmithUI : MonoBehaviour
     private void OnEnable()
     {
         RefreshUI();
+        ChooseFirstSlot();
     }
 
     private void RefreshUI()
@@ -62,6 +69,7 @@ public class BlacksmithUI : MonoBehaviour
         List<Boost> boostList = GameManager.Instance.BlacksmithManager.BoostList;
         CreateBoostList(boostList);
     }
+
 
     private void CreateWeaponList(List<ItemEntry> weaponList)
     {
@@ -112,24 +120,82 @@ public class BlacksmithUI : MonoBehaviour
     }
 
 
-
     private void ChooseInventoryItem(ItemEntry entry)
     {
-        chosenWeapon = entry.weapon.BaseItem;
+        if (entry == null || entry.weapon == null)
+        {
+            weaponIcon.enabled = false;
+            weaponName.text = "-";
 
-        
+            statsDamage.text = "-";
+            statsCritical.text = "- / -";
+            statsReloadTime.text = "- s";
+            return;
+        }
+
+        chosenWeapon = entry.weapon;
+
+        weaponIcon.enabled = true;
+        weaponIcon.sprite = chosenWeapon.BaseItem.icon;
+        weaponName.text = chosenWeapon.BaseItem.itemName;
+
+        statsDamage.text = chosenWeapon.TotalDamage.ToString();
+        statsCritical.text =
+            chosenWeapon.TotalCritDamage
+            + " / " + 
+            (chosenWeapon.TotalCritChance * 100f);
+
+        statsReloadTime.text = chosenWeapon.TotalReloadTime + " s";
     }
 
     private void ChooseBoost(Boost boost)
     {
-        
+        ClearStats();
+        chosenBoost = boost;
 
+        switch (boost.boostType)
+        {
+            case BoostType.Damage:
+                statsDamage.text = $"<color=green>{chosenWeapon.TotalDamage + Mathf.Round(boost.boostAmount)}</color>"; 
+                break;
+
+            case BoostType.CritDamage:
+                statsCritical.text = $"<color=green>{chosenWeapon.TotalCritDamage + boost.boostAmount}</color> / {chosenWeapon.TotalCritChance * 100f}";
+                break;
+
+            case BoostType.CritChance:
+                statsCritical.text = $"{chosenWeapon.TotalCritDamage} / <color=green>{(chosenWeapon.TotalCritChance + boost.boostAmount) * 100f}</color>";
+                break;
+
+            case BoostType.ReloadTime:
+                statsReloadTime.text = $"<color=green>{chosenWeapon.TotalReloadTime - boost.boostAmount} s</color>"; 
+                break;
+        }
     }
+
+    private void ChooseFirstSlot(int chosenSlotPosition = 0)
+    {
+        chosenWeapon = null;
+        if (weaponSlots.Count == 0)
+        {
+            ChooseInventoryItem(null);
+            return;
+        }
+
+        WeaponSlot slot = weaponSlots[chosenSlotPosition].GetComponentInChildren<WeaponSlot>();
+        
+        InfoPart.SetActive(true);
+        ChooseInventoryItem(slot.GetEntry());
+    }
+
 
     private void ClearWeaponList()
     {
         foreach (GameObject slot in weaponSlots)
+        {
+            slot.GetComponentInChildren<WeaponSlot>().Clear();
             slot.SetActive(false);
+        }
     }
 
     private void ClearBoostList()
@@ -140,7 +206,19 @@ public class BlacksmithUI : MonoBehaviour
 
     private void ChangeCoinsText()
     {
+        while(GameManager.Instance == null)
+        {
+
+        }
+
         int number = GameManager.Instance.ScoreSystem.TotalCoins;
         CoinsText.text = number.ToString();
+    }
+
+    private void ClearStats()
+    {
+        statsDamage.text = $"<color=white>{chosenWeapon.TotalDamage}</color>";
+        statsCritical.text = $"<color=white>{chosenWeapon.TotalCritDamage} / {chosenWeapon.TotalCritChance * 100}</color>";
+        statsReloadTime.text = $"<color=white>{chosenWeapon.TotalReloadTime} s</color>";
     }
 }

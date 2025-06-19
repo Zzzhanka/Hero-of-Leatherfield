@@ -15,4 +15,5 @@ MonoBehaviour:
   boostSprite: {fileID: 933406020268216319, guid: 6e21bfb6dfcf79442b4ffe78019f4372, type: 3}
   boostName: Critical Damage Boost
   boostType: 1
-  boostCost: 750
+  boostCost: 7
+  boostAmount: 5

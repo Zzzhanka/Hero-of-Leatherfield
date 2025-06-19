@@ -44,5 +44,18 @@ public class WeaponSlot : MonoBehaviour
         });
     }
 
+    public void Clear()
+    {
+        this.entry = null; 
+        this.onItemClickedCallback = null;
+
+        slotIcon.sprite = null;
+        slotIcon.enabled = false;
+        slotName.text = "";
+        slotName.enabled = false;
+
+        button.onClick.RemoveAllListeners();
+    }
+
     public ItemEntry GetEntry() => entry;
 }

@@ -22,7 +22,8 @@ MonoBehaviour:
   type: 0
   baseCritDamage: 10
   baseCritChance: 0.2
-  baseReloadTime: 0
+  maxBoostLevel: 3
+  baseReloadTime: 1.5
   projectilePrefab: {fileID: 0}
   damageLimit: 50
   critDamageLimit: 2
