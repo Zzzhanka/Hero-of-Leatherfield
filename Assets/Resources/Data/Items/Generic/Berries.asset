@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Living Berries
   itemID: 4
-  icon: {fileID: -1792480258135571260, guid: 2511437d211512e4482d3868d66acbba, type: 3}
+  icon: {fileID: 21300000, guid: acadf5a62bd0e6b4693dbc25fca096b7, type: 3}
   maxStack: 0
   cost: 5
   description: 

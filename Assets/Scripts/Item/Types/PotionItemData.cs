@@ -34,6 +34,6 @@ public class PotionItemData : Item
     [Tooltip("Is effect activating once or adding multiple units over time?\nUseless if IsInstant is True")]
     public PotionActionType potionActionType = PotionActionType.Adding;
 
-    [Tooltip("Time period of potion\nUseless if IsInstant is True")]
-    public float potionUseTime = 0;
+    [Tooltip("Duration of potion effect\nUseless if IsInstant is True")]
+    public float potionDuration = 0;
 }

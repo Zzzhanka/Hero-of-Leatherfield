@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Needles
   itemID: 5
-  icon: {fileID: -6527260261228635250, guid: 76a367d63d21abf48abdf732f8c8ea97, type: 3}
+  icon: {fileID: 21300000, guid: 869282af6d3f2314fb1bd28c6a5d58f9, type: 3}
   maxStack: 0
   cost: 8
   description: 

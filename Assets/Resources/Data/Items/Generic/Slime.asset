@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59789f18e6104124ebc9c8307694f7ad, type: 3}
   m_Name: Slime
   m_EditorClassIdentifier: 
-  itemName: Slime
+  itemName: Slime Slug
   itemID: 1
-  icon: {fileID: 3474400765828723021, guid: f277793141ffd3a41a96a7c4e20cfc09, type: 3}
+  icon: {fileID: 21300000, guid: 7adaec9691ac51a43bc4cf4496bc6815, type: 3}
   maxStack: 0
   cost: 8
   description: Medical Slime. Using for creating health potions

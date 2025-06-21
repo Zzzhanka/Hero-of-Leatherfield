@@ -7,17 +7,24 @@ public class ItemEntry
     public WeaponInstance weapon;
     public int quantity;
 
-    public ItemEntry(Item item, int quantity)
+    public ItemEntry(Item item, int quantity, WeaponInstance weapon = null)
     {
         this.item = item;
         this.quantity = quantity;
+        this.weapon = weapon;
 
-        if (item.itemType == ItemType.Weapon && item is WeaponItemData weaponItem)
+        if(item is WeaponItemData weaponData && this.weapon == null)
         {
-            weapon = new WeaponInstance(weaponItem);
+            this.weapon = new WeaponInstance(weaponData);
         }
     }
+}
 
-    
+[System.Serializable]
+public class ItemEntrySaveData
+{
+    public int itemID;
+    public int quantity;
+    public WeaponInstance weaponInstance;
 }
 

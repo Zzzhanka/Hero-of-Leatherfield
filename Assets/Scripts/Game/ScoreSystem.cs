@@ -5,7 +5,14 @@ public class ScoreSystem : MonoBehaviour
     private string COINS_SAVE_NAME = "HOL_COINS";
     private int totalCoins;
 
-    public int TotalCoins => totalCoins;
+    public int TotalCoins 
+    {
+        get => totalCoins;
+        private set
+        {
+            totalCoins = value <= 0 ? 0 : value;
+        }
+    }
 
     public void Initialize()
     {

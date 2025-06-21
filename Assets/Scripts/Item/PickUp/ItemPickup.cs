@@ -4,12 +4,15 @@ using UnityEngine;
 [RequireComponent(typeof(Collider2D))]
 public class ItemPickup : MonoBehaviour
 {
+    [SerializeField] private WeaponInstance weaponInstance;
     [SerializeField] private Item item;
     [SerializeField] private int quantity = 1;
     private SpriteRenderer iconRenderer;
 
     private bool canBePickedUp = true;
     private bool playerWasInside = false;
+
+    [SerializeField] private float DelayPickup = 1.5f;
 
     private void Awake()
     {
@@ -23,14 +26,31 @@ public class ItemPickup : MonoBehaviour
 
     private void Start()
     {
-        
-        StartCoroutine(DelayedEnablePickup(1.5f));
+        Initialize();
+
+        StartCoroutine(DelayedEnablePickup(DelayPickup));
     }
 
-    public void SetItem(Item item, int quantity, bool isDropped)
+    private void Initialize()
+    {
+        if(item == null)
+            Destroy(gameObject);
+
+        if(item is WeaponItemData weaponData && weaponInstance.BaseItem == null)
+        {
+            weaponInstance = new WeaponInstance(weaponData);
+        }
+    }
+
+    public void SetItem(Item item, int quantity, bool isDropped, WeaponInstance weapon)
     {
         this.item = item;
         this.quantity = quantity;
+
+        if (item.itemType == ItemType.Weapon && weapon != null)
+            this.weaponInstance = weapon;
+
+        else this.weaponInstance = null;
 
         if (iconRenderer == null)
             iconRenderer = GetComponent<SpriteRenderer>();
@@ -45,7 +65,7 @@ public class ItemPickup : MonoBehaviour
         {
             canBePickedUp = false;
             playerWasInside = true; // Prevent pickup until player exits and re-enters
-            StartCoroutine(DelayedEnablePickup(1.5f));
+            StartCoroutine(DelayedEnablePickup(DelayPickup));
         }
         else
         {
@@ -66,7 +86,7 @@ public class ItemPickup : MonoBehaviour
         if (!canBePickedUp || playerWasInside)
             return;
 
-        if (GameManager.Instance.InventoryManager.AddItem(item, quantity))
+        if (GameManager.Instance.InventoryManager.AddItem(item, quantity, weaponInstance))
         {
             Destroy(gameObject);
         }

@@ -3,7 +3,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 
 public class BlacksmithUI : MonoBehaviour
 {
@@ -37,13 +36,29 @@ public class BlacksmithUI : MonoBehaviour
         this.gameObject.SetActive(false);
 
         boostButton.onClick.RemoveAllListeners();
-        boostButton.onClick.AddListener(() => { });
+        boostButton.onClick.AddListener(Boost);
     }
 
     private void OnEnable()
     {
         RefreshUI();
         ChooseFirstSlot();
+
+        GameManager.Instance.InventoryManager.OnInventoryChanged += RefreshUI;
+    }
+
+    private void OnDisable()
+    {
+        chosenBoost = null;
+        GameManager.Instance.InventoryManager.OnInventoryChanged -= RefreshUI;
+    }
+
+    public void Boost()
+    {
+        GameManager.Instance.BlacksmithManager.BoostWeapon(chosenWeapon, chosenBoost);
+
+        RefreshUI();
+        ClearStats();
     }
 
     private void RefreshUI()
@@ -52,6 +67,8 @@ public class BlacksmithUI : MonoBehaviour
 
         RefreshInventoryList();
         RefreshBoostList();
+
+        ChangeBoostButton();
     }
 
     private void RefreshInventoryList()
@@ -124,6 +141,9 @@ public class BlacksmithUI : MonoBehaviour
     {
         if (entry == null || entry.weapon == null)
         {
+            chosenWeapon = null;
+            ChangeBoostButton();
+
             weaponIcon.enabled = false;
             weaponName.text = "-";
 
@@ -134,6 +154,7 @@ public class BlacksmithUI : MonoBehaviour
         }
 
         chosenWeapon = entry.weapon;
+        ChangeBoostButton();
 
         weaponIcon.enabled = true;
         weaponIcon.sprite = chosenWeapon.BaseItem.icon;
@@ -152,6 +173,9 @@ public class BlacksmithUI : MonoBehaviour
     {
         ClearStats();
         chosenBoost = boost;
+        ChangeBoostButton();
+
+        if (chosenWeapon == null) return;
 
         switch (boost.boostType)
         {
@@ -217,8 +241,22 @@ public class BlacksmithUI : MonoBehaviour
 
     private void ClearStats()
     {
-        statsDamage.text = $"<color=white>{chosenWeapon.TotalDamage}</color>";
-        statsCritical.text = $"<color=white>{chosenWeapon.TotalCritDamage} / {chosenWeapon.TotalCritChance * 100}</color>";
-        statsReloadTime.text = $"<color=white>{chosenWeapon.TotalReloadTime} s</color>";
+        if (chosenWeapon != null)
+        {
+            statsDamage.text = $"<color=white>{chosenWeapon.TotalDamage}</color>";
+            statsCritical.text = $"<color=white>{chosenWeapon.TotalCritDamage} / {chosenWeapon.TotalCritChance * 100}</color>";
+            statsReloadTime.text = $"<color=white>{chosenWeapon.TotalReloadTime} s</color>";
+        }
+    }
+
+    private void ChangeBoostButton()
+    {
+        bool temp1 = (chosenWeapon != null && chosenBoost != null) && chosenWeapon.CurrentBoostLevel < 3;
+        bool temp2 = false;
+
+        if (chosenBoost != null)
+            temp2 = chosenBoost.boostCost <= GameManager.Instance.ScoreSystem.TotalCoins;
+        
+        boostButton.interactable = temp1 && temp2;
     }
 }

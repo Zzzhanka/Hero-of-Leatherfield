@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
 public class WeaponInstance
 {
     public WeaponItemData BaseItem { get; private set; }
@@ -17,6 +18,7 @@ public class WeaponInstance
     public float BonusCritDamage => bonusCritDamage;
     public float BonusCritChance => bonusCritChance;
     public float MinusReloadTime => minusReloadTime;
+    public int CurrentBoostLevel => currentBoostLevel;
 
     // Total calculated values
     public int TotalDamage => BaseItem.BaseDamage + bonusDamage;
@@ -42,27 +44,27 @@ public class WeaponInstance
         minusReloadTime = 0f;
     }
 
-    public void ApplyEnhancement(BoostType boostType, float amount)
+    public void ApplyEnhancement(Boost boost)
     {
-        switch (boostType)
+        switch (boost.boostType)
         {
             case BoostType.Damage:
-                bonusDamage += (int) amount;
+                bonusDamage += (int) boost.boostAmount;
                     
                 break;
 
             case BoostType.CritDamage:
-                bonusCritDamage += amount;
+                bonusCritDamage += boost.boostAmount;
 
                 break;
 
             case BoostType.CritChance:
-                bonusCritChance += amount;
+                bonusCritChance += boost.boostAmount;
 
                 break;
 
             case BoostType.ReloadTime:
-                minusReloadTime += amount;
+                minusReloadTime += boost.boostAmount;
                     
                 break;
         }

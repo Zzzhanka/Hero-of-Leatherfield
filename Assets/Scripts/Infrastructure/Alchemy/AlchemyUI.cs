@@ -5,23 +5,29 @@ using UnityEngine.UI;
 
 public class AlchemyUI : MonoBehaviour
 {
+    [Space(8), Header("Potions List Part")]
     [SerializeField] private GameObject slotPrefab;
     [SerializeField] private GameObject componentPrefab;
     [SerializeField] private Transform potionListGridParent;
     [SerializeField] private Transform componentsListgridParent;
 
-    private List<GameObject> slotInstances = new List<GameObject>();
-    private List<GameObject> componentInstances = new List<GameObject>();
-    private Receipt chosenReceipt;
-
     [Space(5), Header("Receipt Details Part")]
     [SerializeField] private GameObject DetailsPanel;
     [SerializeField] private TMP_Text PotionName;
     [SerializeField] private Image PotionIcon;
-    [SerializeField] private TMP_Text PotionStats;
 
+    [Space(5)]
+    [SerializeField] private Transform ItemStatsGrid;
+    [SerializeField] private GameObject ItemStatsPrefab;
+
+    [Space(5)]
     [SerializeField] private Button CreateButton;
 
+    
+
+    private List<GameObject> slotInstances = new List<GameObject>();
+    private List<GameObject> componentInstances = new List<GameObject>();
+    private Receipt chosenReceipt;
     private PotionSlot chosenSlot;
 
     private void Awake()
@@ -90,7 +96,8 @@ public class AlchemyUI : MonoBehaviour
         DetailsPanel.SetActive(true);
         PotionName.text = receipt.receiptItemRef.itemName;
         PotionIcon.sprite = receipt.receiptItemRef.icon;
-        PotionStats.text = receipt.receiptItemRef.description;
+
+        ShowPotionStats(receipt.receiptItemRef);
 
         ShowPotionComponents(receipt);
     }
@@ -129,6 +136,52 @@ public class AlchemyUI : MonoBehaviour
         CheckAvailability();
     }
 
+    private void ShowPotionStats(Item item)
+    {
+        foreach (Transform child in ItemStatsGrid)
+        {
+            Destroy(child.gameObject);
+        }
+
+        PotionItemData potion = item as PotionItemData;
+        string colorStart = "";
+        string colorEnd = "</color>";
+
+        switch (potion.potionType)
+        {
+            case PotionType.Health:
+                colorStart = "<color=green>";
+                break;
+
+            case PotionType.Mana:
+                colorStart = "<color=blue>";
+                break;
+
+            case PotionType.Speed:
+                colorStart = "<color=yellow>";
+                break;
+
+            case PotionType.Damage:
+                colorStart = "<color=red>";
+                break;
+
+            default:
+                colorEnd = "";
+                break;
+        }
+
+        CreateStatRow("Type", colorStart + potion.potionType.ToString() + colorEnd);
+        CreateStatRow("Instant", potion.isInstant ? "Yes" : "No");
+        CreateStatRow("Increase Unit", potion.potionIncreaseAmount + " PU / " +
+            (!potion.isInstant ? potion.potionIncreaseInterval : "1") + " s");
+
+        if (!potion.isInstant)
+        {
+            CreateStatRow("Action Type", potion.potionActionType.ToString());
+            CreateStatRow("Duration", potion.potionDuration + " s");
+        }
+    }
+
     private void ChooseFirstSlot(int chosenSlotPosition = 0)
     {
         if (slotInstances.Count == 0)
@@ -162,6 +215,12 @@ public class AlchemyUI : MonoBehaviour
             slot.SetActive(false);
     }
 
+    private void CreateStatRow(string label, string value)
+    {
+        GameObject statsObj = Instantiate(ItemStatsPrefab, ItemStatsGrid);
+        StatsScript stat = statsObj.GetComponentInChildren<StatsScript>();
+        stat.Setup(label, value);
+    }
 
     private void CheckAvailability()
     {

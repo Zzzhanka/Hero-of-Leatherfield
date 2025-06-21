@@ -1,4 +1,5 @@
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -6,6 +7,7 @@ public class WeaponSlot : MonoBehaviour
 {
     [SerializeField] private Image slotIcon;
     [SerializeField] private TMP_Text slotName;
+    [SerializeField] private TMP_Text slotLevel;
 
     private Button button;
     private ItemEntry entry;
@@ -28,6 +30,9 @@ public class WeaponSlot : MonoBehaviour
             slotIcon.enabled = true;
             slotName.text = entry.item.itemName;
             slotName.enabled = true;
+            slotLevel.text = (entry.weapon.CurrentBoostLevel >= 3 ? "<color=red>" : "") 
+                + entry.weapon.CurrentBoostLevel + "/3" + 
+                (entry.weapon.CurrentBoostLevel >= 3 ? "</color>" : "");
         }
         else
         {
