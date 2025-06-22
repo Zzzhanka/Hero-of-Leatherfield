@@ -20,7 +20,9 @@ public class EnemyCharacteristics : MonoBehaviour
         Slime,
         Mandragora,
         Mushroom,
-        Cyclops
+        Cyclops,
+        Kust,
+        Boloto
     }
 
     public EnemyType Type;

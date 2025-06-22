@@ -15,9 +15,9 @@ GameObject:
   - component: {fileID: 8182645181187752011}
   - component: {fileID: 6602535286622160328}
   - component: {fileID: 8272915169017949022}
-  - component: {fileID: 7736396490593889502}
+  - component: {fileID: 7746250633258975585}
   m_Layer: 7
-  m_Name: Enemy Variant
+  m_Name: Enemy Variant 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33,7 +33,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -82,7 +82,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -1322865801032194752, guid: 7decf8581a21c4545b597dbf383c068f, type: 3}
+  m_Sprite: {fileID: -3721173576768489657, guid: e63648cdfcef9774a8e1d8fdce1b621b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -131,7 +131,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.65625, y: 1}
     newSize: {x: 1, y: 2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -149,7 +149,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 15
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -173,13 +173,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a1ffd46c14e9d24a8404c1bd2128b1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyMaxHealth: 50
+  EnemyMaxHealth: 30
   EnemyCurrentHealth: 0
   EnemyDamage: 5
   EnemyDefense: 0
-  EnemyMoveSpeed: 3.5
-  EnemyAttackReload: 2
-  Type: 3
+  EnemyMoveSpeed: 10
+  EnemyAttackReload: 1
+  Type: 1
 --- !u!114 &6602535286622160328
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -192,7 +192,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a139125ae75882443b53580ae767931d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enemySpeed: 2
+  _enemySpeed: 3
 --- !u!114 &8272915169017949022
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -205,8 +205,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 763e11e324414d84296f37193282613f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _attackReload: 1.5
---- !u!95 &7736396490593889502
+  _attackReload: 1
+--- !u!95 &7746250633258975585
 Animator:
   serializedVersion: 7
   m_ObjectHideFlags: 0
@@ -216,7 +216,7 @@ Animator:
   m_GameObject: {fileID: 2267405162862184750}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 27e48a913ae9c974cbc800522b87342d, type: 2}
+  m_Controller: {fileID: 9100000, guid: f71ddb4203016664986f33ecc489a1dc, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

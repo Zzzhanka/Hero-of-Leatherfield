@@ -5533,6 +5533,7 @@ MonoBehaviour:
   _dashCooldown: 2
   _dashCooldownTimer: 0
   _dashReloadSlider: {fileID: 799926014}
+  smoothMovement: 0
 --- !u!114 &1103755086
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9122,6 +9123,7 @@ MonoBehaviour:
   _enemySpawn:
   - {fileID: 2267405162862184750, guid: 220ea2a1e3e6c984189895554a4382a8, type: 3}
   - {fileID: 2267405162862184750, guid: 475318c085cf9fc4a9a62024173394b6, type: 3}
+  - {fileID: 2267405162862184750, guid: 8564d19098da94a4a897aba193522beb, type: 3}
   _spawnPoin:
   - {fileID: 655087794}
   - {fileID: 122274625}
