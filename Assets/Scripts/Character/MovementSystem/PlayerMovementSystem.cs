@@ -27,6 +27,8 @@ public class PlayerMovementSystem : MonoBehaviour
     private Vector2 _heroPreviousPosition;
     private Vector2 _moveDirection;
 
+    private bool keyboardControl = false;
+
     public IEnumerator Dash()
     {
         if (_playerState.PlayerCanDash && _playerChars.PlayerCurrentEnergy >= _dashCost && _dashCooldownTimer <= 0 && (_playerMovementInputSystem.InputX != 0 || _playerMovementInputSystem.InputY != 0))

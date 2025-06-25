@@ -11,8 +11,11 @@ public class GameManager : MonoBehaviour
     [SerializeField] private AlchemyManager alchemyManager;
     [SerializeField] private StoreManager storeManager;
     [SerializeField] private BlacksmithManager blacksmithManager;
+    [SerializeField] private AudioManager audioManager;
 
     private GameObject player;
+
+    public AudioManager AudioManager => audioManager;
 
     public ItemPickupFactory ItemPickupFactory => 
         itemPickupFactory;

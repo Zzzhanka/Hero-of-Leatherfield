@@ -17,6 +17,14 @@ public class ItemPickupFactory : MonoBehaviour
         pickup.SetItem(droppedItem, amount, true, weapon);
     }
 
+    public void CreatePickup(Transform enemyPos, Item droppedItem, int amount, WeaponInstance weapon = null)
+    {
+        GameObject dropped = Instantiate(pickupPrefab, enemyPos.position, enemyPos.rotation, null);
+
+        ItemPickup pickup = dropped.GetComponent<ItemPickup>();
+        pickup.SetItem(droppedItem, amount, true, weapon);
+    }
+
     private Vector3 GetRandomDropPosition(Vector3 playerPosition)
     {
         Vector2 randomOffset = Random.insideUnitCircle * maxRangeDrop;

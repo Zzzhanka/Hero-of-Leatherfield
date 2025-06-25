@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -13,7 +14,8 @@ public class EnemyCharacteristics : MonoBehaviour
     public float EnemyMoveSpeed;
     public float EnemyAttackReload;
 
-
+    public List<LootEntry> itemDrops = new();
+    public CoinLootEntry coinDrop = new();
 
     public enum EnemyType
     {
@@ -49,7 +51,23 @@ public class EnemyCharacteristics : MonoBehaviour
     {
         EnemyKillStats.Instance.RegisterKill(Type);
         gameObject.SetActive(false);
-
+        DropLoot();
     }
 
+    public void DropLoot()
+    {
+        foreach (var drop in itemDrops)
+        {
+            if (Random.value <= drop.dropChance)
+            {
+                GameManager.Instance.ItemPickupFactory.CreatePickup(gameObject.transform, drop.item, drop.amount);
+            }
+        }
+
+        if (Random.value <= coinDrop.dropChance)
+        {
+            int coinAmount = Random.Range(coinDrop.minCoins, coinDrop.maxCoins + 1);
+            GameManager.Instance.ItemPickupFactory.CreatePickup(gameObject.transform, coinDrop.coinItem, coinAmount);
+        }
+    }
 }

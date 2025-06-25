@@ -4,16 +4,20 @@ using UnityEngine.UI;
 
 public class AudioSettings : MonoBehaviour
 {
-    [SerializeField] private Slider masterSlider;
-    private AudioMixerGroup masterMixerGroup;
+    [SerializeField] private Slider soundSlider;
+    [SerializeField] private Slider musicSlider;
+    [SerializeField] private AudioMixer audioMixer;
 
     private void Awake()
     {
-        
+        soundSlider.onValueChanged.RemoveAllListeners();
+        soundSlider.onValueChanged.AddListener((value) => ChangeVolume(value, "Sound"));
+        musicSlider.onValueChanged.RemoveAllListeners();
+        musicSlider.onValueChanged.AddListener((value) => ChangeVolume(value, "Music"));
     }
 
-    private void ChangeVolume(float value)
+    private void ChangeVolume(float value, string MixerGroup)
     {
-
+        audioMixer.SetFloat(MixerGroup, Mathf.Log10(value) * 20f);
     }
 }

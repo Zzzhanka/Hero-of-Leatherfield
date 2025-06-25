@@ -2,23 +2,29 @@ using UnityEngine;
 
 public class PauseButton : MonoBehaviour
 {
+    [Header("Panel to toggle (pause menu)")]
     public GameObject targetPanel;
+
+    private bool isPaused = false;
 
     public void TogglePanel()
     {
-        if (targetPanel != null)
-        {
-            bool temp = targetPanel.activeSelf;
-            
-            targetPanel.SetActive(!targetPanel.activeSelf);
+        if (targetPanel == null)
+            return;
 
-            // Avoid the bug when Panel won't activate on first press
-            if (targetPanel.activeSelf == temp)
-                targetPanel.SetActive(!targetPanel.activeSelf);
+        isPaused = !isPaused;
 
-            this.gameObject.SetActive(temp);
+        targetPanel.SetActive(isPaused);
 
-            Time.timeScale = temp == true ? 1 : 0;
-        }
+        gameObject.SetActive(!isPaused);
+ 
+        // Set timescale
+        Time.timeScale = isPaused ? 0 : 1;
+
+        // Audio pause/resume via AudioManager (global)
+        if (isPaused)
+            GameManager.Instance?.AudioManager.PauseAllAudio();
+        else
+            GameManager.Instance?.AudioManager.ResumeAllAudio();
     }
 }

@@ -5,6 +5,7 @@ using UnityEngine;
 public class ItemPickup : MonoBehaviour
 {
     [SerializeField] private WeaponInstance weaponInstance;
+    [SerializeField] private Item coinItemRef;
     [SerializeField] private Item item;
     [SerializeField] private int quantity = 1;
     private SpriteRenderer iconRenderer;
@@ -85,6 +86,13 @@ public class ItemPickup : MonoBehaviour
 
         if (!canBePickedUp || playerWasInside)
             return;
+
+        if(item == coinItemRef)
+        {
+            GameManager.Instance.ScoreSystem.AddCoins(quantity);
+            Destroy(gameObject);
+            return;
+        }
 
         if (GameManager.Instance.InventoryManager.AddItem(item, quantity, weaponInstance))
         {

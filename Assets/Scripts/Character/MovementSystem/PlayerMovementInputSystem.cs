@@ -8,6 +8,7 @@ public class PlayerMovementInputSystem : MonoBehaviour
 
     [Space(5)]
     [SerializeField] private Joystick _joystickInput;
+    [SerializeField] private bool fromKeyboard = false;
 
     [Space(5)]
     public float InputX;
@@ -15,7 +16,7 @@ public class PlayerMovementInputSystem : MonoBehaviour
     public float InputMagnitude;
 
     private PlayerMovementSystem _playerMovementSystem;
-
+    
 
     public void DashInput()
     {
@@ -41,7 +42,7 @@ public class PlayerMovementInputSystem : MonoBehaviour
         float rawX;
         float rawY;
 
-        if (_joystickInput != null)
+        if (_joystickInput != null && !fromKeyboard)
         {
             rawX = _joystickInput.Horizontal;
             rawY = _joystickInput.Vertical;

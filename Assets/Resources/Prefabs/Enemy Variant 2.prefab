@@ -179,6 +179,15 @@ MonoBehaviour:
   EnemyDefense: 0
   EnemyMoveSpeed: 10
   EnemyAttackReload: 1
+  itemDrops:
+  - item: {fileID: 11400000, guid: 3a3118ad3ebee6947a21787c07938944, type: 2}
+    dropChance: 1
+    amount: 1
+  coinDrop:
+    dropChance: 1
+    minCoins: 1
+    maxCoins: 3
+    coinItem: {fileID: 11400000, guid: 222804ad8004d7446aba410ec53427a4, type: 2}
   Type: 1
 --- !u!114 &6602535286622160328
 MonoBehaviour:
