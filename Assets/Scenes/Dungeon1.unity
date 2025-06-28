@@ -2645,7 +2645,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
+  m_VoxelSize: 0.083333336
   m_BuildHeightMesh: 0
   m_MinRegionArea: 0
   m_HideEditorLogs: 0
@@ -5547,6 +5547,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _joystickInput: {fileID: 1367083380}
+  fromKeyboard: 0
   InputX: 0
   InputY: 0
   InputMagnitude: 0
@@ -9250,6 +9251,12 @@ MonoBehaviour:
   EnemyDefense: 0
   EnemyMoveSpeed: 1.5
   EnemyAttackReload: 4
+  itemDrops: []
+  coinDrop:
+    dropChance: 1
+    minCoins: 1
+    maxCoins: 10
+    coinItem: {fileID: 0}
   Type: 0
 --- !u!195 &1131687037
 NavMeshAgent:
@@ -13119,6 +13126,12 @@ MonoBehaviour:
   EnemyDefense: 0
   EnemyMoveSpeed: 1
   EnemyAttackReload: 2
+  itemDrops: []
+  coinDrop:
+    dropChance: 1
+    minCoins: 1
+    maxCoins: 10
+    coinItem: {fileID: 0}
   Type: 4
 --- !u!195 &1948748043
 NavMeshAgent:
@@ -13824,6 +13837,12 @@ MonoBehaviour:
   EnemyDefense: 0
   EnemyMoveSpeed: 0.4
   EnemyAttackReload: 8
+  itemDrops: []
+  coinDrop:
+    dropChance: 1
+    minCoins: 1
+    maxCoins: 10
+    coinItem: {fileID: 0}
   Type: 5
 --- !u!195 &2011813620
 NavMeshAgent:

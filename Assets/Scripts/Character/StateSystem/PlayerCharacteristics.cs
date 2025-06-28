@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using System;
 
 
 public class PlayerCharacteristics : MonoBehaviour
@@ -37,9 +38,6 @@ public class PlayerCharacteristics : MonoBehaviour
     private float _energyLoseTimer = 0f;
     private const float _energyLoseInterval = 0.1f;
     private const float _losingEnergyWhileRunning = 1;
-
-
-
 
     public void PlayerTakesDamage(int damage)
     {
@@ -176,10 +174,8 @@ public class PlayerCharacteristics : MonoBehaviour
 
     private void PlayerDies()
     {
-
+        PlayerEvents.InvokePlayerDeath();
         gameObject.SetActive(false);
-        Debug.Log(" Игрок умер :( ");
-
     }
 
 }
