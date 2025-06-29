@@ -7,9 +7,9 @@ public class MainMenuWindow : Window
     [SerializeField] private Button startGameButton;
     [SerializeField] private Button optionsGameButton;
 
-    private void StartGameHandler()
+    public void StartGameHandler()
     {
-        SceneManager.LoadScene("Village");
+        SceneManager.LoadScene("Village 1");
     }
 
     private void OpenOptionsHandler()
