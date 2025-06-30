@@ -825,6 +825,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dungeonScenes:
   - Dungeon1
+  - Dungeon2
 --- !u!61 &49167223
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1304,7 +1305,7 @@ Transform:
   m_GameObject: {fileID: 61285146}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.614, y: -0.12, z: -10}
+  m_LocalPosition: {x: 10.054, y: -0.12, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -21149,7 +21150,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 0ec6728787381c24caa4370761143eb4, type: 3}
     - target: {fileID: 7989398130223795884, guid: 204e0506f74a51a4c8abcd24adbef191, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.494
+      value: 9.934
       objectReference: {fileID: 0}
     - target: {fileID: 7989398130223795884, guid: 204e0506f74a51a4c8abcd24adbef191, type: 3}
       propertyPath: m_LocalPosition.y
@@ -21731,7 +21732,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.614, y: -0.119999886, z: -10}
+  m_LocalPosition: {x: 10.054, y: -0.119999886, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -27978,7 +27979,7 @@ Transform:
   m_GameObject: {fileID: 1103755082}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.614, y: -0.12, z: 0}
+  m_LocalPosition: {x: 10.054, y: -0.12, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -44225,7 +44226,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 8ab0550a37a36624a827f8929219a999, type: 3}
     - target: {fileID: 7989398130223795884, guid: 204e0506f74a51a4c8abcd24adbef191, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.1140003
+      value: 8.554
       objectReference: {fileID: 0}
     - target: {fileID: 7989398130223795884, guid: 204e0506f74a51a4c8abcd24adbef191, type: 3}
       propertyPath: m_LocalPosition.y
@@ -44448,7 +44449,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 0ec6728787381c24caa4370761143eb4, type: 3}
     - target: {fileID: 7989398130223795884, guid: 204e0506f74a51a4c8abcd24adbef191, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.05
+      value: 7.49
       objectReference: {fileID: 0}
     - target: {fileID: 7989398130223795884, guid: 204e0506f74a51a4c8abcd24adbef191, type: 3}
       propertyPath: m_LocalPosition.y
