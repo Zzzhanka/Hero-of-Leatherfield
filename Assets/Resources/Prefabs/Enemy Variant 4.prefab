@@ -149,7 +149,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 15
+  m_Speed: 0.5
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -177,18 +177,15 @@ MonoBehaviour:
   EnemyCurrentHealth: 0
   EnemyDamage: 5
   EnemyDefense: 0
-  EnemyMoveSpeed: 3
+  EnemyMoveSpeed: 0.5
   EnemyAttackReload: 5
-  itemDrops:
-  - item: {fileID: 11400000, guid: 3a3118ad3ebee6947a21787c07938944, type: 2}
-    dropChance: 1
-    amount: 1
+  itemDrops: []
   coinDrop:
     dropChance: 1
-    minCoins: 1
-    maxCoins: 3
+    minCoins: 30
+    maxCoins: 100
     coinItem: {fileID: 11400000, guid: 222804ad8004d7446aba410ec53427a4, type: 2}
-  Type: 1
+  Type: 2
 --- !u!114 &6602535286622160328
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -201,7 +198,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a139125ae75882443b53580ae767931d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enemySpeed: 1
+  _enemySpeed: 0.5
 --- !u!114 &8272915169017949022
 MonoBehaviour:
   m_ObjectHideFlags: 0

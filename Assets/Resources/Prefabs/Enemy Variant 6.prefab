@@ -188,7 +188,7 @@ MonoBehaviour:
     minCoins: 1
     maxCoins: 3
     coinItem: {fileID: 11400000, guid: 222804ad8004d7446aba410ec53427a4, type: 2}
-  Type: 1
+  Type: 0
 --- !u!114 &6602535286622160328
 MonoBehaviour:
   m_ObjectHideFlags: 0
