@@ -131,7 +131,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.32, y: 0.32}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 1, y: 2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -173,12 +173,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a1ffd46c14e9d24a8404c1bd2128b1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyMaxHealth: 30
+  EnemyMaxHealth: 50
   EnemyCurrentHealth: 0
   EnemyDamage: 5
   EnemyDefense: 0
-  EnemyMoveSpeed: 10
-  EnemyAttackReload: 1
+  EnemyMoveSpeed: 3
+  EnemyAttackReload: 5
   itemDrops:
   - item: {fileID: 11400000, guid: 3a3118ad3ebee6947a21787c07938944, type: 2}
     dropChance: 1
@@ -201,7 +201,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a139125ae75882443b53580ae767931d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enemySpeed: 3
+  _enemySpeed: 1
 --- !u!114 &8272915169017949022
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -214,7 +214,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 763e11e324414d84296f37193282613f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _attackReload: 1
+  _attackReload: 5
 --- !u!95 &7746250633258975585
 Animator:
   serializedVersion: 7
