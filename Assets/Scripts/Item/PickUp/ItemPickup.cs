@@ -5,7 +5,6 @@ using UnityEngine;
 public class ItemPickup : MonoBehaviour
 {
     [SerializeField] private WeaponInstance weaponInstance;
-    [SerializeField] private Item coinItemRef;
     [SerializeField] private Item item;
     [SerializeField] private int quantity = 1;
     private SpriteRenderer iconRenderer;
@@ -14,6 +13,7 @@ public class ItemPickup : MonoBehaviour
     private bool playerWasInside = false;
 
     [SerializeField] private float DelayPickup = 1.5f;
+    private bool isItCoin = false;
 
     private void Awake()
     {
@@ -43,7 +43,7 @@ public class ItemPickup : MonoBehaviour
         }
     }
 
-    public void SetItem(Item item, int quantity, bool isDropped, WeaponInstance weapon)
+    public void SetItem(Item item, int quantity, bool isDropped, WeaponInstance weapon, bool isItCoin = false)
     {
         this.item = item;
         this.quantity = quantity;
@@ -87,8 +87,9 @@ public class ItemPickup : MonoBehaviour
         if (!canBePickedUp || playerWasInside)
             return;
 
-        if(item == coinItemRef)
+        if(isItCoin)
         {
+            Debug.Log("HERE");
             GameManager.Instance.ScoreSystem.AddCoins(quantity);
             Destroy(gameObject);
             return;
@@ -104,7 +105,7 @@ public class ItemPickup : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            playerWasInside = false;
+            // playerWasInside = false;
         }
     }
 }

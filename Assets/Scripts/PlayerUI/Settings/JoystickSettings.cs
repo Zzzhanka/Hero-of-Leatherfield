@@ -1,17 +1,23 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class JoystickSettings : MonoBehaviour
+public class JoystickTransparencyController : MonoBehaviour
 {
     [SerializeField] private Slider joystickSlider;
-    [SerializeField] private Image joystickHandle;
-    [SerializeField] private Image joystickCircle;
+    [SerializeField] private List<GameObject> joysticks;
 
     private void Awake()
     {
-        joystickSlider.minValue = 0;
-        joystickSlider.maxValue = 1;
-        joystickSlider.value = joystickCircle.color.a;
+        joystickSlider.minValue = 0f;
+        joystickSlider.maxValue = 1f;
+
+        if (joysticks.Count > 0)
+        {
+            var image = joysticks[0].GetComponentInChildren<Image>();
+            if (image != null)
+                joystickSlider.value = image.color.a;
+        }
 
         joystickSlider.onValueChanged.RemoveAllListeners();
         joystickSlider.onValueChanged.AddListener(ChangeTransparency);
@@ -19,10 +25,16 @@ public class JoystickSettings : MonoBehaviour
 
     private void ChangeTransparency(float value)
     {
-        Color color = joystickCircle.color;
-        color.a = value;
-
-        joystickCircle.color = color;
-        joystickHandle.color = color;
+        foreach (GameObject joystick in joysticks)
+        {
+            // Get all Image components in the joystick GameObject and its children
+            Image[] images = joystick.GetComponentsInChildren<Image>(includeInactive: true);
+            foreach (Image img in images)
+            {
+                Color newColor = img.color;
+                newColor.a = value;
+                img.color = newColor;
+            }
+        }
     }
 }
