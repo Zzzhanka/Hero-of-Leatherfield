@@ -14,6 +14,9 @@ public class AudioSettings : MonoBehaviour
         soundSlider.onValueChanged.AddListener((value) => ChangeVolume(value, "Sound"));
         musicSlider.onValueChanged.RemoveAllListeners();
         musicSlider.onValueChanged.AddListener((value) => ChangeVolume(value, "Music"));
+
+        soundSlider.minValue = .0001f;
+        musicSlider.minValue = .0001f;
     }
 
     private void ChangeVolume(float value, string MixerGroup)
