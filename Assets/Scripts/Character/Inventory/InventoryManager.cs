@@ -8,6 +8,8 @@ public class InventorySaveData
 
 public class InventoryManager : MonoBehaviour
 {
+    public static InventoryManager Instance { get; private set; }
+
     [Header("Inventory")]
     public List<ItemEntry> inventory = new List<ItemEntry>();
 
@@ -17,8 +19,19 @@ public class InventoryManager : MonoBehaviour
     public delegate void InventoryChanged();
     public event InventoryChanged OnInventoryChanged;
 
-
     [Range(30, 100)] public int MinSlots = 30;
+
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
+    }
 
     public void Initialize()
     {
@@ -33,10 +46,9 @@ public class InventoryManager : MonoBehaviour
             return false;
         }
 
-        if(inventory.Count >= MinSlots)
+        if (inventory.Count >= MinSlots)
         {
             Debug.Log("[Inventory] Inventory is FULL");
-
         }
 
         ItemEntry existingEntry = inventory.Find(entry => entry.item == itemToAdd && itemToAdd.maxStack > 1);
@@ -45,7 +57,6 @@ public class InventoryManager : MonoBehaviour
         {
             if (existingEntry.quantity + quantity > itemToAdd.maxStack)
             {
-                
                 inventory.Add(new ItemEntry(itemToAdd, quantity, weapon));
                 return false;
             }
@@ -74,8 +85,6 @@ public class InventoryManager : MonoBehaviour
                 GameManager.Instance.ItemPickupFactory.CreatePickup(itemToRemove, amount, weapon);
             }
 
-
-
             if (entry.quantity - amount <= 0)
             {
                 Debug.Log($"[Inventory] Delete {amount} {itemToRemove.itemName} ({entry.quantity} - {amount})");
@@ -87,7 +96,6 @@ public class InventoryManager : MonoBehaviour
                 entry.quantity -= amount;
             }
 
-
             OnInventoryChanged?.Invoke();
         }
         else
@@ -97,21 +105,12 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
-
     public List<ItemEntry> GetAllEntries() => inventory;
 
     public int FindItemCount(Item item)
     {
         ItemEntry entry = inventory.Find(e => e.item == item);
-
-        if(entry != null)
-        {
-            return entry.quantity;
-        }
-        else
-        {
-            return 0;
-        }
+        return entry != null ? entry.quantity : 0;
     }
 
     public List<ItemEntry> GetSpecificEntries(ItemType type)

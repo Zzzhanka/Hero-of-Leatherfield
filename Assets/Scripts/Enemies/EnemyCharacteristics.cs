@@ -21,7 +21,7 @@ public class EnemyCharacteristics : MonoBehaviour
     {
         Slime,
         Mandragora,
-        Mushroom,
+        Snail,
         Cyclops,
         Kust,
         Boloto
@@ -56,18 +56,26 @@ public class EnemyCharacteristics : MonoBehaviour
 
     public void DropLoot()
     {
+        var inventory = FindObjectOfType<InventoryManager>();
+        if (inventory == null)
+        {
+            Debug.LogError("[DropLoot] InventoryManager not found in scene!");
+            return;
+        }
+
         foreach (var drop in itemDrops)
         {
             if (Random.value <= drop.dropChance)
             {
-                GameManager.Instance.ItemPickupFactory.CreatePickup(gameObject.transform, drop.item, drop.amount);
+                inventory.AddItem(drop.item, drop.amount);
             }
         }
 
         if (Random.value <= coinDrop.dropChance)
         {
             int coinAmount = Random.Range(coinDrop.minCoins, coinDrop.maxCoins + 1);
-            GameManager.Instance.ItemPickupFactory.CreatePickup(gameObject.transform, coinDrop.coinItem, coinAmount);
+            inventory.AddItem(coinDrop.coinItem, coinAmount);
         }
     }
+
 }
