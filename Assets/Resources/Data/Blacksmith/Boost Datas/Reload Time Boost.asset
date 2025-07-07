@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8945a066687825546aba32af79363f97, type: 3}
   m_Name: Reload Time Boost
   m_EditorClassIdentifier: 
-  boostSprite: {fileID: -4352130414292047002, guid: 55ffeb46d2f11e645843193c6ca7ab72, type: 3}
+  boostSprite: {fileID: -4811622487821425069, guid: 8b27c1aab6c07164ab7e250b23e765a0, type: 3}
   boostName: Reload Time Boost
   boostType: 3
   boostCost: 5

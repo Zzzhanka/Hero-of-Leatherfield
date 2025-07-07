@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8945a066687825546aba32af79363f97, type: 3}
   m_Name: Critical Chance Boost
   m_EditorClassIdentifier: 
-  boostSprite: {fileID: 2815870781640260013, guid: 4e5e6aa02c8e7a34bafebe7d4ff387e1, type: 3}
+  boostSprite: {fileID: -7670744015249475436, guid: d9ca5d5583bdb7b439795f21e82efa87, type: 3}
   boostName: Critical Chance Boost
   boostType: 2
   boostCost: 7

@@ -14,10 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Healing Potion
   itemID: 1338
-  icon: {fileID: 21300000, guid: 8ab0550a37a36624a827f8929219a999, type: 3}
+  icon: {fileID: 5369327032235062067, guid: 918ba1ea37d46654aa41d470af84f292, type: 3}
   maxStack: 16
   cost: 10
   description: 
-  potionHealAmount: 10
-  potionUseTime: 3
   potionType: 1
+  potionIncreaseAmount: 1
+  potionIncreaseInterval: 3
+  isInstant: 0
+  potionActionType: 0
+  potionDuration: 0
